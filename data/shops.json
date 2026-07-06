@@ -1,0 +1,226 @@
+[
+  {
+    "id": "shrine",
+    "name": "Shrine of Luck",
+    "keeper": "Garaele",
+    "icon": "🌟",
+    "items": [
+      {
+        "id": "s1",
+        "name": "Healing Potion",
+        "qty": 6,
+        "type": "Potion",
+        "rules": "Brug: Action. Krav: Ingen. Effekt: Healer 2d4+2 HP.",
+        "price": "50 gp"
+      },
+      {
+        "id": "s2",
+        "name": "Scroll of Guidance",
+        "qty": 4,
+        "type": "Scroll (Cantrip)",
+        "rules": "Brug: Action. Krav: Alle; Religion-tjek DC 5 (fejl = scroll opbrugt uden effekt). Effekt: I de næste 10 runder tilføjes +1d4 til det første evnetjek du foretager.",
+        "price": "10 gp"
+      },
+      {
+        "id": "s3",
+        "name": "Scroll of Aid",
+        "qty": 2,
+        "type": "Scroll (2nd)",
+        "rules": "Brug: Action. Krav: Alle; Religion-tjek DC 10 (fejl = scroll opbrugt uden effekt). Effekt: Op til 3 skabninger får +5 maks HP og +5 aktuelle HP frem til næste Long Rest (ikke temp HP).",
+        "price": "75 gp"
+      },
+      {
+        "id": "s4",
+        "name": "Quarterstaff of Good Fortune",
+        "qty": 1,
+        "type": "Våben (Quarterstaff; versatile; 1d6/1d8)",
+        "rules": "Krav: Troldmand (Bard/Cleric/Druid/Sorcerer/Warlock/Wizard). Effekt: 1/Long Rest pr. trylleformular: cast Bless (koncentration, 10 runder) og Cure Wounds (øjeblikkelig).",
+        "price": "900 gp"
+      },
+      {
+        "id": "s5",
+        "name": "Vestments of Blessed Luck",
+        "qty": 1,
+        "type": "Rustning (Tøj; Arcane Armor)",
+        "rules": "Krav: Ingen. AC: 12 + Dex (ingen rustningsfærdighed kræves). Effekt: 1/Long Rest — når du mislykkes et redningskast, tilføj +1d4 til resultatet (kan ændre udfald).",
+        "price": "400 gp"
+      }
+    ]
+  },
+  {
+    "id": "miners",
+    "name": "Miner's Exchange",
+    "keeper": "Halia Thornton",
+    "icon": "💎",
+    "items": [
+      {
+        "id": "m1",
+        "name": "Old Phandalin Undercrypt Map",
+        "qty": 1,
+        "type": "Vidunderligt (Kort/Relic)",
+        "rules": "Lore: Phandalin var engang en stor antik alverby. Ork-angreb for århundreder siden ødelagde området. Næsten intet af den gamle civilisation er tilbage — undtagen hvad der stadig sover under det moderne Phandalin. Halia påstår at have en hemmelig indgang, men det kræver guld og det rette ry. Brug: Ikke et kampitem. Effekt: Med dette kort opnår gruppen et stort spor til Phandalins underjord.",
+        "price": "200 gp/job"
+      },
+      {
+        "id": "m2",
+        "name": "Zhentarim Stiletto",
+        "qty": 1,
+        "type": "Våben (Magisk Dolk; finesse, light, thrown 20/60; 1d4 piercing)",
+        "rules": "Krav: Færdighed med dolke (eller simple våben). Effekt: +1 til angreb. Ved træf: +1 gift-skade (udover piercing). 1/Long Rest: Når du rammer, kan du øjeblikkeligt Disengage (ingen muligheds-angreb mod dig resten af din tur) uden at bruge en handling.",
+        "price": "350 gp"
+      },
+      {
+        "id": "m3",
+        "name": "Shadowweave Studded Leather",
+        "qty": 1,
+        "type": "Magisk Rustning (Let; Studded Leather)",
+        "rules": "Krav: Færdighed med let rustning (typisk Rogue/Ranger/Bard). AC: 13 + Dex. Effekt: 1/Long Rest: cast Invisibility (kun selv, koncentration, 10 runder).",
+        "price": "950 gp"
+      },
+      {
+        "id": "m4",
+        "name": "Charm of the Night Fox",
+        "qty": 1,
+        "type": "Vidunderligt (Trinket)",
+        "rules": "Krav: Ingen. Effekt: 1/Long Rest — tilføj +1d4 til et hvilket som helst Dexterity-færdighedstjek (Acrobatics, Sleight of Hand eller Stealth) efter kastet men før du kender resultatet.",
+        "price": "300 gp"
+      },
+      {
+        "id": "m5",
+        "name": "Poisoned Arrows (bundt à 5)",
+        "qty": 2,
+        "type": "Ammunition (Forgiftede pile)",
+        "rules": "Brug: Hver pil opbruges ved brug. Ved træf: Målet foretager Con save DC 12. Fejl: 1d4 gift-skade og forgiftet frem til slutningen af målets næste tur. Succes: Halvt gift-skade, ingen tilstand. Krav: Færdighed med en bue der skyder pile.",
+        "price": "75 gp"
+      }
+    ]
+  },
+  {
+    "id": "stonehill",
+    "name": "Stonehill Inn",
+    "keeper": "Tolbin",
+    "icon": "🍺",
+    "items": [
+      {
+        "id": "st1",
+        "name": "Standard Rations (1 dag)",
+        "qty": 20,
+        "type": "Rejsegear (Rationer)",
+        "rules": "Rejseregel (Regionkort): Brug 1 ration pr. karakter for at bevæge sig 1 kortrude / felt under overland-rejse. Ingen ration = ingen bevægelse for den karakter på regionkortet (medmindre DM bestemmer andet).",
+        "price": "5 sp"
+      },
+      {
+        "id": "st2",
+        "name": "Hearty Stew",
+        "qty": 10,
+        "type": "Forbrugsgenstand (Mad)",
+        "rules": "Brug: Skal spises på Stonehill Inn. Effekt: Få 1d8 midlertidig HP. Begrænsning: Stakker ikke.",
+        "price": "5 gp"
+      }
+    ]
+  },
+  {
+    "id": "lionshield",
+    "name": "Lionshield Coster",
+    "keeper": "Linene Graywind",
+    "icon": "⚔️",
+    "items": [
+      {
+        "id": "l1",
+        "name": "+1 Shield",
+        "qty": 1,
+        "type": "Rustning (Skjold; +2 AC)",
+        "rules": "Krav: Færdighed med skjolde. Effekt: Magisk +1 AC (i alt +3 AC fra dette skjold).",
+        "price": "900 gp"
+      },
+      {
+        "id": "l2",
+        "name": "Phandalin Ward-Shield",
+        "qty": 1,
+        "type": "Rustning (Skjold; +2 AC)",
+        "rules": "Krav: Færdighed med skjolde. Effekt: 1/Long Rest (Reaktion): giv +2 AC mod ét angreb til dig eller en allieret inden for 5 ft.",
+        "price": "800 gp"
+      },
+      {
+        "id": "l3",
+        "name": "Blessed Mace",
+        "qty": 1,
+        "type": "Våben (Kølle; 1d6 bludgeoning)",
+        "rules": "Krav: Færdighed med simple våben. Effekt: Ved træf mod udøde: +1d4 strålende skade.",
+        "price": "250 gp"
+      },
+      {
+        "id": "l4",
+        "name": "Helm of the Lion",
+        "qty": 1,
+        "type": "Vidunderligt (Hjelm)",
+        "rules": "Krav: Fighter eller Paladin (eller DM-godkendt martial). Effekt: Fordel på redningskast mod forskrækket. 1/Long Rest (Bonushandling): få 1d8 midlertidig HP.",
+        "price": "600 gp"
+      },
+      {
+        "id": "l5",
+        "name": "+1 Longsword",
+        "qty": 1,
+        "type": "Våben (Longsword; versatile; 1d8/1d10 slashing)",
+        "rules": "Krav: Færdighed med martial våben (eller longsword). Effekt: Magisk +1 til angreb og +1 til skade.",
+        "price": "1.000 gp"
+      }
+    ]
+  },
+  {
+    "id": "gnomengarde",
+    "name": "Gnomengarde",
+    "keeper": "Gizmo's Trade-Bench",
+    "icon": "⚙️",
+    "items": [
+      {
+        "id": "g1",
+        "name": "Smoke Capsule",
+        "qty": 3,
+        "type": "Forbrugsgenstand (Gadget)",
+        "rules": "Brug: Action. Effekt: Skaber en 10 ft røgsky i 10 runder (DM afgør sigtbarhed).",
+        "price": "5 gp"
+      },
+      {
+        "id": "g2",
+        "name": "Mechanical Scope",
+        "qty": 2,
+        "type": "Vidunderligt (Våbenvedhæftning)",
+        "rules": "Montering: 10 runder uden for kamp. Hæftes på et afstandsvåben. Effekt: Når du rammer med et afstandsangreb og d20-resultatet er 18–20, gør +1d4 ekstra skade (samme type som våbnet).",
+        "price": "400 gp"
+      },
+      {
+        "id": "g3",
+        "name": "Arcano-Mechanical Demo Key",
+        "qty": 1,
+        "type": "Vidunderligt (Gadget; Nøgle)",
+        "rules": "Brug: Action — åbner enhver dør/lås. Krav: To personer: én med færdighed i Arcana, én med færdighed i Sleight of Hand. Begge foretager tjek DC 10. Ved fejl: Nøglen eksploderer, men døren åbner stadig. Eksplosion: Skabninger inden for 5 ft foretager Dex save DC 10 eller tager 1d6 ild-skade (halvt ved succes).",
+        "price": "250 gp"
+      },
+      {
+        "id": "g4",
+        "name": "Infused Grease Bomb",
+        "qty": 8,
+        "type": "Forbrugsgenstand (Gadget)",
+        "rules": "Brug: Action, kast (30/60 ft). Effekt: Skaber Grease i et 10 ft kvadrat i 10 runder — svært terræn; når en skabning bevæger sig ind i eller starter sin tur dér, Dex save DC 10 eller faldt bagover. Valgfri antændelse: Hvis området rammes af ild, foretager skabninger Dex save DC 10 eller tager 1d4 ild (halvt ved succes) og fedtet forsvinder.",
+        "price": "10 gp"
+      },
+      {
+        "id": "g5",
+        "name": "Clockwork Wildspark Capsule",
+        "qty": 5,
+        "type": "Forbrugsgenstand (Gadget; Wild Magic)",
+        "rules": "Brug: Bonushandling. Effekt: Slå 1d6: (1) +10 ft hastighed i 10 runder (2) 1d4 temp HP pr. niveau (min 3) (3) næste angreb +1d4 skade (4) teleportér op til 30 ft (5) kast lys 20 ft i 10 runder + ulempe på næste Stealth-tjek (6) 5 ft mini-tåge om dig i 1 runde.",
+        "price": "25 gp"
+      },
+      {
+        "id": "g6",
+        "name": "Repeating Fire-Enhancer",
+        "qty": 2,
+        "type": "Vidunderligt (Våbenvedhæftning)",
+        "rules": "Montering: 10 runder uden for kamp. Hæftes på et afstandsvåben. Krav: Færdighed med det pågældende våben. Effekt: Magisk +1 til angreb med det våben og +1 ild-skade ved træf.",
+        "price": "350 gp"
+      }
+    ]
+  }
+]

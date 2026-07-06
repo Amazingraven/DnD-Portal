@@ -14,6 +14,7 @@ data/npcs.json      → "Folk vi har mødt"
 data/items.json     → "Fund & genstande"
 data/podcasts.json  → links til session-optagelser
 data/sessions.json  → session-logs / recaps
+data/shops.json     → "Butikker" — READ-ONLY visning for spillerne
 ```
 
 ## Sådan opdaterer I indhold
@@ -41,6 +42,16 @@ repo).
 ```json
 { "title": "Session-titel", "number": 7, "date": "2026-07-01", "recap": "Spoiler-fri opsummering.", "podcast_url": "https://..." }
 ```
+
+### `shops.json`
+```json
+[{ "id": "shrine", "name": "Shrine of Luck", "keeper": "Garaele", "icon": "🌟",
+   "items": [{ "id": "s1", "name": "Healing Potion", "qty": 6, "type": "Potion", "rules": "...", "price": "50 gp" }] }]
+```
+**Denne fil er skrivebeskyttet på spillerportalen** — ingen køb/salg/redigering her, kun visning.
+Selve inventar-styringen sker i den private DM-udgave (`DnD-DM-Portal/shops/`), som har fulde
+kontroller. Når du har opdateret lageret dér, eksporterer du og beder Claude opdatere denne fil,
+så spillerne ser samme lager.
 
 ## Vigtigt
 

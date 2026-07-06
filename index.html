@@ -183,6 +183,66 @@
     text-decoration: none;
   }
 
+  .shop-card {
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.12s ease, border-color 0.12s ease;
+  }
+  .shop-card:hover { transform: translateY(-2px); border-color: var(--ember); }
+  .shop-card.active { border-color: var(--ember); background: var(--parchment-dark); }
+  .shop-card .shop-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
+  .shop-card .card-name { margin-bottom: 0; }
+  .shop-card .card-meta { margin-bottom: 0; }
+
+  #shop-detail { margin-top: 1.5rem; }
+  .shop-detail-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--rust);
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.5rem;
+  }
+  .shop-detail-title .keeper {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ash);
+    font-size: 0.95rem;
+  }
+  table.shop-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.shop-table th {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: left;
+    padding: 0.4rem 0.6rem;
+    border-bottom: 1px solid var(--gold);
+  }
+  table.shop-table td {
+    padding: 0.55rem 0.6rem;
+    border-bottom: 1px solid rgba(184,134,42,0.25);
+    vertical-align: top;
+  }
+  table.shop-table tr.sold-out { opacity: 0.55; }
+  .item-name { font-weight: 600; color: var(--ink); }
+  .item-rules { font-size: 0.82rem; color: var(--ash); margin-top: 0.2rem; line-height: 1.4; }
+  .qty-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+  }
+  .qty-ok { background: rgba(74,124,89,0.18); color: #3d6b48; }
+  .qty-low { background: rgba(199,126,37,0.2); color: #a05f1a; }
+  .qty-sold { background: rgba(192,57,43,0.18); color: #a5312a; }
+  .item-price { font-family: 'Cinzel', serif; font-weight: 600; color: var(--rust); white-space: nowrap; }
+
   .divider {
     display: flex;
     align-items: center;
@@ -222,6 +282,7 @@
     <button class="tab-btn" data-tab="podcasts">Podcasts</button>
     <button class="tab-btn" data-tab="npcs">Folk vi har mødt</button>
     <button class="tab-btn" data-tab="items">Fund &amp; genstande</button>
+    <button class="tab-btn" data-tab="shops">Butikker</button>
   </nav>
 
   <section id="tab-sessions" class="tab-panel scroll-panel">
@@ -242,6 +303,12 @@
   <section id="tab-items" class="tab-panel scroll-panel" style="display:none;">
     <h2 class="panel-heading">Fund &amp; genstande</h2>
     <div id="items-list" class="card-grid"></div>
+  </section>
+
+  <section id="tab-shops" class="tab-panel scroll-panel" style="display:none;">
+    <h2 class="panel-heading">Butikker</h2>
+    <div id="shops-grid" class="card-grid"></div>
+    <div id="shop-detail"></div>
   </section>
 
   <div class="divider">⚔</div>
@@ -316,6 +383,61 @@
         <div class="card-desc">${esc(s.recap || '')}</div>
         ${s.podcast_url ? `<a class="podcast-link" href="${esc(s.podcast_url)}" target="_blank" rel="noopener">Lyt til sessionen ▶</a>` : ''}
       </div>`).join('') + `</div>`;
+  });
+
+  let shopsData = [];
+  let activeShopId = null;
+
+  function renderShopGrid() {
+    document.getElementById('shops-grid').innerHTML = shopsData.map(shop => {
+      const soldOut = shop.items.filter(i => i.qty === 0).length;
+      return `
+        <div class="card shop-card ${shop.id === activeShopId ? 'active' : ''}" data-shop="${esc(shop.id)}">
+          <div class="shop-icon">${esc(shop.icon || '🏪')}</div>
+          <div class="card-name">${esc(shop.name)}</div>
+          <div class="card-meta">${esc(shop.keeper || '')}</div>
+          <div class="card-desc">${shop.items.length} varer${soldOut ? ' · ' + soldOut + ' udsolgt' : ''}</div>
+        </div>`;
+    }).join('');
+    document.querySelectorAll('.shop-card').forEach(card => {
+      card.addEventListener('click', () => {
+        activeShopId = activeShopId === card.dataset.shop ? null : card.dataset.shop;
+        renderShopGrid();
+        renderShopDetail();
+      });
+    });
+  }
+
+  function renderShopDetail() {
+    const detail = document.getElementById('shop-detail');
+    const shop = shopsData.find(s => s.id === activeShopId);
+    if (!shop) { detail.innerHTML = ''; return; }
+    detail.innerHTML = `
+      <div class="shop-detail-title">${esc(shop.icon || '')} ${esc(shop.name)} <span class="keeper">— ${esc(shop.keeper || '')}</span></div>
+      <table class="shop-table">
+        <thead><tr><th>Genstand</th><th>Type</th><th>Pris</th><th>Antal</th></tr></thead>
+        <tbody>
+          ${shop.items.map(item => `
+            <tr class="${item.qty === 0 ? 'sold-out' : ''}">
+              <td>
+                <div class="item-name">${esc(item.name)}</div>
+                ${item.rules ? `<div class="item-rules">${esc(item.rules)}</div>` : ''}
+              </td>
+              <td>${esc(item.type || '')}</td>
+              <td class="item-price">${esc(item.price || '')}</td>
+              <td><span class="qty-badge ${item.qty === 0 ? 'qty-sold' : item.qty <= 2 ? 'qty-low' : 'qty-ok'}">${item.qty === 0 ? 'Udsolgt' : '×' + item.qty}</span></td>
+            </tr>`).join('')}
+        </tbody>
+      </table>`;
+  }
+
+  loadJSON('data/shops.json').then(data => {
+    if (!data || !Array.isArray(data) || !data.length) {
+      document.getElementById('shops-grid').innerHTML = '<p class="empty-state">Ingen butikker lagt op endnu.</p>';
+      return;
+    }
+    shopsData = data;
+    renderShopGrid();
   });
 </script>
 </body>
