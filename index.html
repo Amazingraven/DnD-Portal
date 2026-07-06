@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragons of Icespire Peak — Spillerportal</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --parchment: #f2e8c9;
+    --parchment-dark: #e8d9a8;
+    --parchment-mid: #ede0b5;
+    --gold: #b8862a;
+    --gold-light: #d4a843;
+    --rust: #8b2e0a;
+    --ash: #3d3020;
+    --ember: #c44a0a;
+    --shadow: rgba(20, 10, 0, 0.55);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0d0a05;
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    min-height: 100vh;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(180,90,10,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 75% 80%, rgba(150,60,5,0.12) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: candleflicker 6s ease-in-out infinite alternate;
+  }
+  @keyframes candleflicker {
+    0%   { opacity: 0.8; }
+    30%  { opacity: 1.0; }
+    60%  { opacity: 0.85; }
+    100% { opacity: 1.0; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .page-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+  header.site-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.2s forwards;
+  }
+  .kicker {
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  h1.site-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: var(--parchment);
+    margin: 0.4rem 0 0.3rem;
+    text-shadow: 0 0 20px rgba(180,100,20,0.4);
+  }
+  .site-mood {
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 1rem;
+  }
+
+  /* Ribbon-bookmark tab navigation — the signature element */
+  nav.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin: 2.2rem 0 0;
+    opacity: 0;
+    animation: fadeUp 1s 0.4s forwards;
+  }
+  .tab-btn {
+    position: relative;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--parchment-dark);
+    background: linear-gradient(180deg, var(--rust), #6b2308);
+    border: none;
+    padding: 0.7rem 1.1rem 0.9rem;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 100%, 0 78%);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .tab-btn:hover { transform: translateY(2px); }
+  .tab-btn.active {
+    background: linear-gradient(180deg, var(--ember), var(--rust));
+    color: var(--parchment);
+  }
+
+  .scroll-panel {
+    background: radial-gradient(ellipse at 50% 0%, var(--parchment) 0%, var(--parchment-dark) 100%);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    padding: 2rem 2.2rem;
+    margin: 2rem 0 2.5rem;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.1s forwards;
+  }
+  .panel-heading {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    color: var(--rust);
+    margin-top: 0;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .empty-state {
+    font-style: italic;
+    color: var(--ash);
+    opacity: 0.8;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.1rem;
+  }
+  .card {
+    background: var(--parchment-mid);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+  }
+  .card-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--rust);
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+  }
+  .card-meta {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .card-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .card a.podcast-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    background: var(--rust);
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    opacity: 0.7;
+    color: var(--gold);
+    font-size: 0.9rem;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  footer {
+    text-align: center;
+    color: var(--gold-light);
+    font-style: italic;
+    opacity: 0.75;
+    margin-top: 3rem;
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header class="site-header">
+    <div class="kicker">Dragons of Icespire Peak</div>
+    <h1 class="site-title">Phandalins Krønike</h1>
+    <div class="site-mood">Folk, fund og fortællinger fra ekspeditionen</div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="sessions">Session-logs</button>
+    <button class="tab-btn" data-tab="podcasts">Podcasts</button>
+    <button class="tab-btn" data-tab="npcs">Folk vi har mødt</button>
+    <button class="tab-btn" data-tab="items">Fund &amp; genstande</button>
+  </nav>
+
+  <section id="tab-sessions" class="tab-panel scroll-panel">
+    <h2 class="panel-heading">Session-logs</h2>
+    <div id="sessions-list"><p class="empty-state">Ingen sessions lagt op endnu.</p></div>
+  </section>
+
+  <section id="tab-podcasts" class="tab-panel scroll-panel" style="display:none;">
+    <h2 class="panel-heading">Podcasts</h2>
+    <div id="podcasts-list"><p class="empty-state">Ingen optagelser lagt op endnu.</p></div>
+  </section>
+
+  <section id="tab-npcs" class="tab-panel scroll-panel" style="display:none;">
+    <h2 class="panel-heading">Folk vi har mødt</h2>
+    <div id="npcs-list" class="card-grid"></div>
+  </section>
+
+  <section id="tab-items" class="tab-panel scroll-panel" style="display:none;">
+    <h2 class="panel-heading">Fund &amp; genstande</h2>
+    <div id="items-list" class="card-grid"></div>
+  </section>
+
+  <div class="divider">⚔</div>
+  <footer>Fortsættes...</footer>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      panels.forEach(p => p.style.display = 'none');
+      document.getElementById('tab-' + btn.dataset.tab).style.display = 'block';
+    });
+  });
+
+  async function loadJSON(path) {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error('not found');
+      return await res.json();
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function esc(str) {
+    const d = document.createElement('div');
+    d.textContent = str ?? '';
+    return d.innerHTML;
+  }
+
+  loadJSON('data/npcs.json').then(data => {
+    if (!data || !data.npcs || !data.npcs.length) return;
+    document.getElementById('npcs-list').innerHTML = data.npcs.map(n => `
+      <div class="card">
+        <div class="card-name">${esc(n.name)}</div>
+        <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
+        <div class="card-desc">${esc(n.description || '')}</div>
+      </div>`).join('');
+  });
+
+  loadJSON('data/items.json').then(data => {
+    if (!data || !data.items || !data.items.length) return;
+    document.getElementById('items-list').innerHTML = data.items.map(i => `
+      <div class="card">
+        <div class="card-name">${esc(i.name)}</div>
+        <div class="card-meta">${esc(i.rarity || '')}</div>
+        <div class="card-desc">${esc(i.description || '')}</div>
+      </div>`).join('');
+  });
+
+  loadJSON('data/podcasts.json').then(data => {
+    if (!data || !data.podcasts || !data.podcasts.length) return;
+    document.getElementById('podcasts-list').innerHTML = `<div class="card-grid">` + data.podcasts.map(p => `
+      <div class="card">
+        <div class="card-name">${esc(p.title)}</div>
+        <div class="card-meta">${p.session_number ? 'Session ' + esc(String(p.session_number)) : ''}${p.date ? ' · ' + esc(p.date) : ''}</div>
+        <div class="card-desc">${esc(p.description || '')}</div>
+        ${p.url ? `<a class="podcast-link" href="${esc(p.url)}" target="_blank" rel="noopener">Lyt her ▶</a>` : ''}
+      </div>`).join('') + `</div>`;
+  });
+
+  loadJSON('data/sessions.json').then(data => {
+    if (!data || !data.sessions || !data.sessions.length) return;
+    document.getElementById('sessions-list').innerHTML = `<div class="card-grid">` + data.sessions.map(s => `
+      <div class="card">
+        <div class="card-name">${esc(s.title)}</div>
+        <div class="card-meta">${s.number ? 'Session ' + esc(String(s.number)) : ''}${s.date ? ' · ' + esc(s.date) : ''}</div>
+        <div class="card-desc">${esc(s.recap || '')}</div>
+        ${s.podcast_url ? `<a class="podcast-link" href="${esc(s.podcast_url)}" target="_blank" rel="noopener">Lyt til sessionen ▶</a>` : ''}
+      </div>`).join('') + `</div>`;
+  });
+</script>
+</body>
+</html>

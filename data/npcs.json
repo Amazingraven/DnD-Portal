@@ -1,0 +1,58 @@
+{
+  "npcs": [
+    {
+      "name": "Dazlyn",
+      "title": "Kontakt i Phandalin",
+      "location": "Phandalin",
+      "description": "En bekendt ansigt i byen, som gruppen har haft flere ærinder med."
+    },
+    {
+      "name": "Norbus",
+      "title": "Lokal skikkelse",
+      "location": "Phandalin",
+      "description": "Kendt af de fleste i byen — holder øje med, hvad der sker."
+    },
+    {
+      "name": "Tolbin",
+      "title": "Lokal skikkelse",
+      "location": "Phandalin",
+      "description": "Har krydset gruppens vej mere end én gang."
+    },
+    {
+      "name": "Elyra Alagondar",
+      "title": "Af Alagondar-blodlinjen",
+      "location": "Phandalin / omegn",
+      "description": "Navnet Alagondar bærer på mere, end de fleste i Phandalin aner."
+    },
+    {
+      "name": "Halia",
+      "title": "Handelskvinde",
+      "location": "Phandalin",
+      "description": "Har fingrene i mange af byens sager."
+    },
+    {
+      "name": "Zane",
+      "title": "Lokal skikkelse",
+      "location": "Phandalin",
+      "description": "Endnu et ansigt, gruppen har lært at kende i byen."
+    },
+    {
+      "name": "Garaele",
+      "title": "Lokal skikkelse",
+      "location": "Phandalin",
+      "description": "Har hjulpet gruppen undervejs."
+    },
+    {
+      "name": "Falcon Jægeren",
+      "title": "Jæger",
+      "location": "Neverwinter Woods",
+      "description": "Kender skovene bedre end de fleste, der endnu trækker vejret."
+    },
+    {
+      "name": "Cryovain",
+      "title": "Den Hvide Drage",
+      "location": "Axeholm / Icespire Peak",
+      "description": "En kulde, der sniger sig ind under huden, længe før man ser skællene."
+    }
+  ]
+}
