@@ -1,9 +1,39 @@
 {
   "items": [
     {
-      "name": "Eksempel-genstand",
-      "rarity": "Common",
-      "description": "Slet denne linje og udfyld med jeres første rigtige fund. Se README for feltbeskrivelser."
+      "name": "Eye of Truth",
+      "rarity": "Artefakt — ubrugt",
+      "description": "Kan genkalde et minde og afsløre sandheden bag det, mod risiko for sindssyge. Stadig i partyets besiddelse, endnu ikke taget i brug."
+    },
+    {
+      "name": "Black Grimoire",
+      "rarity": "Magisk bog (Loross)",
+      "description": "Sortlæderbundet grimoire skrevet på Loross, taget fra Halias laboratorium. Kræver magiske kræfter at læse uden at blive opslugt."
+    },
+    {
+      "name": "Zhentarims gældsbog",
+      "rarity": "Dokument",
+      "description": "En optegnelse over hele byens gæld til Zhentarim. Potentielt et stærkt pressionsmiddel."
+    },
+    {
+      "name": "Krypt-kort",
+      "rarity": "Kort",
+      "description": "Viser vejen til dragejægerens elvergrav under Phandalin, mærket med \"Cross Roads\"."
+    },
+    {
+      "name": "Zhentarim-snigmorder-bælte",
+      "rarity": "Magisk udstyr",
+      "description": "Indeholder healing-potions og gift-coating til våben."
+    },
+    {
+      "name": "Dimoridium Handcuffs",
+      "rarity": "Magisk artefakt",
+      "description": "Håndjern, forstærket specifikt mod medfødt ild-magi."
+    },
+    {
+      "name": "Pin of Fortune",
+      "rarity": "Magisk smykke",
+      "description": "Beskytter bæreren mod overtagelse af guder og ånder."
     }
   ]
 }
