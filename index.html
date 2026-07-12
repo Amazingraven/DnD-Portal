@@ -169,18 +169,30 @@
     font-size: 0.95rem;
     line-height: 1.55;
   }
-  .card a.podcast-link {
-    display: inline-block;
-    margin-top: 0.6rem;
-    font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--parchment);
-    background: var(--rust);
-    padding: 0.4rem 0.8rem;
+  .card-thumb {
+    display: block;
+    width: 100%;
+    max-height: 170px;
+    object-fit: cover;
     border-radius: 3px;
-    text-decoration: none;
+    border: 1px solid var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .card-audio {
+    display: block;
+    width: 100%;
+    margin-top: 0.7rem;
+  }
+  .group-heading {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(184,134,42,0.4);
   }
 
   .shop-card {
@@ -279,7 +291,6 @@
 
   <nav class="tabs">
     <button class="tab-btn active" data-tab="sessions">Session-logs</button>
-    <button class="tab-btn" data-tab="podcasts">Podcasts</button>
     <button class="tab-btn" data-tab="npcs">Folk vi har mødt</button>
     <button class="tab-btn" data-tab="items">Fund &amp; genstande</button>
     <button class="tab-btn" data-tab="shops">Butikker</button>
@@ -290,14 +301,9 @@
     <div id="sessions-list"><p class="empty-state">Ingen sessions lagt op endnu.</p></div>
   </section>
 
-  <section id="tab-podcasts" class="tab-panel scroll-panel" style="display:none;">
-    <h2 class="panel-heading">Podcasts</h2>
-    <div id="podcasts-list"><p class="empty-state">Ingen optagelser lagt op endnu.</p></div>
-  </section>
-
   <section id="tab-npcs" class="tab-panel scroll-panel" style="display:none;">
     <h2 class="panel-heading">Folk vi har mødt</h2>
-    <div id="npcs-list" class="card-grid"></div>
+    <div id="npcs-list"><p class="empty-state">Ingen indgange lagt op endnu.</p></div>
   </section>
 
   <section id="tab-items" class="tab-panel scroll-panel" style="display:none;">
@@ -345,33 +351,31 @@
 
   loadJSON('data/npcs.json').then(data => {
     if (!data || !data.npcs || !data.npcs.length) return;
-    document.getElementById('npcs-list').innerHTML = data.npcs.map(n => `
-      <div class="card">
-        <div class="card-name">${esc(n.name)}</div>
-        <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
-        <div class="card-desc">${esc(n.description || '')}</div>
-      </div>`).join('');
+    const groups = { 'NPC': [], 'Spillerkarakter': [] };
+    data.npcs.forEach(n => (groups[n.kind] || groups['NPC']).push(n));
+    const renderGroup = (label, list) => {
+      if (!list.length) return '';
+      return `<h3 class="group-heading">${esc(label)}</h3><div class="card-grid" style="margin-bottom:1.6rem;">` +
+        list.map(n => `
+          <div class="card">
+            <div class="card-name">${esc(n.name)}</div>
+            <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
+            <div class="card-desc">${esc(n.description || '')}</div>
+          </div>`).join('') + `</div>`;
+    };
+    document.getElementById('npcs-list').innerHTML =
+      renderGroup('NPC\u2019er', groups['NPC']) + renderGroup('Spillernes karakterer', groups['Spillerkarakter']);
   });
 
   loadJSON('data/items.json').then(data => {
     if (!data || !data.items || !data.items.length) return;
     document.getElementById('items-list').innerHTML = data.items.map(i => `
       <div class="card">
+        ${i.image ? `<img class="card-thumb" src="${esc(i.image)}" alt="">` : ''}
         <div class="card-name">${esc(i.name)}</div>
         <div class="card-meta">${esc(i.rarity || '')}</div>
-        <div class="card-desc">${esc(i.description || '')}</div>
+        ${i.description ? `<div class="card-desc">${esc(i.description)}</div>` : ''}
       </div>`).join('');
-  });
-
-  loadJSON('data/podcasts.json').then(data => {
-    if (!data || !data.podcasts || !data.podcasts.length) return;
-    document.getElementById('podcasts-list').innerHTML = `<div class="card-grid">` + data.podcasts.map(p => `
-      <div class="card">
-        <div class="card-name">${esc(p.title)}</div>
-        <div class="card-meta">${p.session_number ? 'Session ' + esc(String(p.session_number)) : ''}${p.date ? ' · ' + esc(p.date) : ''}</div>
-        <div class="card-desc">${esc(p.description || '')}</div>
-        ${p.url ? `<a class="podcast-link" href="${esc(p.url)}" target="_blank" rel="noopener">Lyt her ▶</a>` : ''}
-      </div>`).join('') + `</div>`;
   });
 
   loadJSON('data/sessions.json').then(data => {
@@ -381,7 +385,7 @@
         <div class="card-name">${esc(s.title)}</div>
         <div class="card-meta">${s.number ? 'Session ' + esc(String(s.number)) : ''}${s.date ? ' · ' + esc(s.date) : ''}</div>
         <div class="card-desc">${esc(s.recap || '')}</div>
-        ${s.podcast_url ? `<a class="podcast-link" href="${esc(s.podcast_url)}" target="_blank" rel="noopener">Lyt til sessionen ▶</a>` : ''}
+        ${s.audio ? `<audio class="card-audio" controls src="${esc(s.audio)}"></audio>` : ''}
       </div>`).join('') + `</div>`;
   });
 
