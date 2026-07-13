@@ -344,29 +344,29 @@
   </header>
 
   <nav class="tabs">
-    <button class="tab-btn active" data-tab="sessions">Session-logs</button>
-    <button class="tab-btn" data-tab="npcs">Folk vi har mødt</button>
-    <button class="tab-btn" data-tab="items">Fund &amp; genstande</button>
-    <button class="tab-btn" data-tab="shops">Butikker</button>
+    <button class="tab-btn active" data-tab="sessions" id="tabbtn-sessions">Session-logs</button>
+    <button class="tab-btn" data-tab="npcs" id="tabbtn-npcs">Folk vi har mødt</button>
+    <button class="tab-btn" data-tab="items" id="tabbtn-items">Fund &amp; genstande</button>
+    <button class="tab-btn" data-tab="shops" id="tabbtn-shops">Butikker</button>
   </nav>
 
   <section id="tab-sessions" class="tab-panel scroll-panel">
-    <h2 class="panel-heading">Session-logs</h2>
+    <h2 class="panel-heading" id="heading-sessions">Session-logs</h2>
     <div id="sessions-list"><p class="empty-state">Ingen sessions lagt op endnu.</p></div>
   </section>
 
   <section id="tab-npcs" class="tab-panel scroll-panel" style="display:none;">
-    <h2 class="panel-heading">Folk vi har mødt</h2>
+    <h2 class="panel-heading" id="heading-npcs">Folk vi har mødt</h2>
     <div id="npcs-list"><p class="empty-state">Ingen indgange lagt op endnu.</p></div>
   </section>
 
   <section id="tab-items" class="tab-panel scroll-panel" style="display:none;">
-    <h2 class="panel-heading">Fund &amp; genstande</h2>
+    <h2 class="panel-heading" id="heading-items">Fund &amp; genstande</h2>
     <div id="items-list"></div>
   </section>
 
   <section id="tab-shops" class="tab-panel scroll-panel" style="display:none;">
-    <h2 class="panel-heading">Butikker</h2>
+    <h2 class="panel-heading" id="heading-shops">Butikker</h2>
     <div id="shops-grid" class="card-grid"></div>
     <div id="shop-detail"></div>
   </section>
@@ -407,7 +407,28 @@
     return d.innerHTML;
   }
 
-  loadJSON('data/npcs.json').then(data => {
+  let portalLabels = {};
+  function L(key, fallback) {
+    return (portalLabels[key] && portalLabels[key].trim()) || fallback;
+  }
+
+  const labelsReady = loadJSON('data/labels.json').then(data => {
+    portalLabels = data || {};
+    const setText = (id, key, fallback) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = L(key, fallback);
+    };
+    setText('tabbtn-sessions', 'sessions', 'Session-logs');
+    setText('heading-sessions', 'sessions', 'Session-logs');
+    setText('tabbtn-npcs', 'npcs', 'Folk vi har mødt');
+    setText('heading-npcs', 'npcs', 'Folk vi har mødt');
+    setText('tabbtn-items', 'items', 'Fund & genstande');
+    setText('heading-items', 'items', 'Fund & genstande');
+    setText('tabbtn-shops', 'shops', 'Butikker');
+    setText('heading-shops', 'shops', 'Butikker');
+  });
+
+  Promise.all([loadJSON('data/npcs.json'), labelsReady]).then(([data]) => {
     if (!data || !data.npcs || !data.npcs.length) return;
     const groups = { 'NPC': [], 'Spillerkarakter': [] };
     data.npcs.forEach(n => (groups[n.kind] || groups['NPC']).push(n));
@@ -425,7 +446,7 @@
           </div>`).join('') + `</div>`;
     };
     document.getElementById('npcs-list').innerHTML =
-      renderGroup('NPC\u2019er', groups['NPC']) + renderGroup('Spillernes karakterer', groups['Spillerkarakter']);
+      renderGroup(L('npcs_npc', 'NPC\u2019er'), groups['NPC']) + renderGroup(L('npcs_pc', 'Spillernes karakterer'), groups['Spillerkarakter']);
   });
 
   loadJSON('data/items.json').then(data => {
