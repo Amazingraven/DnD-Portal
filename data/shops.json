@@ -45,7 +45,8 @@
         "rules": "Krav: Ingen. AC: 12 + Dex (ingen rustningsfærdighed kræves). Effekt: 1/Long Rest — når du mislykkes et redningskast, tilføj +1d4 til resultatet (kan ændre udfald).",
         "price": "400 gp"
       }
-    ]
+    ],
+    "enabled": true
   },
   {
     "id": "miners",
