@@ -33,21 +33,24 @@
       "kind": "NPC",
       "title": "Udsmider på Stonehill Inn — Zhentarim-agent",
       "location": "Phandalin",
-      "description": "Plantet af Halia som udsmider for at holde øje med Tolbin og kroen. Har fulgt Elyra med blikket mere end én gang, uden at sige noget. Har en fortid knyttet til Axeholm-affæren, som endnu ikke er afklaret."
+      "description": "Plantet af Halia som udsmider for at holde øje med Tolbin og kroen. Har fulgt Elyra med blikket mere end én gang, uden at sige noget.",
+      "image": ""
     },
     {
       "name": "Dazlyn",
       "kind": "NPC",
       "title": "Dværg, reddet fra Axeholm",
       "location": "Phandalin / Axeholm",
-      "description": "Dværgebyggemester, som gruppen befriede fra Axeholms illusionsloop sammen med Norbus. Tydeligt bekymret for sin ven, jo længere tid der går. Fungerer som gruppens dværgekontakt og guide i de underjordiske gange under Phandalin."
+      "description": "Dværgebyggemester og arkæolog, som gruppen mødte første gang i Temple of Greed, og senere befriede fra Axeholms illusionsloop sammen med Norbus. Tydeligt bekymret for sin ven, jo længere tid der går.",
+      "image": ""
     },
     {
       "name": "Norbus",
       "kind": "NPC",
       "title": "Dværg, besat af en gammel amulet",
       "location": "Phandalin",
-      "description": "Reddet fra Axeholm sammen med Dazlyn, men bærer nu en amulet indskrevet med \"Greed is good\", fundet i Grådighedens Tempel. Opfører sig mere og mere underligt, jo længere han bærer den — øjnene skinner forkert, og han taler i fragmenter."
+      "description": "Dværgebyggemester og arkæolog, redet fra Axeholm sammen med Dazlyn, men bærer nu en amulet indskrevet med \"Greed is good\", fundet i Grådighedens Tempel. Opfører sig mere og mere underligt, jo længere han bærer den — øjnene skinner forkert, og han taler i fragmenter.",
+      "image": ""
     },
     {
       "name": "Harbin Wester",
@@ -68,14 +71,16 @@
       "kind": "NPC",
       "title": "Falcons ranger — forbindelsesofficer i Phandalin",
       "location": "Phandalin / Neverwinter Forest",
-      "description": "Falcons udsendte i Phandalin, loyal og skovfokuseret. Tror stadig, at Heart of Thunder blev destrueret på Tower of Storms. Presser på for et lille recon-hold, der kan ramme orkernes ledelse direkte — regionen kan ikke vinde en åben krig."
+      "description": "Falcons udsendte i Phandalin, loyal ranger. Tror stadig, at Heart of Thunder blev destrueret i toppen af Tower of Storms. Presser på for et lille recon-hold, efter aftale med Falcon, der kan ramme orkernes ledelse direkte — regionen kan ikke vinde en åben krig.",
+      "image": ""
     },
     {
       "name": "Falcon",
       "kind": "NPC",
       "title": "Rangerleder",
       "location": "Falcon's Hunting Lodge, Neverwinter Forest",
-      "description": "Aldrig mødt personligt — kun kendt gennem sin udsendte Brandon og et kort, skarpt brev til Casardas. Holder sine rangere og Kryptgarden-elverne strakt til bristepunktet og kan ikke afsætte folk uden for skoven. Ønsker Heart of Thunder fundet, før orkerne får fat i det."
+      "description": "Aldrig mødt personligt — kun kendt gennem sin udsendte Brandon og et kort, skarpt brev til Casardas. Holder sine rangere og Kryptgarden-elverne strakt til bristepunktet og kan ikke afsætte folk uden for skoven. Ønskede Heart of Thunder fundet og ødelagt, før orkerne fik fat i det.",
+      "image": ""
     },
     {
       "name": "Sir Alaric",
@@ -89,14 +94,16 @@
       "kind": "NPC",
       "title": "Lord Protector af Neverwinter",
       "location": "Neverwinter",
-      "description": "Regerer Neverwinter, fordi ingen kendt, legitim arving til tronen findes. I Axeholm råbte kong Theron selv hans navn som forræder, før han forsvandt for altid. Hvad det egentlig betyder, er stadig ved at gå op for gruppen."
+      "description": "Regerer Neverwinter, fordi ingen kendt, legitim arving til tronen findes. I Axeholm råbte kong Theron selv hans navn som forræder, før han forsvandt for altid. Hvad det egentlig betyder, er stadig ukendt for gruppen.",
+      "image": ""
     },
     {
       "name": "Cryovain",
       "kind": "NPC",
       "title": "Ung hvid drage",
       "location": "Axeholm / Icespire Peak",
-      "description": "Usædvanligt intelligent og påfaldende forfængelig — taler hellere end den kæmper. Har en uafgjort personlig sag med Tolbin siden Kap 4, og har nu direkte truet både ham og Elyra. Observerer fra afstand og venter på, at andre udmatter hinanden først."
+      "description": "Usædvanligt intelligent og påfaldende forfængelig — taler hellere end den kæmper. Har en uafgjort personlig sag med Tolbin siden deres kamp i Phandalin, og har nu direkte truet både ham og Elyra. Observerer fra afstand og venter på, at alle andre udmatter hinanden.",
+      "image": ""
     },
     {
       "name": "Casardas",
@@ -131,14 +138,16 @@
       "kind": "Spillerkarakter",
       "title": "Dragonborn paladin",
       "location": "Ukendt oprindelse",
-      "description": "Dragonborn paladin med stærk retfærdighedssans. Modtog Tolbins fortrolige besked før Axeholm — en bøn om dømmekraft, ikke løgn. Hans utænkelige: at afsløre arvingens sandhed for en udvalgt, betroet kreds — selv en \"sikker\" lækage er for ham et løftebrud."
+      "description": "Dragonborn paladin med stærk retfærdighedssans. Modtog Tolbins fortrolige besked før Axeholm — en bøn om dømmekraft, ikke løgn. Hans utænkelige: at afsløre arvingens sandhed for en udvalgt, betroet kreds — selv en \"sikker\" betroet er for ham et løftebrud.",
+      "image": ""
     },
     {
       "name": "Taiim",
       "kind": "Spillerkarakter",
       "title": "Ranger — bærer af Ember of the Last Heirs",
       "location": "Ukendt oprindelse",
-      "description": "Ranger formet af tab — hans forældre blev dræbt under Axeholm-oprydningen, af hvem vides endnu ikke. Genkendte Elyra i familieportrættet i Axeholm. Bærer Ember of the Last Heirs, en ring med et fragment af kongeparrets sjæle, der straffer ham, når han ikke handler til Elyras beskyttelse. Hans utænkelige: at sænke buen mod forældrenes morder og sige, at fortiden ikke længere betyder noget."
+      "description": "Ranger formet af tab — hans forældre blev dræbt af maskerede skatteopkrævere, men af hvem helt præcist vides endnu ikke. Genkendte Elyra i familieportrættet i Axeholm. Bærer Ember of the Last Heirs, en ring med et fragment af kongeparrets sjæle, der straffer ham, når han ikke handler til Elyras beskyttelse. Hans utænkelige: at sænke buen mod forældrenes morder og sige, at fortiden ikke længere betyder noget.",
+      "image": ""
     }
   ]
 }
