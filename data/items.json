@@ -4,7 +4,7 @@
       "name": "Eye of Truth",
       "rarity": "Mekanisk artefakt",
       "description": "Kan genkalde et minde og afsløre sandheden bag det, mod risiko for sindssyge. Stadig i partyets besiddelse, endnu ikke taget i brug.",
-      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783963848484--jet-af-sandhed.png"
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963848484--jet-af-sandhed.png"
     },
     {
       "name": "Black Grimoire",
@@ -20,25 +20,25 @@
     },
     {
       "name": "The Heart of Thunder",
-      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783963783473-hjertet-af-torden-artefakt.png",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963783473-hjertet-af-torden-artefakt.png",
       "rarity": "",
       "description": ""
     },
     {
       "name": "Ember of the Last Heirs",
-      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783949674656-the_ember_of_the_last_heirs_card.png",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783949674656-the_ember_of_the_last_heirs_card.png",
       "rarity": "",
       "description": ""
     },
     {
       "name": "Stormscale Armor",
-      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783863804975-chatgpt-image-13.-jun.-2026-13.34.03.png",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783949753209-chatgpt-image-15.-jun.-2026-19.07.49.png",
       "rarity": "",
       "description": ""
     },
     {
       "name": "Black-Iron Bulwark",
-      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783949951062-black-iron-bulwark-shield-item-card.png",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783949951062-black-iron-bulwark-shield-item-card.png",
       "rarity": "",
       "description": ""
     }
