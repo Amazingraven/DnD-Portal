@@ -513,11 +513,15 @@
   }
 
   loadJSON('data/shops.json').then(data => {
-    if (!data || !Array.isArray(data) || !data.length) {
+    if (!data || !Array.isArray(data)) {
       document.getElementById('shops-grid').innerHTML = '<p class="empty-state">Ingen butikker lagt op endnu.</p>';
       return;
     }
-    shopsData = data;
+    shopsData = data.filter(s => s.enabled !== false);
+    if (!shopsData.length) {
+      document.getElementById('shops-grid').innerHTML = '<p class="empty-state">Ingen butikker lagt op endnu.</p>';
+      return;
+    }
     renderShopGrid();
   });
 
