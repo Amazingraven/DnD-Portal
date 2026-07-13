@@ -338,9 +338,9 @@
 <div class="page-wrap">
 
   <header class="site-header">
-    <div class="kicker">Dragons of Icespire Peak</div>
-    <h1 class="site-title">Phandalins Krønike</h1>
-    <div class="site-mood">Folk, fund og fortællinger fra ekspeditionen</div>
+    <div class="kicker" id="site-kicker">Dragons of Icespire Peak</div>
+    <h1 class="site-title" id="site-title">Phandalins Krønike</h1>
+    <div class="site-mood" id="site-mood">Folk, fund og fortællinger fra ekspeditionen</div>
   </header>
 
   <nav class="tabs">
@@ -426,6 +426,9 @@
     setText('heading-items', 'items', 'Fund & genstande');
     setText('tabbtn-shops', 'shops', 'Butikker');
     setText('heading-shops', 'shops', 'Butikker');
+    setText('site-kicker', 'site_kicker', 'Dragons of Icespire Peak');
+    setText('site-title', 'site_title', 'Phandalins Krønike');
+    setText('site-mood', 'site_mood', 'Folk, fund og fortællinger fra ekspeditionen');
   });
 
   Promise.all([loadJSON('data/npcs.json'), labelsReady]).then(([data]) => {
