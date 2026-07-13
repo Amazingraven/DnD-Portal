@@ -4,7 +4,7 @@
       "name": "Eye of Truth",
       "rarity": "Mekanisk artefakt",
       "description": "Kan genkalde et minde og afsløre sandheden bag det, mod risiko for sindssyge. Stadig i partyets besiddelse, endnu ikke taget i brug.",
-      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963264692--jet-af-sandhed.png"
+      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783963848484--jet-af-sandhed.png"
     },
     {
       "name": "Black Grimoire",
@@ -21,7 +21,7 @@
       "name": "Pin of Fortune",
       "rarity": "Magisk smykke",
       "description": "Beskytter bæreren mod overtagelse af guder og ånder.",
-      "image": ""
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963397553-the-anchor-pin_-ward-against-darkness.png"
     },
     {
       "name": "The Heart of Thunder",
@@ -31,19 +31,19 @@
     },
     {
       "name": "Ember of the Last Heirs",
-      "image": "",
+      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783949674656-the_ember_of_the_last_heirs_card.png",
       "rarity": "",
       "description": ""
     },
     {
       "name": "Stormscale Armor",
-      "image": "",
+      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783863804975-chatgpt-image-13.-jun.-2026-13.34.03.png",
       "rarity": "",
       "description": ""
     },
     {
       "name": "Black-Iron Bulwark",
-      "image": "",
+      "image": "https://github.com/Amazingraven/DnD-Portal/blob/main/data/images/1783949951062-black-iron-bulwark-shield-item-card.png",
       "rarity": "",
       "description": ""
     }
