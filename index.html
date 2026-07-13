@@ -139,16 +139,62 @@
     opacity: 0.8;
   }
 
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
   .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1.1rem;
   }
   .card {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
     background: var(--parchment-mid);
     border: 1px solid var(--gold);
     border-radius: 4px;
     padding: 1rem 1.2rem;
+  }
+  .card-media {
+    flex: 0 0 130px;
+    width: 130px;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid var(--gold);
+    cursor: zoom-in;
+    transition: opacity 0.15s ease;
+  }
+  .card-media:hover {
+    opacity: 0.85;
+  }
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 9, 6, 0.93);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+  }
+  .lightbox-overlay.open {
+    display: flex;
+  }
+  .lightbox-img {
+    max-width: 92vw;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.65);
+  }
+  .card-body {
+    flex: 1 1 auto;
+    min-width: 0;
   }
   .card-name {
     font-family: 'Cinzel', serif;
@@ -169,19 +215,26 @@
     font-size: 0.95rem;
     line-height: 1.55;
   }
-  .card-thumb {
-    display: block;
-    width: 100%;
-    max-height: 170px;
-    object-fit: cover;
-    border-radius: 3px;
-    border: 1px solid var(--gold);
-    margin-bottom: 0.6rem;
-  }
   .card-audio {
     display: block;
     width: 100%;
     margin-top: 0.7rem;
+  }
+  .audio-link-btn {
+    display: inline-block;
+    margin-top: 0.7rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--parchment);
+    background: var(--rust);
+    padding: 0.45rem 0.9rem;
+    border-radius: 3px;
+    text-decoration: none;
+  }
+  .audio-link-btn:hover {
+    opacity: 0.88;
   }
   .group-heading {
     font-family: 'Cinzel', serif;
@@ -196,6 +249,7 @@
   }
 
   .shop-card {
+    display: block;
     cursor: pointer;
     text-align: center;
     transition: transform 0.12s ease, border-color 0.12s ease;
@@ -308,7 +362,7 @@
 
   <section id="tab-items" class="tab-panel scroll-panel" style="display:none;">
     <h2 class="panel-heading">Fund &amp; genstande</h2>
-    <div id="items-list" class="card-grid"></div>
+    <div id="items-list"></div>
   </section>
 
   <section id="tab-shops" class="tab-panel scroll-panel" style="display:none;">
@@ -319,6 +373,10 @@
 
   <div class="divider">⚔</div>
   <footer>Fortsættes...</footer>
+</div>
+
+<div id="lightbox-overlay" class="lightbox-overlay">
+  <img id="lightbox-img" class="lightbox-img" src="" alt="">
 </div>
 
 <script>
@@ -355,12 +413,15 @@
     data.npcs.forEach(n => (groups[n.kind] || groups['NPC']).push(n));
     const renderGroup = (label, list) => {
       if (!list.length) return '';
-      return `<h3 class="group-heading">${esc(label)}</h3><div class="card-grid" style="margin-bottom:1.6rem;">` +
+      return `<h3 class="group-heading">${esc(label)}</h3><div class="card-list" style="margin-bottom:1.6rem;">` +
         list.map(n => `
           <div class="card">
-            <div class="card-name">${esc(n.name)}</div>
-            <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
-            <div class="card-desc">${esc(n.description || '')}</div>
+            ${n.image ? `<img class="card-media" src="${esc(n.image)}" alt="">` : ''}
+            <div class="card-body">
+              <div class="card-name">${esc(n.name)}</div>
+              <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
+              <div class="card-desc">${esc(n.description || '')}</div>
+            </div>
           </div>`).join('') + `</div>`;
     };
     document.getElementById('npcs-list').innerHTML =
@@ -369,23 +430,39 @@
 
   loadJSON('data/items.json').then(data => {
     if (!data || !data.items || !data.items.length) return;
-    document.getElementById('items-list').innerHTML = data.items.map(i => `
+    document.getElementById('items-list').innerHTML = `<div class="card-list">` + data.items.map(i => `
       <div class="card">
-        ${i.image ? `<img class="card-thumb" src="${esc(i.image)}" alt="">` : ''}
-        <div class="card-name">${esc(i.name)}</div>
-        <div class="card-meta">${esc(i.rarity || '')}</div>
-        ${i.description ? `<div class="card-desc">${esc(i.description)}</div>` : ''}
-      </div>`).join('');
+        ${i.image ? `<img class="card-media" src="${esc(i.image)}" alt="">` : ''}
+        <div class="card-body">
+          <div class="card-name">${esc(i.name)}</div>
+          <div class="card-meta">${esc(i.rarity || '')}</div>
+          ${i.description ? `<div class="card-desc">${esc(i.description)}</div>` : ''}
+        </div>
+      </div>`).join('') + `</div>`;
   });
+
+  function isDirectAudioFile(url) {
+    return /\.(mp3|wav|ogg|m4a|aac|flac|opus)(\?.*)?$/i.test(url || '');
+  }
+
+  function renderAudioBlock(url) {
+    if (!url) return '';
+    if (isDirectAudioFile(url)) {
+      return `<audio class="card-audio" controls src="${esc(url)}"></audio>`;
+    }
+    return `<a class="audio-link-btn" href="${esc(url)}" target="_blank" rel="noopener">🔗 Lyt til optagelsen ▶</a>`;
+  }
 
   loadJSON('data/sessions.json').then(data => {
     if (!data || !data.sessions || !data.sessions.length) return;
-    document.getElementById('sessions-list').innerHTML = `<div class="card-grid">` + data.sessions.map(s => `
+    document.getElementById('sessions-list').innerHTML = `<div class="card-list">` + data.sessions.map(s => `
       <div class="card">
-        <div class="card-name">${esc(s.title)}</div>
-        <div class="card-meta">${s.number ? 'Session ' + esc(String(s.number)) : ''}${s.date ? ' · ' + esc(s.date) : ''}</div>
-        <div class="card-desc">${esc(s.recap || '')}</div>
-        ${s.audio ? `<audio class="card-audio" controls src="${esc(s.audio)}"></audio>` : ''}
+        <div class="card-body">
+          <div class="card-name">${esc(s.title)}</div>
+          <div class="card-meta">${s.number ? 'Session ' + esc(String(s.number)) : ''}${s.date ? ' · ' + esc(s.date) : ''}</div>
+          <div class="card-desc">${esc(s.recap || '')}</div>
+          ${renderAudioBlock(s.audio)}
+        </div>
       </div>`).join('') + `</div>`;
   });
 
@@ -442,6 +519,25 @@
     }
     shopsData = data;
     renderShopGrid();
+  });
+
+  // Klik på et vare-/portræt-billede åbner det i fuld størrelse
+  const lightbox = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  document.addEventListener('click', (e) => {
+    const img = e.target.closest('img.card-media');
+    if (img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || '';
+      lightbox.classList.add('open');
+    }
+  });
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { lightbox.classList.remove('open'); lightboxImg.src = ''; }
   });
 </script>
 </body>
