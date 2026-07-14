@@ -1,39 +1,39 @@
 {
   "items": [
     {
-      "name": "Eye of Truth",
-      "rarity": "Mekanisk artefakt",
-      "description": "Kan genkalde et minde og afsløre sandheden bag det, mod risiko for sindssyge. Stadig i partyets besiddelse, endnu ikke taget i brug.",
-      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963848484--jet-af-sandhed.png"
-    },
-    {
       "name": "Black Grimoire",
-      "rarity": "Magisk bog (Loross)",
+      "rarity": "Eldritch Artifact",
       "description": "Sortlæderbundet grimoire skrevet på Loross, taget fra Halias laboratorium. Kræver magiske kræfter at læse uden at blive opslugt.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783863804975-chatgpt-image-13.-jun.-2026-13.34.03.png"
     },
     {
+      "name": "Eye of Truth",
+      "rarity": "An Ancient Gnomish Retrocognitive Engine",
+      "description": "Skænket af Gnomernes Konge efter befrielsen af gnomernes rige fra mimic-truslen. En enestående gnomisk konstruktion, hvori et levende øje genoplever bærerens minder og afslører de oversete detaljer, der forvandler erindring til sandhed.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963848484--jet-af-sandhed.png"
+    },
+    {
       "name": "Pin of Fortune",
-      "rarity": "Magisk smykke",
-      "description": "Beskytter bæreren mod overtagelse af guder og ånder.",
+      "rarity": "Blessed Relic",
+      "description": "Fundet i Halia Thorntons hemmelige vault under Miner's Exchange. En hellig nål velsignet af Tymora, skabt til at beskytte sin bærer mod besættelse, guddommelig overtagelse og andre kræfter, der søger herredømme over sind og sjæl.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963397553-the-anchor-pin_-ward-against-darkness.png"
     },
     {
       "name": "The Heart of Thunder",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783963783473-hjertet-af-torden-artefakt.png",
-      "rarity": "",
-      "description": ""
+      "rarity": "Divine Vessel",
+      "description": "Fundet i Tower of Storms, hvor Talos' kult ofrede utallige sjæle for at nære artefaktets kraft. Hver sjæl lever videre i hjertet og giver bæreren herredømme over stormens lyn og torden – men kræver til gengæld at dens vold aldrig stilner."
     },
     {
       "name": "Ember of the Last Heirs",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783949674656-the_ember_of_the_last_heirs_card.png",
-      "rarity": "",
-      "description": ""
+      "rarity": "Soulbound Artifact",
+      "description": "Fundet i Axeholm, båret af kong Theron Alagondars rastløse ånd. Ringen indeholder et levende fragment af Theron og Seraphinas sjæle, som styrker den, der beskytter deres sidste arving, men ubønhørligt straffer enhver, der svigter dette ansvar."
     },
     {
       "name": "Stormscale Armor",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783949753209-chatgpt-image-15.-jun.-2026-19.07.49.png",
-      "rarity": "",
+      "rarity": "Storm-infused magic armor",
       "description": ""
     },
     {
