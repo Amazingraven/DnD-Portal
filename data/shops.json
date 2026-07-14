@@ -10,7 +10,7 @@
         "name": "Healing Potion",
         "qty": 6,
         "type": "Potion",
-        "rules": "Brug: Action. Krav: Ingen. Effekt: Healer 2d4+2 HP.",
+        "rules": "Bonus Action. \nEffekt: Heale 2d4+2 HP.",
         "price": "50 gp"
       },
       {
