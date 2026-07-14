@@ -94,7 +94,8 @@
         "rules": "Brug: Hver pil opbruges ved brug. Ved træf: Målet foretager Con save DC 12. Fejl: 1d4 gift-skade og forgiftet frem til slutningen af målets næste tur. Succes: Halvt gift-skade, ingen tilstand. Krav: Færdighed med en bue der skyder pile.",
         "price": "75 gp"
       }
-    ]
+    ],
+    "enabled": false
   },
   {
     "id": "stonehill",
@@ -107,8 +108,8 @@
         "name": "Standard Rations (1 dag)",
         "qty": 20,
         "type": "Rejsegear (Rationer)",
-        "rules": "Rejseregel (Regionkort): Brug 1 ration pr. karakter for at bevæge sig 1 kortrude / felt under overland-rejse. Ingen ration = ingen bevægelse for den karakter på regionkortet (medmindre DM bestemmer andet).",
-        "price": "5 sp"
+        "rules": "Rejseregel (Regionkort): Brug 1 ration pr. karakter for at bevæge sig 1 kortrude / felt under overland-rejse.",
+        "price": "25 sp"
       },
       {
         "id": "st2",
@@ -155,7 +156,7 @@
         "name": "Helm of the Lion",
         "qty": 1,
         "type": "Vidunderligt (Hjelm)",
-        "rules": "Krav: Fighter eller Paladin (eller DM-godkendt martial). Effekt: Fordel på redningskast mod forskrækket. 1/Long Rest (Bonushandling): få 1d8 midlertidig HP.",
+        "rules": "Krav: Fighter eller Paladin (eller DM-godkendt martial). \nEffekt: 1/Long Rest (Bonus action): få 1d8 midlertidig HP.",
         "price": "600 gp"
       },
       {
