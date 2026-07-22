@@ -171,6 +171,14 @@
   .card-media:hover {
     opacity: 0.85;
   }
+  .card-media-item {
+    flex: 0 0 150px;
+    width: 150px;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    background: rgba(26,18,8,0.08);
+  }
   .lightbox-overlay {
     display: none;
     position: fixed;
@@ -610,7 +618,7 @@
           <h4 class="pc-section-heading">🎒 Mine genstande</h4>
           <div class="card-list">${myItems.map(i => `
             <div class="card">
-              ${i.image ? `<img class="card-media" src="${esc(i.image)}" alt="">` : ''}
+              ${i.image ? `<img class="card-media card-media-item" src="${esc(i.image)}" alt="">` : ''}
               <div class="card-body">
                 <div class="card-name">${esc(i.name)}</div>
                 ${i.rarity ? `<div class="card-meta">${esc(i.rarity)}</div>` : ''}
@@ -704,7 +712,7 @@
     if (!visibleItems.length) return;
     document.getElementById('items-list').innerHTML = `<div class="card-list">` + visibleItems.map(i => `
       <div class="card">
-        ${i.image ? `<img class="card-media" src="${esc(i.image)}" alt="">` : ''}
+        ${i.image ? `<img class="card-media card-media-item" src="${esc(i.image)}" alt="">` : ''}
         <div class="card-body">
           <div class="card-name">${esc(i.name)}</div>
           <div class="card-meta">${esc(i.rarity || '')}</div>
