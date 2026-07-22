@@ -236,6 +236,47 @@
   .audio-link-btn:hover {
     opacity: 0.88;
   }
+  .map-wrap-portal {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--gold);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+    margin-bottom: 1rem;
+  }
+  .map-image-portal { width: 100%; display: block; }
+  .map-pin-portal {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  .map-pin-dot-portal {
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--ember);
+    border: 2px solid var(--gold-light);
+    box-shadow: 0 0 8px rgba(196,74,10,0.7);
+    transition: transform 0.15s ease;
+  }
+  .map-pin-portal:hover .map-pin-dot-portal,
+  .map-pin-portal.active .map-pin-dot-portal {
+    transform: scale(1.3);
+  }
+  .map-pin-label-portal {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    background: rgba(20,10,0,0.82);
+    color: var(--parchment);
+    padding: 0.15rem 0.55rem;
+    border-radius: 2px;
+    margin-top: 0.25rem;
+  }
+  .map-pin-detail { margin-top: 1.2rem; }
   .group-heading {
     font-family: 'Cinzel', serif;
     font-weight: 600;
@@ -246,6 +287,42 @@
     margin: 0 0 0.8rem;
     padding-bottom: 0.4rem;
     border-bottom: 1px solid rgba(184,134,42,0.4);
+  }
+  .pc-card { padding: 0; overflow: hidden; }
+  .pc-card-clickable { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1rem 1.2rem; cursor: pointer; }
+  .pc-card-clickable:hover { background: rgba(184,134,42,0.08); }
+  .pc-toggle-hint {
+    font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--gold); opacity: 0.8; font-weight: 600; margin-left: 0.4rem;
+  }
+  .pc-detail { padding: 0 1.2rem 1.2rem; border-top: 1px solid rgba(184,134,42,0.3); margin-top: 0; }
+  .pc-section { margin-top: 1.1rem; }
+  .pc-section-heading {
+    font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--rust); margin: 0 0 0.6rem;
+  }
+  .pc-section .card-list { gap: 0.7rem; }
+  .pc-section .card { padding: 0.7rem 0.9rem; }
+  .pc-empty-note { padding: 0.8rem 1.2rem 1.2rem; font-size: 0.85rem; opacity: 0.7; font-style: italic; }
+  .pc-secrets {
+    background: linear-gradient(135deg, var(--ink), #2a1d0f);
+    border-radius: 4px;
+    padding: 1rem 1.1rem 0.4rem;
+    margin-top: 1.3rem;
+    box-shadow: inset 0 0 24px rgba(196,74,10,0.15), 0 0 0 1px rgba(184,134,42,0.4);
+  }
+  .pc-secrets .pc-section-heading { color: var(--gold-light); }
+  .secret-card {
+    background: rgba(242,232,201,0.06);
+    border: 1px solid rgba(184,134,42,0.35);
+  }
+  .secret-card .card-name { color: var(--parchment); }
+  .secret-card .card-desc { color: var(--parchment-dark); }
+  .secret-card .card-meta { color: var(--gold-light); }
+  .secret-kind-tag {
+    display: inline-block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.06em;
+    text-transform: uppercase; background: rgba(196,74,10,0.3); color: var(--gold-light);
+    padding: 0.12rem 0.5rem; border-radius: 2px; margin-left: 0.4rem; vertical-align: middle;
   }
 
   .shop-card {
@@ -344,13 +421,19 @@
   </header>
 
   <nav class="tabs">
-    <button class="tab-btn active" data-tab="sessions" id="tabbtn-sessions">Session-logs</button>
+    <button class="tab-btn active" data-tab="map" id="tabbtn-map">Kort</button>
+    <button class="tab-btn" data-tab="sessions" id="tabbtn-sessions">Session-logs</button>
     <button class="tab-btn" data-tab="npcs" id="tabbtn-npcs">Folk vi har mødt</button>
     <button class="tab-btn" data-tab="items" id="tabbtn-items">Fund &amp; genstande</button>
     <button class="tab-btn" data-tab="shops" id="tabbtn-shops">Butikker</button>
   </nav>
 
-  <section id="tab-sessions" class="tab-panel scroll-panel">
+  <section id="tab-map" class="tab-panel scroll-panel">
+    <h2 class="panel-heading" id="heading-map">Kort</h2>
+    <div id="map-container"><p class="empty-state">Intet kort tilføjet endnu.</p></div>
+  </section>
+
+  <section id="tab-sessions" class="tab-panel scroll-panel" style="display:none;">
     <h2 class="panel-heading" id="heading-sessions">Session-logs</h2>
     <div id="sessions-list"><p class="empty-state">Ingen sessions lagt op endnu.</p></div>
   </section>
@@ -426,19 +509,170 @@
     setText('heading-items', 'items', 'Fund & genstande');
     setText('tabbtn-shops', 'shops', 'Butikker');
     setText('heading-shops', 'shops', 'Butikker');
+    setText('tabbtn-map', 'map', 'Kort');
+    setText('heading-map', 'map', 'Kort');
     setText('site-kicker', 'site_kicker', 'Dragons of Icespire Peak');
     setText('site-title', 'site_title', 'Phandalins Krønike');
     setText('site-mood', 'site_mood', 'Folk, fund og fortællinger fra ekspeditionen');
   });
 
-  Promise.all([loadJSON('data/npcs.json'), labelsReady]).then(([data]) => {
-    if (!data || !data.npcs || !data.npcs.length) return;
+  Promise.all([loadJSON('data/map.json'), loadJSON('data/npcs.json'), loadJSON('data/sessions.json'), labelsReady]).then(([mapData, npcData, sessionsData]) => {
+    const container = document.getElementById('map-container');
+    if (!mapData || !mapData.image) return;
+    const allNpcs = (npcData && npcData.npcs) || [];
+    const allSessions = (sessionsData && sessionsData.sessions) || [];
+    const norm = s => (s || '').trim().toLowerCase();
+    let openPinName = null;
+
+    function pinDetailHTML(pinName) {
+      const here = allNpcs.filter(n => norm(n.mapPin) === norm(pinName));
+      const sessionsHere = allSessions.filter(s => norm(s.mapPin) === norm(pinName));
+      if (!here.length && !sessionsHere.length) {
+        return `<div class="pc-empty-note">Intet tilknyttet ${esc(pinName)} endnu.</div>`;
+      }
+      const peopleHTML = here.length ? `
+        <div class="pc-section">
+          <h4 class="pc-section-heading">Folk her</h4>
+          <div class="card-list">
+            ${here.map(n => `
+              <div class="card">
+                ${n.image ? `<img class="card-media" src="${esc(n.image)}" alt="">` : ''}
+                <div class="card-body">
+                  <div class="card-name">${esc(n.name)}</div>
+                  <div class="card-meta">${esc(n.title || '')}${n.kind ? ' · ' + esc(n.kind) : ''}</div>
+                  <div class="card-desc">${esc(n.description || '')}</div>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>` : '';
+      const sessionsHTML = sessionsHere.length ? `
+        <div class="pc-section">
+          <h4 class="pc-section-heading">📖 Sessioner her</h4>
+          <div class="card-list">
+            ${sessionsHere.map(s => `
+              <div class="card">
+                <div class="card-body">
+                  <div class="card-name">${esc(s.title)}</div>
+                  <div class="card-meta">${s.number ? 'Session ' + esc(String(s.number)) : ''}${s.date ? ' · ' + esc(s.date) : ''}</div>
+                  <div class="card-desc">${esc(s.recap || '')}</div>
+                  ${renderAudioBlock(s.audio)}
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>` : '';
+      return `<div class="map-pin-detail"><h3 class="group-heading">📍 ${esc(pinName)}</h3>${peopleHTML}${sessionsHTML}</div>`;
+    }
+
+    function renderMap() {
+      container.innerHTML = `
+        <div class="map-wrap-portal" id="mapWrapPortal">
+          <img src="${esc(mapData.image)}" class="map-image-portal" alt="Kort">
+          ${(mapData.pins || []).map(p => `
+            <div class="map-pin-portal ${openPinName === p.name ? 'active' : ''}" data-pin="${esc(p.name)}" style="left:${p.x}%; top:${p.y}%;">
+              <span class="map-pin-dot-portal"></span>
+              <span class="map-pin-label-portal">${esc(p.name)}</span>
+            </div>`).join('')}
+        </div>
+        ${openPinName ? pinDetailHTML(openPinName) : '<p class="empty-state" style="margin-top:1rem;">Klik på et sted på kortet for at se, hvem og hvad der hører til der.</p>'}`;
+      container.querySelectorAll('[data-pin]').forEach(el => {
+        el.addEventListener('click', () => {
+          const name = el.dataset.pin;
+          openPinName = (openPinName === name) ? null : name;
+          renderMap();
+        });
+      });
+    }
+    renderMap();
+  });
+
+  let pcExpandedName = null;
+
+  Promise.all([
+    loadJSON('data/npcs.json'),
+    loadJSON('data/items.json'),
+    loadJSON('data/personal.json'),
+    labelsReady
+  ]).then(([npcData, itemsData, personalData]) => {
+    if (!npcData || !npcData.npcs || !npcData.npcs.length) return;
+    const allItems = (itemsData && itemsData.items) || [];
+    const allPersonal = (personalData && personalData.personal) || [];
     const groups = { 'NPC': [], 'Spillerkarakter': [] };
-    data.npcs.forEach(n => (groups[n.kind] || groups['NPC']).push(n));
-    const renderGroup = (label, list) => {
+    npcData.npcs.forEach(n => (groups[n.kind] || groups['NPC']).push(n));
+    const norm = s => (s || '').trim().toLowerCase();
+
+    function pcDetailHTML(n) {
+      const myItems = allItems.filter(i => norm(i.owner) === norm(n.name) && i.visibility !== 'Skjult');
+      const myNotes = allPersonal.filter(p => norm(p.character) === norm(n.name) && p.kind === 'Note/Brev');
+      const mySecrets = allPersonal.filter(p => norm(p.character) === norm(n.name) && p.kind !== 'Note/Brev');
+
+      const itemsHTML = myItems.length ? `
+        <div class="pc-section">
+          <h4 class="pc-section-heading">🎒 Mine genstande</h4>
+          <div class="card-list">${myItems.map(i => `
+            <div class="card">
+              ${i.image ? `<img class="card-media" src="${esc(i.image)}" alt="">` : ''}
+              <div class="card-body">
+                <div class="card-name">${esc(i.name)}</div>
+                ${i.rarity ? `<div class="card-meta">${esc(i.rarity)}</div>` : ''}
+                ${i.description ? `<div class="card-desc">${esc(i.description)}</div>` : ''}
+              </div>
+            </div>`).join('')}</div>
+        </div>` : '';
+
+      const notesHTML = myNotes.length ? `
+        <div class="pc-section">
+          <h4 class="pc-section-heading">✉ Noter &amp; breve</h4>
+          <div class="card-list">${myNotes.map(p => `
+            <div class="card">
+              ${p.image ? `<img class="card-media" src="${esc(p.image)}" alt="">` : ''}
+              <div class="card-body">
+                <div class="card-name">${esc(p.title)}</div>
+                ${p.date ? `<div class="card-meta">${esc(p.date)}</div>` : ''}
+                <div class="card-desc">${esc(p.content || '')}</div>
+              </div>
+            </div>`).join('')}</div>
+        </div>` : '';
+
+      const secretsHTML = mySecrets.length ? `
+        <div class="pc-section pc-secrets">
+          <h4 class="pc-section-heading">🔮 Hemmelige beskeder</h4>
+          <div class="card-list">${mySecrets.map(p => `
+            <div class="card secret-card">
+              ${p.image ? `<img class="card-media" src="${esc(p.image)}" alt="">` : ''}
+              <div class="card-body">
+                <div class="card-name">${esc(p.title)} <span class="secret-kind-tag">${esc(p.kind)}</span></div>
+                ${p.date ? `<div class="card-meta">${esc(p.date)}</div>` : ''}
+                <div class="card-desc">${esc(p.content || '')}</div>
+              </div>
+            </div>`).join('')}</div>
+        </div>` : '';
+
+      if (!itemsHTML && !notesHTML && !secretsHTML) {
+        return `<div class="pc-empty-note">Intet registreret endnu for ${esc(n.name)}.</div>`;
+      }
+      return `<div class="pc-detail">${itemsHTML}${notesHTML}${secretsHTML}</div>`;
+    }
+
+    function pcCardHTML(n) {
+      const isOpen = pcExpandedName === n.name;
+      return `
+        <div class="card pc-card">
+          <div class="pc-card-clickable" data-pc-toggle="${esc(n.name)}">
+            ${n.image ? `<img class="card-media" src="${esc(n.image)}" alt="">` : ''}
+            <div class="card-body">
+              <div class="card-name">${esc(n.name)} <span class="pc-toggle-hint">${isOpen ? '▲ Skjul' : '▼ Se mine ting'}</span></div>
+              <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
+              <div class="card-desc">${esc(n.description || '')}</div>
+            </div>
+          </div>
+          ${isOpen ? pcDetailHTML(n) : ''}
+        </div>`;
+    }
+
+    const renderGroup = (label, list, clickable) => {
       if (!list.length) return '';
       return `<h3 class="group-heading">${esc(label)}</h3><div class="card-list" style="margin-bottom:1.6rem;">` +
-        list.map(n => `
+        (clickable ? list.map(pcCardHTML).join('') : list.map(n => `
           <div class="card">
             ${n.image ? `<img class="card-media" src="${esc(n.image)}" alt="">` : ''}
             <div class="card-body">
@@ -446,15 +680,29 @@
               <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
               <div class="card-desc">${esc(n.description || '')}</div>
             </div>
-          </div>`).join('') + `</div>`;
+          </div>`).join('')) + `</div>`;
     };
-    document.getElementById('npcs-list').innerHTML =
-      renderGroup(L('npcs_npc', 'NPC\u2019er'), groups['NPC']) + renderGroup(L('npcs_pc', 'Spillernes karakterer'), groups['Spillerkarakter']);
+
+    function renderAll() {
+      document.getElementById('npcs-list').innerHTML =
+        renderGroup(L('npcs_npc', 'NPC\u2019er'), groups['NPC'], false) +
+        renderGroup(L('npcs_pc', 'Spillernes karakterer'), groups['Spillerkarakter'], true);
+      document.querySelectorAll('[data-pc-toggle]').forEach(el => {
+        el.addEventListener('click', () => {
+          const name = el.dataset.pcToggle;
+          pcExpandedName = (pcExpandedName === name) ? null : name;
+          renderAll();
+        });
+      });
+    }
+    renderAll();
   });
 
   loadJSON('data/items.json').then(data => {
     if (!data || !data.items || !data.items.length) return;
-    document.getElementById('items-list').innerHTML = `<div class="card-list">` + data.items.map(i => `
+    const visibleItems = data.items.filter(i => i.visibility !== 'Skjult');
+    if (!visibleItems.length) return;
+    document.getElementById('items-list').innerHTML = `<div class="card-list">` + visibleItems.map(i => `
       <div class="card">
         ${i.image ? `<img class="card-media" src="${esc(i.image)}" alt="">` : ''}
         <div class="card-body">
