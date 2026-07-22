@@ -101,16 +101,19 @@
       "name": "Cryovain",
       "kind": "NPC",
       "title": "Ung hvid drage",
-      "location": "Axeholm / Icespire Peak",
+      "location": "Icespire Hold",
       "description": "Usædvanligt intelligent og påfaldende forfængelig — taler hellere end den kæmper. Har en uafgjort personlig sag med Tolbin siden deres kamp i Phandalin, og har nu direkte truet både ham og Elyra. Observerer fra afstand og venter på, at alle andre udmatter hinanden.",
-      "image": ""
+      "image": "",
+      "mapPin": ""
     },
     {
       "name": "Casardas",
       "kind": "Spillerkarakter",
-      "title": "Spejder — bærer af THE GREED",
+      "title": "Rouge",
       "location": "Kryptgarden Forest (oprindelse)",
-      "description": "Spejder og Falcon-kontakt med ukueligt skov-kendskab. Dirkede vault-porten op i Halias laboratorium. Da spejlrummets gåde krævede, at han pegede på sit eget utænkelige, valgte han: at forsegle døren bag sig og gå alene med skatten, og efterlade resten af gruppen fanget. Bærer nu amuletten \"Greed is good\" — grebet bevidst gennem sin kappe for at undgå direkte kontakt."
+      "description": "Spejder og Falcon-kontakt med ukueligt skov-kendskab. Dirkede vault-porten op i Halias laboratorium. Da spejlrummets gåde krævede, at han pegede på sit eget utænkelige, valgte han: at forsegle døren bag sig og gå alene med skatten, og efterlade resten af gruppen fanget. Bærer nu amuletten \"Greed is good\" — grebet bevidst gennem sin kappe for at undgå direkte kontakt.",
+      "image": "",
+      "mapPin": ""
     },
     {
       "name": "Fizzel",
