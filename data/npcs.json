@@ -46,22 +46,6 @@
       "mapPin": "Phandalin"
     },
     {
-      "name": "Dazlyn",
-      "kind": "NPC",
-      "title": "Dværg, reddet fra Axeholm",
-      "location": "Phandalin / Axeholm",
-      "description": "Dværgebyggemester og arkæolog, som gruppen mødte første gang i Temple of Greed, og senere befriede fra Axeholms illusionsloop sammen med Norbus. Tydeligt bekymret for sin ven, jo længere tid der går.",
-      "image": ""
-    },
-    {
-      "name": "Norbus",
-      "kind": "NPC",
-      "title": "Dværg, besat af en gammel amulet",
-      "location": "Phandalin",
-      "description": "Dværgebyggemester og arkæolog, redet fra Axeholm sammen med Dazlyn, men bærer nu en amulet indskrevet med \"Greed is good\", fundet i Grådighedens Tempel. Opfører sig mere og mere underligt, jo længere han bærer den — øjnene skinner forkert, og han taler i fragmenter.",
-      "image": ""
-    },
-    {
       "name": "Harbin Wester",
       "kind": "NPC",
       "title": "Borgmester af Phandalin",
@@ -89,6 +73,31 @@
       "mapPin": "Phandalin"
     },
     {
+      "name": "Cryovain",
+      "kind": "NPC",
+      "title": "Ung hvid drage",
+      "location": "Icespire Hold",
+      "description": "Usædvanligt intelligent og påfaldende forfængelig — taler hellere end den kæmper. Har en uafgjort personlig sag med Tolbin siden deres kamp i Phandalin, og har nu direkte truet både ham og Elyra. Observerer fra afstand og venter på, at alle andre udmatter hinanden.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784806654712-cryovain-portr-t.png",
+      "mapPin": ""
+    },
+    {
+      "name": "Dazlyn",
+      "kind": "NPC",
+      "title": "Dværg, reddet fra Axeholm",
+      "location": "Phandalin / Axeholm",
+      "description": "Dværgebyggemester og arkæolog, som gruppen mødte første gang i Temple of Greed, og senere befriede fra Axeholms illusionsloop sammen med Norbus. Tydeligt bekymret for sin ven, jo længere tid der går.",
+      "image": ""
+    },
+    {
+      "name": "Norbus",
+      "kind": "NPC",
+      "title": "Dværg, besat af en gammel amulet",
+      "location": "Phandalin",
+      "description": "Dværgebyggemester og arkæolog, redet fra Axeholm sammen med Dazlyn, men bærer nu en amulet indskrevet med \"Greed is good\", fundet i Grådighedens Tempel. Opfører sig mere og mere underligt, jo længere han bærer den — øjnene skinner forkert, og han taler i fragmenter.",
+      "image": ""
+    },
+    {
       "name": "Falcon",
       "kind": "NPC",
       "title": "Rangerleder",
@@ -111,15 +120,6 @@
       "location": "Neverwinter",
       "description": "Regerer Neverwinter, fordi ingen kendt, legitim arving til tronen findes. I Axeholm råbte kong Theron selv hans navn som forræder, før han forsvandt for altid. Hvad det egentlig betyder, er stadig ukendt for gruppen.",
       "image": ""
-    },
-    {
-      "name": "Cryovain",
-      "kind": "NPC",
-      "title": "Ung hvid drage",
-      "location": "Icespire Hold",
-      "description": "Usædvanligt intelligent og påfaldende forfængelig — taler hellere end den kæmper. Har en uafgjort personlig sag med Tolbin siden deres kamp i Phandalin, og har nu direkte truet både ham og Elyra. Observerer fra afstand og venter på, at alle andre udmatter hinanden.",
-      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784806654712-cryovain-portr-t.png",
-      "mapPin": ""
     },
     {
       "name": "Casardas",
