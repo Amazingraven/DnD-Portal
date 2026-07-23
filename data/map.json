@@ -44,7 +44,7 @@
     },
     {
       "id": "pin_lo7knam8dd",
-      "name": "Temple of Greedy",
+      "name": "Temple of Greed",
       "x": 65.5,
       "y": 85.1,
       "hidden": false
@@ -55,6 +55,27 @@
       "x": 64.9,
       "y": 50.9,
       "hidden": false
+    },
+    {
+      "id": "pin_vy9d80o90zc",
+      "name": "Hell Pit Orges - Ring of Blood",
+      "x": 89.9,
+      "y": 43.5,
+      "hidden": true
+    },
+    {
+      "id": "pin_c1gog6r4rv",
+      "name": "Circle of Thunder",
+      "x": 57.6,
+      "y": 30,
+      "hidden": true
+    },
+    {
+      "id": "pin_s67mxg7n56",
+      "name": "Court of the Icespire Orcs",
+      "x": 75.4,
+      "y": 37.7,
+      "hidden": true
     }
   ]
 }
