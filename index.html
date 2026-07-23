@@ -832,8 +832,9 @@
 
   function renderPdfBlock(url) {
     if (!url) return '';
+    const viewerUrl = url + '#toolbar=0&navpanes=0&view=FitH';
     return `<div class="pdf-embed-wrap">
-      <iframe src="${esc(url)}" class="pdf-embed" loading="lazy" title="PDF-dokument"></iframe>
+      <iframe src="${esc(viewerUrl)}" class="pdf-embed" loading="lazy" title="PDF-dokument"></iframe>
       <a href="${esc(url)}" target="_blank" rel="noopener" class="pdf-open-link">📄 Åbn PDF i fuld skærm</a>
     </div>`;
   }
