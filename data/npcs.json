@@ -5,28 +5,36 @@
       "kind": "NPC",
       "title": "Kroejer på Stonehill Inn — og paladin",
       "location": "Phandalin",
-      "description": "Skjulte sig som kroejer, indtil han under Cryovains angreb stod frem i fuld rustning. Har siden tilstået hele sandheden: han var udsendt til Axeholm for 15 år siden, fandt Elyra som eneste overlevende i massakren, og har skjult hende som sin datter lige siden. Beder gruppen holde hendes identitet hemmelig — også for hende selv."
+      "description": "Skjulte sig som kroejer, indtil han under Cryovains angreb stod frem i fuld rustning. Har siden tilstået hele sandheden: han var udsendt til Axeholm for 15 år siden, fandt Elyra som eneste overlevende i massakren, og har skjult hende som sin datter lige siden. Beder gruppen holde hendes identitet hemmelig — også for hende selv.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795617991-chatgpt-image-23.-jul.-2026-08.22.07.png",
+      "mapPin": ""
     },
     {
       "name": "Garaele",
       "kind": "NPC",
       "title": "Præstinde for Tymora — og Harper",
       "location": "Phandalin",
-      "description": "Byens præstinde, som blev sendt ud for at finde alkymisten Adabra Gwynn, men fandt hende dræbt af Cryovain — tabet sidder stadig i hende. Har siden hjulpet Tolbin skjule Elyra i årevis og træner hende nu i at kontrollere sin ukontrollerede ildmagi. Uenig med Tolbin om Elyras fremtid — hvor han vil skåne hende for tronen, vil Garaele se hende sidde på den."
+      "description": "Byens præstinde, som blev sendt ud for at finde alkymisten Adabra Gwynn, men fandt hende dræbt af Cryovain — tabet sidder stadig i hende. Har siden hjulpet Tolbin skjule Elyra i årevis og træner hende nu i at kontrollere sin ukontrollerede ildmagi. Uenig med Tolbin om Elyras fremtid — hvor han vil skåne hende for tronen, vil Garaele se hende sidde på den.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795761272-chatgpt-image-23.-jul.-2026-08.22.27.png",
+      "mapPin": ""
     },
     {
       "name": "Elyra Alagondar",
       "kind": "NPC",
       "title": "Sidste arving til Neverwinters trone",
       "location": "Phandalin",
-      "description": "Officielt Tolbins datter, i virkeligheden den forsvundne Alagondar-arving reddet fra Axeholm som 4-årig. Bærer en ukontrolleret ildmagi der bryder ud under stærkt pres. Ved endnu ikke selv, hvem hun er — gruppen bærer den byrde for hende."
+      "description": "Officielt Tolbins datter, i virkeligheden den forsvundne Alagondar-arving reddet fra Axeholm som 4-årig. Bærer en ukontrolleret ildmagi der bryder ud under stærkt pres. Ved endnu ikke selv, hvem hun er — gruppen bærer den byrde for hende.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795773396-chatgpt-image-23.-jul.-2026-08.22.19.png",
+      "mapPin": ""
     },
     {
       "name": "Halia Thornton",
       "kind": "NPC",
       "title": "Ejer af Miner's Exchange — Zhentarim-leder",
       "location": "Phandalin",
-      "description": "Driver byens vigtigste opkøbssted for sjældne genstande, men skjuler langt mere magt og rigdom end en almindelig købmand burde have. Bærer Zhentarim-emblem. Gav gruppen adgang til krypten under sin butik mod overdragelse af alt, hvad de fandt i Axeholm — en aftale gruppen ikke har overholdt fuldt ud."
+      "description": "Driver byens vigtigste opkøbssted for sjældne genstande, men skjuler langt mere magt og rigdom end en almindelig købmand burde have. Bærer Zhentarim-emblem. Gav gruppen adgang til krypten under sin butik mod overdragelse af alt, hvad de fandt i Axeholm — en aftale gruppen ikke har overholdt fuldt ud.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795786821-chatgpt-image-23.-jul.-2026-08.22.15.png",
+      "mapPin": ""
     },
     {
       "name": "Zane Jawbreaker",
@@ -34,7 +42,8 @@
       "title": "Udsmider på Stonehill Inn — Zhentarim-agent",
       "location": "Phandalin",
       "description": "Plantet af Halia som udsmider for at holde øje med Tolbin og kroen. Har fulgt Elyra med blikket mere end én gang, uden at sige noget.",
-      "image": ""
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795803340-chatgpt-image-23.-jul.-2026-08.21.44.png",
+      "mapPin": ""
     },
     {
       "name": "Dazlyn",
@@ -57,14 +66,18 @@
       "kind": "NPC",
       "title": "Borgmester af Phandalin",
       "location": "Phandalin",
-      "description": "Paranoid og konfliktsky — gemmer sig, når presset bliver for stort. Betaler dog altid dusører, når beviset er der. Valgte til sidst selv at følge med evakueringen mod Axeholm, da presset blev for stort til at blive i byen."
+      "description": "Paranoid og konfliktsky — gemmer sig, når presset bliver for stort. Betaler dog altid dusører, når beviset er der. Valgte til sidst selv at følge med evakueringen mod Axeholm, da presset blev for stort til at blive i byen.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795815620-chatgpt-image-23.-jul.-2026-08.21.56.png",
+      "mapPin": ""
     },
     {
       "name": "Big Al",
       "kind": "NPC",
       "title": "Militsens anker — tidligere sherif",
       "location": "Phandalin / Butter Skull Ranch",
-      "description": "Tidligere sherif, reddet af gruppen fra orkernes fangenskab på Butter Skull Ranch. Hård og direkte, uden tålmodighed for frygt. Har siden ledet Phandalins spæde milits sammen med Tolbin og Brutus."
+      "description": "Tidligere sherif, reddet af gruppen fra orkernes fangenskab på Butter Skull Ranch. Hård og direkte, uden tålmodighed for frygt. Har siden ledet Phandalins spæde milits sammen med Tolbin og Brutus.",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795825353-chatgpt-image-23.-jul.-2026-08.22.31.png",
+      "mapPin": ""
     },
     {
       "name": "Brandon",
@@ -72,7 +85,8 @@
       "title": "Falcons ranger — forbindelsesofficer i Phandalin",
       "location": "Phandalin / Neverwinter Forest",
       "description": "Falcons udsendte i Phandalin, loyal ranger. Tror stadig, at Heart of Thunder blev destrueret i toppen af Tower of Storms. Presser på for et lille recon-hold, efter aftale med Falcon, der kan ramme orkernes ledelse direkte — regionen kan ikke vinde en åben krig.",
-      "image": ""
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795718414-chatgpt-image-23.-jul.-2026-08.22.42.png",
+      "mapPin": ""
     },
     {
       "name": "Falcon",
@@ -103,7 +117,7 @@
       "title": "Ung hvid drage",
       "location": "Icespire Hold",
       "description": "Usædvanligt intelligent og påfaldende forfængelig — taler hellere end den kæmper. Har en uafgjort personlig sag med Tolbin siden deres kamp i Phandalin, og har nu direkte truet både ham og Elyra. Observerer fra afstand og venter på, at alle andre udmatter hinanden.",
-      "image": "",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795743869-chatgpt-image-23.-jul.-2026-08.21.53.png",
       "mapPin": ""
     },
     {
