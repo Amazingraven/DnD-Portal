@@ -285,6 +285,45 @@
     margin-top: 0.25rem;
   }
   .map-pin-detail { margin-top: 1.2rem; }
+  .map-pin-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(20,10,0,0.95);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 0.6rem 0.8rem;
+    min-width: 180px;
+    max-width: 260px;
+    white-space: normal;
+    z-index: 20;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    pointer-events: none;
+  }
+  .map-pin-portal:hover .map-pin-tooltip {
+    display: block;
+  }
+  .map-pin-tooltip-row {
+    font-size: 0.72rem;
+    color: var(--parchment-dark);
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+  }
+  .map-pin-tooltip-row:last-child { margin-bottom: 0; }
+  .map-pin-tooltip-row strong {
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 0.65rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+  .map-shop-link { cursor: pointer; }
+  .map-shop-link:hover { background: rgba(184,134,42,0.1); }
   .group-heading {
     font-family: 'Cinzel', serif;
     font-weight: 600;
@@ -473,13 +512,12 @@
 <script>
   const tabs = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.tab-panel');
+  function switchToTab(tabKey) {
+    tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === tabKey));
+    panels.forEach(p => { p.style.display = (p.id === 'tab-' + tabKey) ? 'block' : 'none'; });
+  }
   tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabs.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      panels.forEach(p => p.style.display = 'none');
-      document.getElementById('tab-' + btn.dataset.tab).style.display = 'block';
-    });
+    btn.addEventListener('click', () => switchToTab(btn.dataset.tab));
   });
 
   async function loadJSON(path) {
@@ -524,18 +562,32 @@
     setText('site-mood', 'site_mood', 'Folk, fund og fortællinger fra ekspeditionen');
   });
 
-  Promise.all([loadJSON('data/map.json'), loadJSON('data/npcs.json'), loadJSON('data/sessions.json'), labelsReady]).then(([mapData, npcData, sessionsData]) => {
+  Promise.all([loadJSON('data/map.json'), loadJSON('data/npcs.json'), loadJSON('data/sessions.json'), loadJSON('data/shops.json'), labelsReady]).then(([mapData, npcData, sessionsData, shopsJson]) => {
     const container = document.getElementById('map-container');
     if (!mapData || !mapData.image) return;
     const allNpcs = (npcData && npcData.npcs) || [];
     const allSessions = (sessionsData && sessionsData.sessions) || [];
+    const allShops = (Array.isArray(shopsJson) ? shopsJson : []).filter(s => s.enabled !== false);
     const norm = s => (s || '').trim().toLowerCase();
     let openPinName = null;
+
+    function pinTooltipHTML(pinName) {
+      const peopleNames = allNpcs.filter(n => norm(n.mapPin) === norm(pinName)).map(n => n.name);
+      const shopNames = allShops.filter(s => norm(s.mapPin) === norm(pinName)).map(s => s.name);
+      const sessionTitles = allSessions.filter(s => norm(s.mapPin) === norm(pinName)).map(s => s.title);
+      if (!peopleNames.length && !shopNames.length && !sessionTitles.length) return '';
+      return `<div class="map-pin-tooltip">
+        ${peopleNames.length ? `<div class="map-pin-tooltip-row"><strong>Folk:</strong> ${peopleNames.map(esc).join(', ')}</div>` : ''}
+        ${shopNames.length ? `<div class="map-pin-tooltip-row"><strong>Butikker:</strong> ${shopNames.map(esc).join(', ')}</div>` : ''}
+        ${sessionTitles.length ? `<div class="map-pin-tooltip-row"><strong>Sessioner:</strong> ${sessionTitles.map(esc).join(', ')}</div>` : ''}
+      </div>`;
+    }
 
     function pinDetailHTML(pinName) {
       const here = allNpcs.filter(n => norm(n.mapPin) === norm(pinName));
       const sessionsHere = allSessions.filter(s => norm(s.mapPin) === norm(pinName));
-      if (!here.length && !sessionsHere.length) {
+      const shopsHere = allShops.filter(s => norm(s.mapPin) === norm(pinName));
+      if (!here.length && !sessionsHere.length && !shopsHere.length) {
         return `<div class="pc-empty-note">Intet tilknyttet ${esc(pinName)} endnu.</div>`;
       }
       const peopleHTML = here.length ? `
@@ -544,11 +596,24 @@
           <div class="card-list">
             ${here.map(n => `
               <div class="card">
-                ${n.image ? `<img class="card-media" src="${esc(n.image)}" alt="">` : ''}
+                ${n.image ? `<img class="card-media card-media-item" src="${esc(n.image)}" alt="">` : ''}
                 <div class="card-body">
                   <div class="card-name">${esc(n.name)}</div>
                   <div class="card-meta">${esc(n.title || '')}${n.kind ? ' · ' + esc(n.kind) : ''}</div>
                   <div class="card-desc">${esc(n.description || '')}</div>
+                </div>
+              </div>`).join('')}
+          </div>
+        </div>` : '';
+      const shopsHTML = shopsHere.length ? `
+        <div class="pc-section">
+          <h4 class="pc-section-heading">⚖️ Butikker her</h4>
+          <div class="card-list">
+            ${shopsHere.map(s => `
+              <div class="card map-shop-link" data-jump-shop="${esc(s.id)}">
+                <div class="card-body">
+                  <div class="card-name">${esc(s.icon || '⚖️')} ${esc(s.name)} <span class="pc-toggle-hint">▶ Åbn butik</span></div>
+                  <div class="card-meta">${esc(s.keeper || '')}</div>
                 </div>
               </div>`).join('')}
           </div>
@@ -559,6 +624,7 @@
           <div class="card-list">
             ${sessionsHere.map(s => `
               <div class="card">
+                ${s.image ? `<img class="card-media card-media-item" src="${esc(s.image)}" alt="">` : ''}
                 <div class="card-body">
                   <div class="card-name">${esc(s.title)}</div>
                   <div class="card-meta">${s.number ? 'Session ' + esc(String(s.number)) : ''}${s.date ? ' · ' + esc(s.date) : ''}</div>
@@ -568,25 +634,32 @@
               </div>`).join('')}
           </div>
         </div>` : '';
-      return `<div class="map-pin-detail"><h3 class="group-heading">📍 ${esc(pinName)}</h3>${peopleHTML}${sessionsHTML}</div>`;
+      return `<div class="map-pin-detail"><h3 class="group-heading">📍 ${esc(pinName)}</h3>${peopleHTML}${shopsHTML}${sessionsHTML}</div>`;
     }
 
     function renderMap() {
       container.innerHTML = `
         <div class="map-wrap-portal" id="mapWrapPortal">
           <img src="${esc(mapData.image)}" class="map-image-portal" alt="Kort">
-          ${(mapData.pins || []).map(p => `
+          ${(mapData.pins || []).filter(p => !p.hidden).map(p => `
             <div class="map-pin-portal ${openPinName === p.name ? 'active' : ''}" data-pin="${esc(p.name)}" style="left:${p.x}%; top:${p.y}%;">
               <span class="map-pin-dot-portal"></span>
               <span class="map-pin-label-portal">${esc(p.name)}</span>
+              ${pinTooltipHTML(p.name)}
             </div>`).join('')}
         </div>
-        ${openPinName ? pinDetailHTML(openPinName) : '<p class="empty-state" style="margin-top:1rem;">Klik på et sted på kortet for at se, hvem og hvad der hører til der.</p>'}`;
+        ${openPinName ? pinDetailHTML(openPinName) : '<p class="empty-state" style="margin-top:1rem;">Klik på et sted på kortet for at se, hvem og hvad der hører til der. Før musen hen over et sted for en hurtig oversigt.</p>'}`;
       container.querySelectorAll('[data-pin]').forEach(el => {
         el.addEventListener('click', () => {
           const name = el.dataset.pin;
           openPinName = (openPinName === name) ? null : name;
           renderMap();
+        });
+      });
+      container.querySelectorAll('[data-jump-shop]').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          jumpToShop(el.dataset.jumpShop);
         });
       });
     }
@@ -615,7 +688,7 @@
 
       const itemsHTML = myItems.length ? `
         <div class="pc-section">
-          <h4 class="pc-section-heading">🎒 Mine genstande</h4>
+          <h4 class="pc-section-heading">💰 Mine genstande</h4>
           <div class="card-list">${myItems.map(i => `
             <div class="card">
               ${i.image ? `<img class="card-media card-media-item" src="${esc(i.image)}" alt="">` : ''}
@@ -666,7 +739,7 @@
       return `
         <div class="card pc-card">
           <div class="pc-card-clickable" data-pc-toggle="${esc(n.name)}">
-            ${n.image ? `<img class="card-media" src="${esc(n.image)}" alt="">` : ''}
+            ${n.image ? `<img class="card-media card-media-item" src="${esc(n.image)}" alt="">` : ''}
             <div class="card-body">
               <div class="card-name">${esc(n.name)} <span class="pc-toggle-hint">${isOpen ? '▲ Skjul' : '▼ Se mine ting'}</span></div>
               <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
@@ -682,7 +755,7 @@
       return `<h3 class="group-heading">${esc(label)}</h3><div class="card-list" style="margin-bottom:1.6rem;">` +
         (clickable ? list.map(pcCardHTML).join('') : list.map(n => `
           <div class="card">
-            ${n.image ? `<img class="card-media" src="${esc(n.image)}" alt="">` : ''}
+            ${n.image ? `<img class="card-media card-media-item" src="${esc(n.image)}" alt="">` : ''}
             <div class="card-body">
               <div class="card-name">${esc(n.name)}</div>
               <div class="card-meta">${esc(n.title || '')}${n.location ? ' · ' + esc(n.location) : ''}</div>
@@ -737,6 +810,7 @@
     if (!data || !data.sessions || !data.sessions.length) return;
     document.getElementById('sessions-list').innerHTML = `<div class="card-list">` + data.sessions.map(s => `
       <div class="card">
+        ${s.image ? `<img class="card-media card-media-item" src="${esc(s.image)}" alt="">` : ''}
         <div class="card-body">
           <div class="card-name">${esc(s.title)}</div>
           <div class="card-meta">${s.number ? 'Session ' + esc(String(s.number)) : ''}${s.date ? ' · ' + esc(s.date) : ''}</div>
@@ -754,7 +828,7 @@
       const soldOut = shop.items.filter(i => i.qty === 0).length;
       return `
         <div class="card shop-card ${shop.id === activeShopId ? 'active' : ''}" data-shop="${esc(shop.id)}">
-          <div class="shop-icon">${esc(shop.icon || '🏪')}</div>
+          <div class="shop-icon">${esc(shop.icon || '⚖️')}</div>
           <div class="card-name">${esc(shop.name)}</div>
           <div class="card-meta">${esc(shop.keeper || '')}</div>
           <div class="card-desc">${shop.items.length} varer${soldOut ? ' · ' + soldOut + ' udsolgt' : ''}</div>
@@ -804,6 +878,14 @@
     }
     renderShopGrid();
   });
+
+  function jumpToShop(shopId) {
+    switchToTab('shops');
+    activeShopId = shopId;
+    renderShopGrid();
+    renderShopDetail();
+    document.getElementById('tab-shops').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   // Klik på et vare-/portræt-billede åbner det i fuld størrelse
   const lightbox = document.getElementById('lightbox-overlay');
