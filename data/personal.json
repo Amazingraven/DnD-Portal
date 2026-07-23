@@ -1,0 +1,49 @@
+{
+  "personal": [
+    {
+      "character": "Casardas",
+      "kind": "Note/Brev",
+      "title": "Rapport fra Falcon",
+      "content": "",
+      "image": "",
+      "pdf": "https://amazingraven.github.io/DnD-Portal/data/documents/1784806829211-casadas-handout_rapport---kap-5.pdf",
+      "date": ""
+    },
+    {
+      "character": "Casardas",
+      "kind": "Andet",
+      "title": "Intell mission til Falcons Hunting Lodge - Neverwinter Woods",
+      "content": "",
+      "image": "",
+      "pdf": "https://amazingraven.github.io/DnD-Portal/data/documents/1784806871798-casadas-handout---kap-4.pdf",
+      "date": ""
+    },
+    {
+      "character": "Brutus",
+      "kind": "Andet",
+      "title": "Cryovain´s attack on Phandalin",
+      "content": "",
+      "image": "",
+      "pdf": "https://amazingraven.github.io/DnD-Portal/data/documents/1784807050824-brutus-handout---kap-4.pdf",
+      "date": ""
+    },
+    {
+      "character": "Rohgar",
+      "kind": "Note/Brev",
+      "title": "Brev fra Sir Alaric",
+      "content": "Fundet i Axeholm",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784807131537-brev-fra-sir-alaric.png",
+      "pdf": "",
+      "date": ""
+    },
+    {
+      "character": "Rohgar",
+      "kind": "Fortrolig samtale",
+      "title": "Fortrolig samtale med Tolbin",
+      "content": "",
+      "image": "",
+      "pdf": "https://amazingraven.github.io/DnD-Portal/data/documents/1784807169497-tolbin_fortrolig_besked_rhogar_final_spacious.pdf",
+      "date": ""
+    }
+  ]
+}
