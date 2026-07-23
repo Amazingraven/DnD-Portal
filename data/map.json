@@ -24,13 +24,13 @@
     {
       "id": "pin_7u9mh06k2mf",
       "name": "Falcon´s Hunting Lodge",
-      "x": 57.4,
-      "y": 41.4,
+      "x": 57.7,
+      "y": 41.3,
       "hidden": false
     },
     {
       "id": "pin_g4bxv3w92h",
-      "name": "Tempel of Tymora",
+      "name": "Temple of Tymora",
       "x": 66.8,
       "y": 58.6,
       "hidden": false
@@ -44,16 +44,16 @@
     },
     {
       "id": "pin_lo7knam8dd",
-      "name": "Tempel of Greedy",
+      "name": "Temple of Greedy",
       "x": 65.5,
       "y": 85.1,
       "hidden": false
     },
     {
       "id": "pin_5yhv2ixnmhs",
-      "name": "Sawmill",
-      "x": 50.4,
-      "y": 47,
+      "name": "Phandalin Sawmill",
+      "x": 64.9,
+      "y": 50.9,
       "hidden": false
     }
   ]
