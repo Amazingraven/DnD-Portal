@@ -46,7 +46,8 @@
         "price": "400 gp"
       }
     ],
-    "enabled": true
+    "enabled": true,
+    "mapPin": "Phandalin"
   },
   {
     "id": "miners",
@@ -167,7 +168,8 @@
         "rules": "Krav: Færdighed med martial våben (eller longsword). Effekt: Magisk +1 til angreb og +1 til skade.",
         "price": "1.000 gp"
       }
-    ]
+    ],
+    "mapPin": "Phandalin"
   },
   {
     "id": "gnomengarde",
@@ -223,6 +225,7 @@
         "rules": "Montering: 10 runder uden for kamp. Hæftes på et afstandsvåben. Krav: Færdighed med det pågældende våben. Effekt: Magisk +1 til angreb med det våben og +1 ild-skade ved træf.",
         "price": "350 gp"
       }
-    ]
+    ],
+    "mapPin": "Phandalin"
   }
 ]
