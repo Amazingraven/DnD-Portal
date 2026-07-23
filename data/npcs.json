@@ -7,7 +7,7 @@
       "location": "Phandalin",
       "description": "Skjulte sig som kroejer, indtil han under Cryovains angreb stod frem i fuld rustning. Har siden tilstået hele sandheden: han var udsendt til Axeholm for 15 år siden, fandt Elyra som eneste overlevende i massakren, og har skjult hende som sin datter lige siden. Beder gruppen holde hendes identitet hemmelig — også for hende selv.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795617991-chatgpt-image-23.-jul.-2026-08.22.07.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Garaele",
@@ -16,7 +16,7 @@
       "location": "Phandalin",
       "description": "Byens præstinde, som blev sendt ud for at finde alkymisten Adabra Gwynn, men fandt hende dræbt af Cryovain — tabet sidder stadig i hende. Har siden hjulpet Tolbin skjule Elyra i årevis og træner hende nu i at kontrollere sin ukontrollerede ildmagi. Uenig med Tolbin om Elyras fremtid — hvor han vil skåne hende for tronen, vil Garaele se hende sidde på den.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795761272-chatgpt-image-23.-jul.-2026-08.22.27.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Elyra Alagondar",
@@ -25,7 +25,7 @@
       "location": "Phandalin",
       "description": "Officielt Tolbins datter, i virkeligheden den forsvundne Alagondar-arving reddet fra Axeholm som 4-årig. Bærer en ukontrolleret ildmagi der bryder ud under stærkt pres. Ved endnu ikke selv, hvem hun er — gruppen bærer den byrde for hende.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795773396-chatgpt-image-23.-jul.-2026-08.22.19.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Halia Thornton",
@@ -34,7 +34,7 @@
       "location": "Phandalin",
       "description": "Driver byens vigtigste opkøbssted for sjældne genstande, men skjuler langt mere magt og rigdom end en almindelig købmand burde have. Bærer Zhentarim-emblem. Gav gruppen adgang til krypten under sin butik mod overdragelse af alt, hvad de fandt i Axeholm — en aftale gruppen ikke har overholdt fuldt ud.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784806570722-halia-portr-t.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Zane Jawbreaker",
@@ -43,7 +43,7 @@
       "location": "Phandalin",
       "description": "Plantet af Halia som udsmider for at holde øje med Tolbin og kroen. Har fulgt Elyra med blikket mere end én gang, uden at sige noget.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784795803340-chatgpt-image-23.-jul.-2026-08.21.44.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Dazlyn",
@@ -68,7 +68,7 @@
       "location": "Phandalin",
       "description": "Paranoid og konfliktsky — gemmer sig, når presset bliver for stort. Betaler dog altid dusører, når beviset er der. Valgte til sidst selv at følge med evakueringen mod Axeholm, da presset blev for stort til at blive i byen.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784806582950-harbin-portr-t.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Big Al",
@@ -77,7 +77,7 @@
       "location": "Phandalin / Butter Skull Ranch",
       "description": "Tidligere sherif, reddet af gruppen fra orkernes fangenskab på Butter Skull Ranch. Hård og direkte, uden tålmodighed for frygt. Har siden ledet Phandalins spæde milits sammen med Tolbin og Brutus.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784806592689-big-al-portr-t.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Brandon",
@@ -86,7 +86,7 @@
       "location": "Phandalin / Neverwinter Forest",
       "description": "Falcons udsendte i Phandalin, loyal ranger. Tror stadig, at Heart of Thunder blev destrueret i toppen af Tower of Storms. Presser på for et lille recon-hold, efter aftale med Falcon, der kan ramme orkernes ledelse direkte — regionen kan ikke vinde en åben krig.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784806640176-brandon-portr-t.png",
-      "mapPin": ""
+      "mapPin": "Phandalin"
     },
     {
       "name": "Falcon",
@@ -94,7 +94,8 @@
       "title": "Rangerleder",
       "location": "Falcon's Hunting Lodge, Neverwinter Forest",
       "description": "Aldrig mødt personligt — kun kendt gennem sin udsendte Brandon og et kort, skarpt brev til Casardas. Holder sine rangere og Kryptgarden-elverne strakt til bristepunktet og kan ikke afsætte folk uden for skoven. Ønskede Heart of Thunder fundet og ødelagt, før orkerne fik fat i det.",
-      "image": ""
+      "image": "",
+      "mapPin": "Falcon´s Hunting Lodge"
     },
     {
       "name": "Sir Alaric",
