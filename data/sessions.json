@@ -5,7 +5,9 @@
       "number": 1,
       "date": "",
       "recap": "Fem eventyrere samledes i Neverwinter om Dagult Neverembers dusør på byens forsvundne arvinger og fulgte sporet til minebyen Phandalin. På Stonehill Inn hørte de rygter om Zhentarim og mødte en mistænksomt nysgerrig udsmider. Efter at have presset en paranoid borgmester, Harbin Wester, fik de deres første opgave: advare dværgene Dazlyn og Norbus om en hvid drage i omegnen.",
-      "audio": ""
+      "audio": "",
+      "mapPin": "",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784807504961-chatgpt-image-22.-mar.-2026-12.15.11.png"
     },
     {
       "title": "Temple of Greed",
@@ -40,7 +42,9 @@
       "number": 6,
       "date": "",
       "recap": "Kort opsummering — uddybes gerne senere. I Tymoras tempel fandt gruppen resterne af en falden Harper-patrulje og en krypteret note, der pegede mod et større spil bag kulisserne. Et Zhentarim-baghold ventede dem samme sted — det første konkrete tegn på, hvor tæt Zhentarim fulgte med i deres bevægelser.",
-      "audio": ""
+      "audio": "",
+      "mapPin": "",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784807393813-chatgpt-image-22.-mar.-2026-12.35.59.png"
     },
     {
       "title": "Tower of Storms",
@@ -48,28 +52,35 @@
       "date": "",
       "recap": "Kort opsummering — uddybes gerne senere. Ved Tower of Storms besejrede gruppen orklederen Gruklash Stormcaller og fjernede artefaktet Heart of Thunder fra hans bryst. Cryovain landede på platformen kort efter og iagttog kampens afslutning uden selv at angribe.",
       "audio": "https://notebooklm.google.com/notebook/ec562f6a-e291-4dfb-8f9e-8d5b280a189b/artifact/86884b05-16a3-441b-b06c-d980adcce75e?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_",
-      "mapPin": "Tower of Storms"
+      "mapPin": "Tower of Storms",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784807407227-chatgpt-image-22.-mar.-2026-12.30.45.png"
     },
     {
       "title": "Shadows of Axeholm",
       "number": 8,
       "date": "",
       "recap": "Med Heart of Thunder i hænderne valgte gruppen at beholde artefaktet frem for at destruere det, på trods af Talos' hvisken til Zaptor og Cryovains kolde interesse i deres beslutning. Tilbage i Phandalin mødte de Falcons udsendte Brandon, der bad om et recon-hold mod orkernes ledelse. Sporet delte sig igen: mens nogle fulgte Tolbins antydninger mod Axeholm, købte resten adgang til en skjult krypt under Miner's Exchange hos Halia Thornton mod at aflevere alt, hvad Axeholm måtte gemme. I Axeholm fandt gruppen en borg fanget i en gylden illusion af en fest, der aldrig sluttede. Ved at presse kongeparrets spøgelsesbilleder om deres forsvundne datter brød illusionen, og to banshee-ånder rejste sig i vrede og sorg. Da kampen var vundet, lå kun en ring og et gammelt brev tilbage — et brev der navngav Tolbin som kongens udsendte paladin, og et navn ingen i Phandalin havde ventet at se på skrift: Dagult.",
-      "audio": "https://notebooklm.google.com/notebook/b6db38e7-349c-42f0-8c57-cd487658ecbe/artifact/8188b290-6a98-4c3f-ba35-e7fc9cb981ce?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_"
+      "audio": "https://notebooklm.google.com/notebook/b6db38e7-349c-42f0-8c57-cd487658ecbe/artifact/8188b290-6a98-4c3f-ba35-e7fc9cb981ce?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_",
+      "mapPin": "",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784807430358-axeholm.png"
     },
     {
       "title": "Greed Under Siege",
       "number": 9,
       "date": "",
       "recap": "Tilbage i Phandalin fortalte Tolbin hele sandheden om natten i Axeholm for de af gruppen, der bar sporet med sig hjem — og bad dem holde det hemmeligt, både for byen og for pigen selv. Timer senere kom orkerne marcherende mod byen, og et hastigt krigsråd fordelte forsvaret: fronten, evakueringen mod Axeholm, og en skjult vault under Halias butik. Midt i kaosset brød Norbus med sin post og trak gruppen ned i et nekrotisk laboratorium, hvor et sindsvækkende bryg lagde alle undtagen Zaptor i gulvet — og bag en nyåbnet dør ventede noget, ingen endnu havde set.",
-      "audio": "https://notebooklm.google.com/notebook/1d4508b7-f089-419f-9032-a3c553649e8b/artifact/6b775d91-7b31-433c-a476-d712d82ea506?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_"
+      "audio": "https://notebooklm.google.com/notebook/1d4508b7-f089-419f-9032-a3c553649e8b/artifact/6b775d91-7b31-433c-a476-d712d82ea506?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_",
+      "mapPin": "",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784807468854-commander.png"
     },
     {
       "title": "Vault of the Zentarim",
       "number": 10,
       "date": "",
       "recap": "Dybere i Halias laboratorium mødte gruppen et rum af spejle, der tvang hver af dem til at pege på det, de aldrig ville lade blive virkeligt — et valg, der afslørede mere om dem selv, end nogen havde regnet med. Bag spejlene ventede en lænket, ældgammel sort drage tappet for blod, samt beviser på Halias sande formål. Gruppen befriede dragen, mistede og genvandt en gammel amulet mellem hænder, og vendte tilbage til overfladen til et hærget Phandalin — hvor et sidste møde med Zhentarim, talstærke og med gidsler i hænderne, bragte alt til stilstand.",
-      "audio": "https://notebooklm.google.com/notebook/6a1fa0f6-b02d-46ad-a240-e60e4e119ab9/artifact/9c80d8dd-337e-47b8-a944-48d5f6d7734f?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_"
+      "audio": "https://notebooklm.google.com/notebook/6a1fa0f6-b02d-46ad-a240-e60e4e119ab9/artifact/9c80d8dd-337e-47b8-a944-48d5f6d7734f?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_1&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_1_",
+      "mapPin": "",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1784807482513-chatgpt-image-2.-jun.-2026-19.02.34.png"
     }
   ]
 }
