@@ -2,7 +2,6 @@
   "npcs": [
     {
       "name": "Tolbin Stonehill",
-      "kind": "NPC",
       "title": "Kroejer på Stonehill Inn — og paladin",
       "location": "Phandalin",
       "description": "Skjulte sig som kroejer, indtil han under Cryovains angreb stod frem i fuld rustning. Har siden tilstået hele sandheden: han var udsendt til Axeholm for 15 år siden, fandt Elyra som eneste overlevende i massakren, og har skjult hende som sin datter lige siden. Beder gruppen holde hendes identitet hemmelig — også for hende selv.",
@@ -11,7 +10,6 @@
     },
     {
       "name": "Garaele",
-      "kind": "NPC",
       "title": "Præstinde for Tymora — og Harper",
       "location": "Phandalin",
       "description": "Byens præstinde, som blev sendt ud for at finde alkymisten Adabra Gwynn, men fandt hende dræbt af Cryovain — tabet sidder stadig i hende. Har siden hjulpet Tolbin skjule Elyra i årevis og træner hende nu i at kontrollere sin ukontrollerede ildmagi. Uenig med Tolbin om Elyras fremtid — hvor han vil skåne hende for tronen, vil Garaele se hende sidde på den.",
@@ -20,7 +18,6 @@
     },
     {
       "name": "Elyra Alagondar",
-      "kind": "NPC",
       "title": "Sidste arving til Neverwinters trone",
       "location": "Phandalin",
       "description": "Officielt Tolbins datter, i virkeligheden den forsvundne Alagondar-arving reddet fra Axeholm som 4-årig. Bærer en ukontrolleret ildmagi der bryder ud under stærkt pres. Ved endnu ikke selv, hvem hun er — gruppen bærer den byrde for hende.",
@@ -29,7 +26,6 @@
     },
     {
       "name": "Halia Thornton",
-      "kind": "NPC",
       "title": "Ejer af Miner's Exchange — Zhentarim-leder",
       "location": "Phandalin",
       "description": "Driver byens vigtigste opkøbssted for sjældne genstande, men skjuler langt mere magt og rigdom end en almindelig købmand burde have. Bærer Zhentarim-emblem. Gav gruppen adgang til krypten under sin butik mod overdragelse af alt, hvad de fandt i Axeholm — en aftale gruppen ikke har overholdt fuldt ud.",
@@ -38,7 +34,6 @@
     },
     {
       "name": "Zane Jawbreaker",
-      "kind": "NPC",
       "title": "Udsmider på Stonehill Inn — Zhentarim-agent",
       "location": "Phandalin",
       "description": "Plantet af Halia som udsmider for at holde øje med Tolbin og kroen. Har fulgt Elyra med blikket mere end én gang, uden at sige noget.",
@@ -47,7 +42,6 @@
     },
     {
       "name": "Harbin Wester",
-      "kind": "NPC",
       "title": "Borgmester af Phandalin",
       "location": "Phandalin",
       "description": "Paranoid og konfliktsky — gemmer sig, når presset bliver for stort. Betaler dog altid dusører, når beviset er der. Valgte til sidst selv at følge med evakueringen mod Axeholm, da presset blev for stort til at blive i byen.",
@@ -56,7 +50,6 @@
     },
     {
       "name": "Big Al",
-      "kind": "NPC",
       "title": "Militsens anker — tidligere sherif",
       "location": "Phandalin / Butter Skull Ranch",
       "description": "Tidligere sherif, reddet af gruppen fra orkernes fangenskab på Butter Skull Ranch. Hård og direkte, uden tålmodighed for frygt. Har siden ledet Phandalins spæde milits sammen med Tolbin og Brutus.",
@@ -65,7 +58,6 @@
     },
     {
       "name": "Brandon",
-      "kind": "NPC",
       "title": "Falcons ranger — forbindelsesofficer i Phandalin",
       "location": "Phandalin / Neverwinter Forest",
       "description": "Falcons udsendte i Phandalin, loyal ranger. Tror stadig, at Heart of Thunder blev destrueret i toppen af Tower of Storms. Presser på for et lille recon-hold, efter aftale med Falcon, der kan ramme orkernes ledelse direkte — regionen kan ikke vinde en åben krig.",
@@ -74,7 +66,6 @@
     },
     {
       "name": "Cryovain",
-      "kind": "NPC",
       "title": "Ung hvid drage",
       "location": "Icespire Hold",
       "description": "Usædvanligt intelligent og påfaldende forfængelig — taler hellere end den kæmper. Har en uafgjort personlig sag med Tolbin siden deres kamp i Phandalin, og har nu direkte truet både ham og Elyra. Observerer fra afstand og venter på, at alle andre udmatter hinanden.",
@@ -83,7 +74,6 @@
     },
     {
       "name": "Dazlyn",
-      "kind": "NPC",
       "title": "Dværg, reddet fra Axeholm",
       "location": "Phandalin / Axeholm",
       "description": "Dværgebyggemester og arkæolog, som gruppen mødte første gang i Temple of Greed, og senere befriede fra Axeholms illusionsloop sammen med Norbus. Tydeligt bekymret for sin ven, jo længere tid der går.",
@@ -91,7 +81,6 @@
     },
     {
       "name": "Norbus",
-      "kind": "NPC",
       "title": "Dværg, besat af en gammel amulet",
       "location": "Phandalin",
       "description": "Dværgebyggemester og arkæolog, redet fra Axeholm sammen med Dazlyn, men bærer nu en amulet indskrevet med \"Greed is good\", fundet i Grådighedens Tempel. Opfører sig mere og mere underligt, jo længere han bærer den — øjnene skinner forkert, og han taler i fragmenter.",
@@ -99,7 +88,6 @@
     },
     {
       "name": "Falcon",
-      "kind": "NPC",
       "title": "Rangerleder",
       "location": "Falcon's Hunting Lodge, Neverwinter Forest",
       "description": "Aldrig mødt personligt — kun kendt gennem sin udsendte Brandon og et kort, skarpt brev til Casardas. Holder sine rangere og Kryptgarden-elverne strakt til bristepunktet og kan ikke afsætte folk uden for skoven. Ønskede Heart of Thunder fundet og ødelagt, før orkerne fik fat i det.",
@@ -108,63 +96,15 @@
     },
     {
       "name": "Sir Alaric",
-      "kind": "NPC",
       "title": "Tidligere High Vindicator af Neverwinter",
       "location": "Kendt kun fra et brev fundet i Axeholm",
       "description": "Aldrig mødt — kun kendt gennem et gammelt brev. Advarede kongeparret om, at Dagult, dengang steward af Neverwinter, samlede magt gennem korruption og \"usete kræfter\". Sendte Tolbin til Axeholm som eskorte for den kongelige familie, kort før massakren."
     },
     {
       "name": "Dagult Neverember",
-      "kind": "NPC",
       "title": "Lord Protector af Neverwinter",
       "location": "Neverwinter",
       "description": "Regerer Neverwinter, fordi ingen kendt, legitim arving til tronen findes. I Axeholm råbte kong Theron selv hans navn som forræder, før han forsvandt for altid. Hvad det egentlig betyder, er stadig ukendt for gruppen.",
-      "image": ""
-    },
-    {
-      "name": "Casardas",
-      "kind": "Spillerkarakter",
-      "title": "Rouge",
-      "location": "Kryptgarden Forest (oprindelse)",
-      "description": "Spejder og Falcon-kontakt med ukueligt skov-kendskab. Dirkede vault-porten op i Halias laboratorium. Da spejlrummets gåde krævede, at han pegede på sit eget utænkelige, valgte han: at forsegle døren bag sig og gå alene med skatten, og efterlade resten af gruppen fanget. Bærer nu amuletten \"Greed is good\" — grebet bevidst gennem sin kappe for at undgå direkte kontakt.",
-      "image": "",
-      "mapPin": ""
-    },
-    {
-      "name": "Fizzel",
-      "kind": "Spillerkarakter",
-      "title": "High elf wizard",
-      "location": "Waterdeep (oprindelse)",
-      "description": "Wizard med en fortid i Waterdeep, hvor en anklage om forbudt magi mod Lady Windseeker næsten kostede ham alt — renset efter en duel gruppen vandt for ham. Knækkede spejlrummets gåde i Halias laboratorium ved hjælp af Loross og arkane kundskaber. Hans utænkelige: at redde sig selv ved at gifte sig med Lady Windseeker i stedet for at stå ved sin uskyld."
-    },
-    {
-      "name": "Zaptor",
-      "kind": "Spillerkarakter",
-      "title": "Veteran — bærer af Heart of Thunder",
-      "location": "Ukendt oprindelse",
-      "description": "Erfaren veteran, dreven mod mørke og guddommelige kræfter. Rakte ud efter Heart of Thunder på Tower of Storms og modtog en direkte Talos-vision — lodtrækning gjorde ham bærer. Tømte alene kedlen i Halias vault og forblev knap stående. Hans utænkelige: at ødelægge Heart of Thunder uden tøven og uden nysgerrighed efter dets kraft."
-    },
-    {
-      "name": "Brutus",
-      "kind": "Spillerkarakter",
-      "title": "Fighter",
-      "location": "Ukendt oprindelse",
-      "description": "Frygtløs fighter, drevet af kamp, guld og eventyrlyst — men også kampagnens moralske bremseklods. Stoppede Norbus fra at gå gennem den nyåbnede dør i Halias laboratorium. Hans utænkelige: at trække sig bag de svageste ved barrikaden og lade dem tage slagene for at redde sig selv."
-    },
-    {
-      "name": "Rohgar",
-      "kind": "Spillerkarakter",
-      "title": "Dragonborn paladin",
-      "location": "Ukendt oprindelse",
-      "description": "Dragonborn paladin med stærk retfærdighedssans. Modtog Tolbins fortrolige besked før Axeholm — en bøn om dømmekraft, ikke løgn. Hans utænkelige: at afsløre arvingens sandhed for en udvalgt, betroet kreds — selv en \"sikker\" betroet er for ham et løftebrud.",
-      "image": ""
-    },
-    {
-      "name": "Taiim",
-      "kind": "Spillerkarakter",
-      "title": "Ranger — bærer af Ember of the Last Heirs",
-      "location": "Ukendt oprindelse",
-      "description": "Ranger formet af tab — hans forældre blev dræbt af maskerede skatteopkrævere, men af hvem helt præcist vides endnu ikke. Genkendte Elyra i familieportrættet i Axeholm. Bærer Ember of the Last Heirs, en ring med et fragment af kongeparrets sjæle, der straffer ham, når han ikke handler til Elyras beskyttelse. Hans utænkelige: at sænke buen mod forældrenes morder og sige, at fortiden ikke længere betyder noget.",
       "image": ""
     }
   ]
