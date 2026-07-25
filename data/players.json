@@ -1,0 +1,44 @@
+{
+  "players": [
+    {
+      "name": "Casardas",
+      "title": "Rouge",
+      "location": "Kryptgarden Forest (oprindelse)",
+      "description": "Spejder og Falcon-kontakt med ukueligt skov-kendskab. Dirkede vault-porten op i Halias laboratorium. Da spejlrummets gåde krævede, at han pegede på sit eget utænkelige, valgte han: at forsegle døren bag sig og gå alene med skatten, og efterlade resten af gruppen fanget. Bærer nu amuletten \"Greed is good\" — grebet bevidst gennem sin kappe for at undgå direkte kontakt.",
+      "image": "",
+      "mapPin": ""
+    },
+    {
+      "name": "Fizzel",
+      "title": "High elf wizard",
+      "location": "Waterdeep (oprindelse)",
+      "description": "Wizard med en fortid i Waterdeep, hvor en anklage om forbudt magi mod Lady Windseeker næsten kostede ham alt — renset efter en duel gruppen vandt for ham. Knækkede spejlrummets gåde i Halias laboratorium ved hjælp af Loross og arkane kundskaber. Hans utænkelige: at redde sig selv ved at gifte sig med Lady Windseeker i stedet for at stå ved sin uskyld."
+    },
+    {
+      "name": "Zaptor",
+      "title": "Veteran — bærer af Heart of Thunder",
+      "location": "Ukendt oprindelse",
+      "description": "Erfaren veteran, dreven mod mørke og guddommelige kræfter. Rakte ud efter Heart of Thunder på Tower of Storms og modtog en direkte Talos-vision — lodtrækning gjorde ham bærer. Tømte alene kedlen i Halias vault og forblev knap stående. Hans utænkelige: at ødelægge Heart of Thunder uden tøven og uden nysgerrighed efter dets kraft."
+    },
+    {
+      "name": "Brutus",
+      "title": "Fighter",
+      "location": "Ukendt oprindelse",
+      "description": "Frygtløs fighter, drevet af kamp, guld og eventyrlyst — men også kampagnens moralske bremseklods. Stoppede Norbus fra at gå gennem den nyåbnede dør i Halias laboratorium. Hans utænkelige: at trække sig bag de svageste ved barrikaden og lade dem tage slagene for at redde sig selv."
+    },
+    {
+      "name": "Rohgar",
+      "title": "Dragonborn paladin",
+      "location": "Ukendt oprindelse",
+      "description": "Dragonborn paladin med stærk retfærdighedssans. Modtog Tolbins fortrolige besked før Axeholm — en bøn om dømmekraft, ikke løgn. Hans utænkelige: at afsløre arvingens sandhed for en udvalgt, betroet kreds — selv en \"sikker\" betroet er for ham et løftebrud.",
+      "image": ""
+    },
+    {
+      "name": "Taiim",
+      "title": "Ranger — bærer af Ember of the Last Heirs",
+      "location": "Ukendt oprindelse",
+      "description": "Ranger formet af tab — hans forældre blev dræbt af maskerede skatteopkrævere, men af hvem helt præcist vides endnu ikke. Genkendte Elyra i familieportrættet i Axeholm. Bærer Ember of the Last Heirs, en ring med et fragment af kongeparrets sjæle, der straffer ham, når han ikke handler til Elyras beskyttelse. Hans utænkelige: at sænke buen mod forældrenes morder og sige, at fortiden ikke længere betyder noget.",
+      "image": ""
+    }
+  ]
+}
