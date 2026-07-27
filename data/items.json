@@ -55,6 +55,30 @@
       "description": "",
       "owner": "Rohgar",
       "visibility": "Synlig"
+    },
+    {
+      "name": "Aelrindel´s Lance",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1785145264899-chatgpt-image-10.-jul.-2026-10.59.27.png",
+      "rarity": "",
+      "owner": "",
+      "visibility": "Skjult",
+      "description": ""
+    },
+    {
+      "name": "Chromatic Breatplate",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1785145314131-chatgpt-image-10.-jul.-2026-11.00.20.png",
+      "rarity": "",
+      "owner": "",
+      "visibility": "Skjult",
+      "description": ""
+    },
+    {
+      "name": "Claw of Tiamat",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1785145354289-chatgpt-image-10.-jul.-2026-10.59.44.png",
+      "rarity": "",
+      "owner": "",
+      "visibility": "Skjult",
+      "description": ""
     }
   ]
 }
