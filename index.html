@@ -380,6 +380,22 @@
   .secret-card .card-name { color: var(--parchment); }
   .secret-card .card-desc { color: var(--parchment-dark); }
   .secret-card .card-meta { color: var(--gold-light); }
+  .secret-card-hidden {
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .secret-card-hidden:hover {
+    background: rgba(242,232,201,0.12);
+  }
+  .secret-reveal-hint, .secret-hide-hint {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--gold-light);
+    opacity: 0.85;
+    margin-top: 0.35rem;
+  }
+  .secret-hide-hint { cursor: pointer; }
   .secret-kind-tag {
     display: inline-block; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.06em;
     text-transform: uppercase; background: rgba(196,74,10,0.3); color: var(--gold-light);
@@ -702,6 +718,7 @@
   });
 
   let pcExpandedName = null;
+  const revealedSecrets = new Set();
 
   Promise.all([
     loadJSON('data/players.json'),
@@ -711,7 +728,7 @@
   ]).then(([playerData, itemsData, personalData]) => {
     if (!playerData || !playerData.players || !playerData.players.length) return;
     const allItems = (itemsData && itemsData.items) || [];
-    const allPersonal = (personalData && personalData.personal) || [];
+    const allPersonal = ((personalData && personalData.personal) || []).map((p, i) => ({ ...p, __idx: i }));
     const norm = s => (s || '').trim().toLowerCase();
 
     function pcDetailHTML(n) {
@@ -751,16 +768,29 @@
       const secretsHTML = mySecrets.length ? `
         <div class="pc-section pc-secrets">
           <h4 class="pc-section-heading">🔮 Hemmelige beskeder</h4>
-          <div class="card-list">${mySecrets.map(p => `
-            <div class="card secret-card">
-              ${p.image ? `<img class="card-media card-media-item" src="${esc(p.image)}" alt="">` : ''}
-              <div class="card-body">
-                <div class="card-name">${esc(p.title)} <span class="secret-kind-tag">${esc(p.kind)}</span></div>
-                ${p.date ? `<div class="card-meta">${esc(p.date)}</div>` : ''}
-                <div class="card-desc">${esc(p.content || '')}</div>
-                ${renderPdfBlock(p.pdf)}
-              </div>
-            </div>`).join('')}</div>
+          <div class="card-list">${mySecrets.map(p => {
+            const isRevealed = revealedSecrets.has(p.__idx);
+            if (!isRevealed) {
+              return `
+                <div class="card secret-card secret-card-hidden" data-secret-toggle="${p.__idx}">
+                  <div class="card-body">
+                    <div class="card-name">${esc(p.title)} <span class="secret-kind-tag">${esc(p.kind)}</span></div>
+                    <div class="secret-reveal-hint">👁 Klik for at afsløre</div>
+                  </div>
+                </div>`;
+            }
+            return `
+              <div class="card secret-card" data-secret-toggle="${p.__idx}">
+                ${p.image ? `<img class="card-media card-media-item" src="${esc(p.image)}" alt="">` : ''}
+                <div class="card-body">
+                  <div class="card-name">${esc(p.title)} <span class="secret-kind-tag">${esc(p.kind)}</span></div>
+                  ${p.date ? `<div class="card-meta">${esc(p.date)}</div>` : ''}
+                  <div class="card-desc">${esc(p.content || '')}</div>
+                  ${renderPdfBlock(p.pdf)}
+                  <div class="secret-hide-hint">👁 Klik for at skjule igen</div>
+                </div>
+              </div>`;
+          }).join('')}</div>
         </div>` : '';
 
       if (!itemsHTML && !notesHTML && !secretsHTML) {
@@ -792,6 +822,14 @@
         el.addEventListener('click', () => {
           const name = el.dataset.pcToggle;
           pcExpandedName = (pcExpandedName === name) ? null : name;
+          renderAll();
+        });
+      });
+      document.querySelectorAll('[data-secret-toggle]').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const idx = Number(el.dataset.secretToggle);
+          if (revealedSecrets.has(idx)) revealedSecrets.delete(idx); else revealedSecrets.add(idx);
           renderAll();
         });
       });
