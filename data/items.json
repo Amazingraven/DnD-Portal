@@ -5,7 +5,7 @@
       "rarity": "Eldritch Artifact",
       "description": "Sortlæderbundet grimoire skrevet på Loross, taget fra Halias laboratorium. Kræver magiske kræfter at læse uden at blive opslugt.",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1783863804975-chatgpt-image-13.-jun.-2026-13.34.03.png",
-      "owner": "Zaptor",
+      "owner": "Fizzel",
       "visibility": "Synlig"
     },
     {
@@ -84,7 +84,7 @@
       "name": "Lantern of the Last Road",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1785321431882-lantern-of-the-last-road.png",
       "rarity": "",
-      "owner": "",
+      "owner": "Fizzel",
       "visibility": "Synlig",
       "description": ""
     },
@@ -92,8 +92,8 @@
       "name": "Black Grimoire - del 1",
       "image": "https://amazingraven.github.io/DnD-Portal/data/images/1785588837801-chatgpt-image-13.-jun.-2026-13.34.54.png",
       "rarity": "",
-      "owner": "",
-      "visibility": "Skjult",
+      "owner": "Fizzel",
+      "visibility": "Synlig",
       "description": ""
     }
   ]
