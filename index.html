@@ -780,14 +780,14 @@
                 </div>`;
             }
             return `
-              <div class="card secret-card" data-secret-toggle="${p.__idx}">
+              <div class="card secret-card">
                 ${p.image ? `<img class="card-media card-media-item" src="${esc(p.image)}" alt="">` : ''}
                 <div class="card-body">
                   <div class="card-name">${esc(p.title)} <span class="secret-kind-tag">${esc(p.kind)}</span></div>
                   ${p.date ? `<div class="card-meta">${esc(p.date)}</div>` : ''}
                   <div class="card-desc">${esc(p.content || '')}</div>
                   ${renderPdfBlock(p.pdf)}
-                  <div class="secret-hide-hint">👁 Klik for at skjule igen</div>
+                  <div class="secret-hide-hint" data-secret-toggle="${p.__idx}">👁 Klik for at skjule igen</div>
                 </div>
               </div>`;
           }).join('')}</div>
