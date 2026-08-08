@@ -95,6 +95,14 @@
       "owner": "Fizzel",
       "visibility": "Synlig",
       "description": ""
+    },
+    {
+      "name": "Token of the Blood Champion",
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1786186917864-chatgpt-image-8.-aug.-2026-13.01.12.png",
+      "rarity": "",
+      "owner": "",
+      "visibility": "Skjult",
+      "description": ""
     }
   ]
 }
