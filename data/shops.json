@@ -255,7 +255,7 @@
       {
         "id": "item_j4fri2ti2md",
         "name": "Posion coating",
-        "qty": 6,
+        "qty": 4,
         "price": "10",
         "type": "Weapon coating",
         "rules": "Application Time: Takes 1 Action in combat - (unless you have the Poisoner feat, which allows a bonus action).\nCapacity: 1 vial/dose coats 1 melee weapon for (slashing or piercing).\nDuration: Lasts until the coated weapon has hit 3 times or rest/long rest.\nBasic Poison: Deals an extra 1d4 poison damage on a hit."
