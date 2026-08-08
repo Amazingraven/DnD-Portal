@@ -227,5 +227,47 @@
       }
     ],
     "mapPin": "Phandalin"
+  },
+  {
+    "id": "shop_puup3g1aqgi",
+    "name": "Rangers Supplies",
+    "keeper": "",
+    "icon": "",
+    "mapPin": "Falcon´s Hunting Lodge",
+    "enabled": false,
+    "items": [
+      {
+        "id": "item_chsgju75u76",
+        "name": "Scouting Bow",
+        "qty": 1,
+        "price": "350",
+        "type": "Short Bow + 1",
+        "rules": "Magical (+1 to hit & 1+ dmg)\nDamage: 1d6 piercing\nRange: 80/320 ft"
+      },
+      {
+        "id": "item_c8zo58ow4mk",
+        "name": "Boots of Elvenkind",
+        "qty": 2,
+        "price": "450",
+        "type": "Boots",
+        "rules": "Effect: Your steps make no sound on any surface. \nYou get advantage on Dexterity (Stealth) checks relying on silent movement."
+      },
+      {
+        "id": "item_j4fri2ti2md",
+        "name": "Posion coating",
+        "qty": 6,
+        "price": "10",
+        "type": "Weapon coating",
+        "rules": "Application Time: Takes 1 Action in combat - (unless you have the Poisoner feat, which allows a bonus action).\nCapacity: 1 vial/dose coats 1 melee weapon for (slashing or piercing).\nDuration: Lasts until the coated weapon has hit 3 times or rest/long rest.\nBasic Poison: Deals an extra 1d4 poison damage on a hit."
+      },
+      {
+        "id": "item_dro6llf41n5",
+        "name": "Arrow of Beast Slaying",
+        "qty": 6,
+        "price": "35",
+        "type": "",
+        "rules": "On a hit it deals an extra 1d10 and forces a DC 17 Constitution save.  piercing damage is dobbled on failure."
+      }
+    ]
   }
 ]
