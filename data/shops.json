@@ -231,10 +231,10 @@
   {
     "id": "shop_puup3g1aqgi",
     "name": "Rangers Supplies",
-    "keeper": "",
+    "keeper": "Falcon",
     "icon": "",
     "mapPin": "Falcon´s Hunting Lodge",
-    "enabled": false,
+    "enabled": true,
     "items": [
       {
         "id": "item_chsgju75u76",
