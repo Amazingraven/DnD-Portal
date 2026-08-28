@@ -61,7 +61,7 @@
       "name": "Hell Pit Orges - Ring of Blood",
       "x": 89.9,
       "y": 43.5,
-      "hidden": true
+      "hidden": false
     },
     {
       "id": "pin_c1gog6r4rv",
@@ -75,7 +75,7 @@
       "name": "Court of the Icespire Orcs",
       "x": 75.4,
       "y": 37.7,
-      "hidden": true
+      "hidden": false
     }
   ]
 }
