@@ -111,6 +111,54 @@
       "owner": "",
       "visibility": "Skjult",
       "description": ""
+    },
+    {
+      "name": "THE GREED",
+      "rarity": "Cursed Artifact",
+      "description": "En amulet fundet i Grådighedens Tempel, indgraveret med ordene \"Greed is good\". Den hvisker til sin bærer om den største skat, deres hjerte begærer — men hvad den peger mod, siger måske mere om bæreren end om skatten selv.",
+      "image": "",
+      "owner": "Casardas",
+      "visibility": "Synlig"
+    },
+    {
+      "name": "Dimoridium Handcuffs",
+      "rarity": "Suppressive Relic",
+      "description": "Håndjern smedet til at kue medfødt ildmagi ved berøring. Fundet i Halia Thorntons vault under Miner's Exchange.",
+      "image": "",
+      "owner": "Casardas",
+      "visibility": "Synlig"
+    },
+    {
+      "name": "Zhentarims gældsbog",
+      "rarity": "Politisk pressionsmiddel",
+      "description": "En bogholderi-protokol over Phandalins gæld til Zhentarim, taget fra Halia Thorntons vault. Navne, beløb og datoer nok til at lægge byens økonomiske afhængighed helt åben.",
+      "image": "",
+      "owner": "Taiim",
+      "visibility": "Synlig"
+    },
+    {
+      "name": "Krypt-kort",
+      "rarity": "Elverkort",
+      "description": "Et gammelt kort taget fra Halia Thorntons vault, der viser to ruter gennem krypten under Phandalin: én til \"Cross Roads\", hvor den sorte drage bad om at mødes igen, og én til \"Grave of the Last Dragon Hunter\".",
+      "image": "",
+      "owner": "",
+      "visibility": "Synlig"
+    },
+    {
+      "name": "Zhentarim-snigmorder-bælte",
+      "rarity": "Assassin's Kit",
+      "description": "Et bælte taget fra Halia Thorntons vault, udstyret til hurtig og lydløs kamp — en snigmorders redskab, nu i heltenes besiddelse.",
+      "image": "",
+      "owner": "Brutus",
+      "visibility": "Synlig"
+    },
+    {
+      "name": "Zhentarim-snigmorder-bælte",
+      "rarity": "Assassin's Kit",
+      "description": "Et bælte taget fra Halia Thorntons vault, udstyret til hurtig og lydløs kamp — en snigmorders redskab, nu i heltenes besiddelse.",
+      "image": "",
+      "owner": "Casardas",
+      "visibility": "Synlig"
     }
   ]
 }
