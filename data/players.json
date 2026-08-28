@@ -27,11 +27,12 @@
       "description": "Frygtløs fighter, drevet af kamp, guld og eventyrlyst — men også kampagnens moralske bremseklods. Stoppede Norbus fra at gå gennem den nyåbnede dør i Halias laboratorium. Hans utænkelige: at trække sig bag de svageste ved barrikaden og lade dem tage slagene for at redde sig selv."
     },
     {
-      "name": "Rohgar",
+      "name": "Rhogar",
       "title": "Dragonborn paladin",
       "location": "Ukendt oprindelse",
       "description": "Dragonborn paladin med stærk retfærdighedssans. Modtog Tolbins fortrolige besked før Axeholm — en bøn om dømmekraft, ikke løgn. Hans utænkelige: at afsløre arvingens sandhed for en udvalgt, betroet kreds — selv en \"sikker\" betroet er for ham et løftebrud.",
-      "image": ""
+      "image": "https://amazingraven.github.io/DnD-Portal/data/images/1787904610855-3cfb03bb-b23e-4a93-85bf-1d774821e052.jpg",
+      "mapPin": ""
     },
     {
       "name": "Taiim",
