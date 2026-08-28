@@ -147,7 +147,7 @@
     {
       "name": "Zhentarim-snigmorder-bælte",
       "rarity": "Assassin's Kit",
-      "description": "Et bælte taget fra Halia Thorntons vault, udstyret til hurtig og lydløs kamp — en snigmorders redskab, nu i heltenes besiddelse.",
+      "description": "Et bælte taget fra Halia Thorntons vault, udstyret til hurtig og lydløs kamp — en snigmorders redskab. (effekt: Posion coat, som gratis action, ved initiation af combat)",
       "image": "",
       "owner": "Brutus",
       "visibility": "Synlig"
@@ -155,7 +155,7 @@
     {
       "name": "Zhentarim-snigmorder-bælte",
       "rarity": "Assassin's Kit",
-      "description": "Et bælte taget fra Halia Thorntons vault, udstyret til hurtig og lydløs kamp — en snigmorders redskab, nu i heltenes besiddelse.",
+      "description": "Et bælte taget fra Halia Thorntons vault, udstyret til hurtig og lydløs kamp — en snigmorders redskab. (effekt: Posion coat, som gratis action, ved initiation af combat)",
       "image": "",
       "owner": "Casardas",
       "visibility": "Synlig"
