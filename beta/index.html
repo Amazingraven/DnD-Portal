@@ -616,12 +616,13 @@ function sessionDetail(no) {
 }
 
 /* ---------- Folk ---------- */
-function personRow(p) {
+function personRow(p, note = '') {
   const face = p.image ? img(p.image, 'row-thumb') : `<span class="mono" aria-hidden="true">${esc(initial(p.name))}</span>`;
   return `<a class="row" href="${personHref(p)}" data-search="${esc(norm([p.name, p.title, p.location].join(' ')))}">${face}
     <span class="row-text"><span class="row-name">${esc(p.name)}</span>
       ${p.title ? `<span class="row-meta">${esc(p.title)}</span>` : ''}
-      ${p.location ? `<span class="row-place">${esc(p.location)}</span>` : ''}</span></a>`;
+      ${p.location ? `<span class="row-place">${esc(p.location)}</span>` : ''}
+      ${note ? `<span class="row-place" style="color:var(--rust);font-style:normal;font-family:var(--display);font-size:11.5px;font-weight:600;margin-top:2px">${esc(note)}</span>` : ''}</span></a>`;
 }
 function folkHead(active) {
   return `<header class="head tex"><h1>Folk</h1>
@@ -672,16 +673,10 @@ function npcDetail(name) {
 function partyScreen() {
   const me = prefs().me;
   const mine = me && findPerson(me);
-  const tiles = S.players.map(p => `
-    <a class="tile tex pc-tile ${mine && mine.name === p.name ? 'me' : ''}" href="#/folk/selskabet/${enc(p.name)}">
-      ${p.image ? img(p.image, 'pc-face') : `<span class="mono" aria-hidden="true">${esc(initial(p.name))}</span>`}
-      <span class="tile-name" style="font-size:15px">${esc(p.name)}</span>
-      <span class="tile-owner">${esc([p.title, p.location].filter(Boolean).join(' · '))}</span>
-    </a>`).join('');
   return folkHead('pc') + `<div class="body">
-    ${mine && mine._pc ? `<div style="margin-bottom:16px">${linkCard(`#/folk/selskabet/${enc(mine.name)}`, ICON.doc, 'Mine papirer', mine.name)}</div>` : ''}
-    ${S.players.length ? `<div class="grid2">${tiles}</div>` : '<p class="empty">Ingen karakterer lagt op endnu.</p>'}
-    ${!mine && S.players.length ? `<p class="muted" style="margin-top:16px;font-size:15px">Åbn din egen karakter og vælg "Det er min karakter", så ligger dine papirer lige her næste gang.</p>` : ''}
+    ${mine && mine._pc ? `<div style="margin-bottom:6px">${linkCard(`#/folk/selskabet/${enc(mine.name)}`, ICON.doc, 'Mine papirer', mine.name)}</div>` : ''}
+    ${S.players.length ? `<div class="rows two">${S.players.map(p => personRow({ ...p, _pc: true }, mine && mine.name === p.name ? 'Din karakter' : '')).join('')}</div>` : '<p class="empty">Ingen karakterer lagt op endnu.</p>'}
+    ${!mine && S.players.length ? `<p class="muted" style="margin-top:8px;font-size:15px">Åbn din egen karakter og vælg "Det er min karakter", så ligger dine papirer lige her næste gang.</p>` : ''}
   </div>`;
 }
 const revealed = new Set();
