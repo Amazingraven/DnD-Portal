@@ -248,6 +248,9 @@ audio { width: 100%; margin-top: 18px; }
   font-family: var(--display); font-size: 10.5px; font-weight: 600; padding: 3px 7px; white-space: nowrap;
 }
 .pin-dot { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 11px; height: 11px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 3px rgba(240,229,200,0.85); }
+.pin-label { opacity: 0.2; transition: opacity 0.2s; }
+.pin[aria-pressed="true"] .pin-label, .pin:focus-visible .pin-label { opacity: 1; }
+@media (hover: hover) { .pin:hover .pin-label { opacity: 1; } }
 .pin.below .pin-label { bottom: auto; top: 30px; }
 .pin.here .pin-label { border-color: var(--rust); }
 .pin.here .pin-dot { background: var(--rust); width: 14px; height: 14px; box-shadow: 0 0 0 4px rgba(240,229,200,0.9); }
@@ -630,15 +633,13 @@ function folkHead(active) {
       <a href="#/folk" aria-current="${active === 'npc'}">${esc(L('npcs', 'Folk vi har mødt'))}</a>
       <a href="#/folk/selskabet" aria-current="${active === 'pc'}">${esc(L('players', 'Selskabet'))}</a>
     </div>
-    ${active === 'npc' ? `<label class="sr" for="folk-search">Søg efter en person</label><input id="folk-search" class="search tex" type="search" placeholder="Søg efter navn, titel eller sted" autocomplete="off">` : ''}
   </header>`;
 }
 function screenFolk(r) {
   if (r.a === 'selskabet') return r.b ? pcDetail(r.b) : partyScreen();
   if (r.a) return npcDetail(r.a);
   if (!S.npcs.length) return folkHead('npc') + '<p class="empty">Ingen personer lagt op endnu.</p>';
-  return folkHead('npc') + `<div class="body"><div class="rows two" id="folk-list">${S.npcs.map(n => personRow({ ...n, _pc: false })).join('')}</div>
-    <p class="empty" id="folk-none" hidden>Ingen matcher søgningen.</p></div>`;
+  return folkHead('npc') + `<div class="body"><div class="rows two" id="folk-list">${S.npcs.map(n => personRow({ ...n, _pc: false })).join('')}</div></div>`;
 }
 function detailHero(p, gallery, back) {
   const gi = galleryIndex(gallery, p.name);
