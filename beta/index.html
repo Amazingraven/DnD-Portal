@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="da" data-data-base="../data/">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e4d4aa">
+<title>Phandalins Krønike</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f0e5c8;
+  --paper-deep: #e4d4aa;
+  --ink: #2b1d0d;
+  --ink-2: #5a4526;
+  --ink-3: #6b5637;
+  --rust: #8b2e0a;
+  --rust-2: #6d2206;
+  --gold: #a8792a;
+  --line: rgba(43,29,13,0.18);
+  --line-2: rgba(43,29,13,0.28);
+  --night: #1b140a;
+  --display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --body: 'EB Garamond', Garamond, Georgia, serif;
+  --nav-h: 68px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 17px; line-height: 1.5;
+  -webkit-tap-highlight-color: rgba(139,46,10,0.12);
+}
+a { color: var(--rust); }
+a:hover { color: var(--rust-2); }
+button { font: inherit; color: inherit; }
+img { max-width: 100%; }
+.tex { background-image: url(data:image/png;base64,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); background-size: 210px 210px; background-repeat: repeat; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+
+/* ---------- app shell ---------- */
+.view { min-height: 100vh; padding-top: var(--safe-t); padding-bottom: calc(var(--nav-h) + var(--safe-b) + 16px); }
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+  background-color: var(--paper-deep); border-top: 1px solid var(--gold);
+  padding: 6px 4px calc(8px + var(--safe-b));
+}
+.tabbar a {
+  min-height: 54px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  text-decoration: none; color: var(--ink-3); font-family: var(--display); font-size: 10.5px; font-weight: 600;
+}
+.tabbar a[aria-current="page"] { color: var(--rust); }
+.tabbar svg { width: 23px; height: 23px; }
+.brand { display: none; }
+
+/* ---------- screen parts ---------- */
+.head { padding: 18px 18px 14px; background-color: var(--paper); border-bottom: 1px solid var(--line); }
+.head.plain { border-bottom-color: var(--gold); }
+.kicker { font-size: 14px; font-style: italic; color: var(--ink-3); }
+h1 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 27px; line-height: 1.15; letter-spacing: 0.005em; }
+.sub { margin-top: 4px; font-size: 15px; color: var(--ink-2); }
+.body { padding: 16px 18px 0; }
+.back {
+  width: 46px; height: 46px; margin: -6px 0 2px -12px; display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; color: var(--ink);
+}
+.back svg { width: 21px; height: 21px; }
+.rule { width: 54px; height: 1px; background: var(--gold); margin: 14px 0; border: 0; }
+.muted { color: var(--ink-3); font-style: italic; }
+.empty { padding: 28px 4px; color: var(--ink-3); font-style: italic; text-align: center; }
+
+.seg { margin-top: 12px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line-2); }
+.seg a {
+  min-height: 46px; display: flex; align-items: center; justify-content: center; text-decoration: none;
+  color: var(--ink); font-family: var(--display); font-size: 12.5px; font-weight: 600;
+}
+.seg a + a { border-left: 1px solid var(--line-2); }
+.seg a[aria-current="true"] { background-color: var(--rust); color: var(--paper); }
+
+.search {
+  margin-top: 12px; width: 100%; min-height: 48px; padding: 0 14px;
+  background-color: var(--paper-deep); border: 1px solid var(--line-2); border-radius: 0;
+  color: var(--ink); font-family: var(--body); font-size: 17px; -webkit-appearance: none; appearance: none;
+}
+.search::placeholder { color: var(--ink-3); }
+
+.chips { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  min-height: 44px; padding: 0 16px; border: 1px solid var(--line-2); background-color: var(--paper-deep);
+  font-family: var(--display); font-size: 12px; font-weight: 600; cursor: pointer; color: var(--ink);
+}
+.chip[aria-pressed="true"] { background-color: var(--rust); color: var(--paper); border-color: var(--rust); }
+
+.link-card {
+  min-height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 14px; background-color: var(--paper-deep); border: 1px solid var(--line-2);
+  text-decoration: none; color: var(--ink); cursor: pointer; width: 100%; text-align: left;
+}
+.link-card + .link-card { margin-top: 10px; }
+.link-card .lc-main { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.link-card .lc-title { font-family: var(--display); font-size: 14.5px; font-weight: 600; }
+.link-card .lc-sub { display: block; font-size: 13.5px; font-style: italic; color: var(--ink-3); }
+.link-card svg { flex-shrink: 0; }
+.chev { width: 17px; height: 17px; color: var(--rust); }
+.ico { width: 20px; height: 20px; color: var(--rust); }
+
+/* ---------- lists ---------- */
+.rows { display: flex; flex-direction: column; }
+.row {
+  display: flex; gap: 14px; align-items: center; padding: 14px 0; text-decoration: none; color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.row:last-child { border-bottom: 0; }
+.row-thumb { width: 68px; height: 80px; object-fit: cover; object-position: 50% 20%; border: 1px solid var(--gold); flex-shrink: 0; background: var(--paper-deep); }
+.mono {
+  width: 68px; height: 80px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--gold); background-color: var(--paper-deep);
+  font-family: var(--display); font-size: 26px; font-weight: 700; color: var(--rust);
+}
+.row-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex-grow: 1; }
+.row-name { font-family: var(--display); font-size: 16px; font-weight: 600; line-height: 1.25; }
+.row-meta { font-size: 14.5px; color: var(--ink-2); line-height: 1.3; }
+.row-place { font-size: 13px; font-style: italic; color: var(--ink-3); }
+
+.chapter-num { font-family: var(--display); font-size: 23px; font-weight: 600; color: var(--ink-3); width: 34px; flex-shrink: 0; text-align: left; }
+.row.latest .chapter-num { color: var(--rust); }
+
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.tile {
+  display: flex; flex-direction: column; text-decoration: none; color: var(--ink);
+  background-color: var(--paper-deep); border: 1px solid var(--gold); min-width: 0;
+}
+.tile img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; background: var(--paper); }
+.tile-text { padding: 10px 11px 12px; display: flex; flex-direction: column; gap: 3px; }
+.tile-name { font-family: var(--display); font-size: 13.5px; font-weight: 600; line-height: 1.25; }
+.tile-meta { font-size: 13px; font-style: italic; color: var(--ink-3); }
+.tile-owner { font-size: 13.5px; color: var(--ink-2); }
+
+.pc-tile { padding: 13px 13px 14px; gap: 8px; }
+.pc-tile .mono, .pc-tile img.pc-face { width: 46px; height: 46px; font-size: 19px; }
+.pc-tile img.pc-face { aspect-ratio: auto; object-fit: cover; object-position: 50% 20%; border: 1px solid var(--gold); }
+.pc-tile.me { border-color: var(--rust); box-shadow: inset 0 0 0 1px var(--rust); }
+
+.shop-row {
+  display: flex; align-items: center; gap: 13px; padding: 14px; text-decoration: none; color: var(--ink);
+  background-color: var(--paper-deep); border: 1px solid var(--gold);
+}
+.shop-row + .shop-row { margin-top: 12px; }
+.shop-mark {
+  width: 44px; height: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line-2); font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--rust);
+}
+
+/* ---------- detail ---------- */
+.hero { position: relative; height: 58vh; max-height: 470px; min-height: 320px; overflow: hidden; background-color: var(--paper-deep); }
+.hero > button.zoom-hit { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; }
+.hero img.hero-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; display: block; }
+.hero.contain img.hero-img { object-fit: contain; }
+.hero-scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 52%; background: linear-gradient(to top, var(--paper) 6%, rgba(240,229,200,0.86) 42%, rgba(240,229,200,0)); pointer-events: none; }
+.hero-text { position: absolute; left: 18px; right: 18px; bottom: 14px; pointer-events: none; }
+.hero-text h1 { font-size: 30px; font-weight: 700; }
+.hero-back {
+  position: absolute; top: calc(14px + var(--safe-t)); left: 14px; width: 46px; height: 46px; z-index: 2;
+  display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--ink);
+  background: rgba(240,229,200,0.92); border: 1px solid var(--line-2);
+}
+.hero-back svg { width: 21px; height: 21px; }
+.zoom-badge {
+  position: absolute; right: 14px; bottom: 14px; z-index: 2; display: flex; align-items: center; gap: 7px;
+  background: rgba(27,20,10,0.78); color: var(--paper); padding: 8px 12px;
+  font-family: var(--display); font-size: 11.5px; font-weight: 600; pointer-events: none;
+}
+.zoom-badge svg { width: 15px; height: 15px; }
+.hero.has-title .zoom-badge { top: calc(14px + var(--safe-t)); bottom: auto; }
+
+.prose { font-size: 17.5px; line-height: 1.64; }
+.prose p { margin: 0 0 14px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose a.person { text-decoration: none; border-bottom: 1px solid var(--rust); }
+.star-rule { display: flex; align-items: center; gap: 10px; margin: 14px 0 18px; }
+.star-rule span { height: 1px; background: var(--gold); flex-grow: 1; }
+.star-rule span:first-child { flex-grow: 0; width: 34px; }
+.star-rule svg { width: 13px; height: 13px; color: var(--gold); }
+
+.section-h { margin: 26px 0 10px; font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--ink-2); }
+.inline-img { display: block; width: 100%; margin: 4px 0 18px; border: 1px solid var(--gold); cursor: zoom-in; padding: 0; background: none; }
+.inline-img img { display: block; width: 100%; }
+
+.audio-card { margin-top: 20px; display: flex; align-items: center; gap: 13px; }
+.audio-card .play { width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%; background: var(--rust); display: flex; align-items: center; justify-content: center; }
+.audio-card .play svg { width: 16px; height: 16px; color: var(--paper); }
+audio { width: 100%; margin-top: 18px; }
+
+.pager { display: flex; gap: 10px; margin-top: 26px; }
+.pager a, .pager span {
+  flex: 1 1 0; min-height: 50px; display: flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid var(--line-2); text-decoration: none; color: var(--ink);
+  font-family: var(--display); font-size: 12.5px; font-weight: 600;
+}
+.pager span { visibility: hidden; }
+.pager svg { width: 15px; height: 15px; }
+
+.paper-card { padding: 14px; background-color: var(--paper-deep); border: 1px solid var(--gold); }
+.paper-card + .paper-card { margin-top: 12px; }
+.paper-kind { font-size: 13.5px; font-style: italic; color: var(--ink-3); }
+.paper-title { font-family: var(--display); font-size: 15.5px; font-weight: 600; line-height: 1.25; margin-top: 2px; }
+.paper-card .prose { font-size: 16.5px; margin-top: 10px; }
+.paper-card .inline-img { margin: 12px 0 0; }
+.paper-card .link-card { margin-top: 12px; background-color: var(--paper); }
+.secret { width: 100%; text-align: left; cursor: pointer; font: inherit; color: inherit; border-color: var(--rust); }
+.secret .reveal { margin-top: 6px; font-size: 14px; color: var(--rust); display: flex; align-items: center; gap: 7px; }
+.secret .reveal svg { width: 16px; height: 16px; }
+.hide-again { all: unset; margin-top: 12px; display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--rust); cursor: pointer; }
+
+.me-toggle { margin-top: 14px; min-height: 48px; padding: 0 16px; width: 100%; border: 1px solid var(--line-2); background-color: var(--paper-deep); font-family: var(--display); font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.me-toggle[aria-pressed="true"] { background-color: var(--rust); border-color: var(--rust); color: var(--paper); }
+
+.stock { display: flex; align-items: flex-start; gap: 12px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.stock:last-child { border-bottom: 0; }
+.stock-main { flex-grow: 1; min-width: 0; }
+.stock-name { font-family: var(--display); font-size: 15px; font-weight: 600; line-height: 1.25; }
+.stock-type { font-size: 14px; font-style: italic; color: var(--ink-3); }
+.stock-rules { margin-top: 5px; font-size: 14.5px; color: var(--ink-2); line-height: 1.4; }
+.stock-side { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
+.price { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--rust); white-space: nowrap; }
+.qty { font-size: 13px; color: var(--ink-2); background-color: var(--paper-deep); border: 1px solid var(--line-2); padding: 1px 8px; white-space: nowrap; }
+.qty.low { border-color: var(--rust); color: var(--rust); }
+.stock.sold { opacity: 0.6; }
+.stock.sold .price { color: var(--ink-2); }
+.stock.sold .qty { background: none; border-style: dashed; }
+
+/* ---------- map ---------- */
+.map-stage { position: relative; line-height: 0; background: var(--paper-deep); border-bottom: 1px solid var(--gold); }
+.map-stage > img { width: 100%; height: auto; display: block; }
+.pin {
+  position: absolute; width: 44px; height: 44px; transform: translate(-50%, -50%);
+  background: none; border: 0; padding: 0; cursor: pointer; line-height: 1.2;
+}
+.pin-label {
+  position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%);
+  background: rgba(240,229,200,0.94); border: 1px solid rgba(43,29,13,0.4); color: var(--ink);
+  font-family: var(--display); font-size: 10.5px; font-weight: 600; padding: 3px 7px; white-space: nowrap;
+}
+.pin-dot { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 11px; height: 11px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 3px rgba(240,229,200,0.85); }
+.pin.below .pin-label { bottom: auto; top: 30px; }
+.pin.here .pin-label { border-color: var(--rust); }
+.pin.here .pin-dot { background: var(--rust); width: 14px; height: 14px; box-shadow: 0 0 0 4px rgba(240,229,200,0.9); }
+.pin[aria-pressed="true"] .pin-label { background: var(--rust); color: var(--paper); border-color: var(--rust); }
+.map-tools { padding: 12px 18px 0; }
+.now-card { margin: 16px 18px 0; padding: 14px 16px 16px; background-color: var(--paper); border: 1px solid var(--gold); }
+.now-card .label { display: flex; justify-content: space-between; gap: 10px; font-family: var(--display); font-size: 12px; font-weight: 600; color: var(--ink-3); }
+.now-card .label i { font-family: var(--body); font-weight: 400; }
+.now-card .place { font-family: var(--display); font-size: 22px; font-weight: 600; margin: 3px 0 10px; }
+.pin-detail { padding: 6px 18px 0; }
+.pin-detail h2 { margin: 18px 0 4px; font-family: var(--display); font-size: 21px; font-weight: 600; }
+
+/* ---------- fullscreen viewer ---------- */
+.viewer { position: fixed; inset: 0; z-index: 100; background: var(--night); color: var(--paper); touch-action: none; user-select: none; -webkit-user-select: none; }
+.viewer[hidden] { display: none; }
+.v-stage { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.v-stage img { max-width: 100%; max-height: 100%; transform-origin: 50% 50%; will-change: transform; -webkit-user-drag: none; }
+.v-top { position: absolute; top: calc(12px + var(--safe-t)); left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
+.v-top > * { pointer-events: auto; }
+.v-btn {
+  min-width: 48px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: rgba(27,20,10,0.72); border: 1px solid rgba(240,229,200,0.32); color: var(--paper); cursor: pointer; padding: 0 12px;
+  font-family: var(--display); font-size: 12px; font-weight: 600;
+}
+.v-btn svg { width: 19px; height: 19px; }
+.v-pct { font-size: 13px; color: rgba(240,229,200,0.8); background: rgba(27,20,10,0.72); border: 1px solid rgba(240,229,200,0.2); padding: 6px 11px; }
+.v-hint {
+  position: absolute; left: 50%; bottom: calc(178px + var(--safe-b)); transform: translateX(-50%);
+  background: rgba(27,20,10,0.8); border: 1px solid rgba(240,229,200,0.2); padding: 8px 14px; font-size: 14.5px; white-space: nowrap;
+  transition: opacity 0.6s; pointer-events: none;
+}
+.v-hint.gone { opacity: 0; }
+.v-foot {
+  pointer-events: none;
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 18px calc(18px + var(--safe-b));
+  background: linear-gradient(to top, var(--night) 30%, rgba(27,20,10,0.88) 65%, rgba(27,20,10,0));
+}
+.v-title { font-family: var(--display); font-size: 19px; font-weight: 600; }
+.v-sub { font-size: 14.5px; font-style: italic; color: rgba(240,229,200,0.72); margin-top: 2px; }
+.v-actions { margin-top: 12px; display: flex; gap: 10px; pointer-events: auto; }
+.v-actions .v-btn { background: transparent; }
+.v-actions .fit { flex-grow: 1; }
+.v-actions .v-btn[disabled] { opacity: 0.3; cursor: default; }
+.v-load { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-style: italic; color: rgba(240,229,200,0.7); }
+
+/* ---------- larger screens ---------- */
+@media (min-width: 700px) {
+  .grid2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .body, .head { padding-left: 28px; padding-right: 28px; }
+  .pin-detail, .map-tools { padding-left: 28px; padding-right: 28px; }
+  .now-card { margin-left: 28px; margin-right: 28px; }
+  .rows.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+  .rows.two .row:last-child { border-bottom: 1px solid var(--line); }
+}
+@media (min-width: 1000px) {
+  :root { --nav-h: 0px; }
+  body { font-size: 18px; }
+  .tabbar {
+    top: 0; right: auto; width: 232px; grid-template-columns: 1fr; grid-auto-rows: min-content; align-content: start;
+    border-top: 0; border-right: 1px solid var(--gold); padding: 26px 14px;
+  }
+  .brand { display: block; padding: 0 8px 22px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+  .brand .kicker { font-size: 13.5px; }
+  .brand .t { font-family: var(--display); font-size: 19px; font-weight: 600; line-height: 1.2; margin-top: 3px; }
+  .tabbar a { flex-direction: row; justify-content: flex-start; gap: 12px; padding: 0 10px; font-size: 13.5px; min-height: 50px; }
+  .tabbar a[aria-current="page"] { background-color: var(--paper); border: 1px solid var(--line-2); }
+  .view { margin-left: 232px; padding-bottom: 60px; }
+  .view > * { max-width: 1060px; }
+  .grid2 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .detail-wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; }
+  .detail-wrap .hero { height: calc(100vh - 40px); max-height: 760px; position: sticky; top: 20px; margin: 20px 0 0 28px; border: 1px solid var(--gold); }
+  .detail-wrap .hero-scrim, .detail-wrap .hero-text { display: none; }
+  .detail-wrap .desk-title { display: block !important; }
+  .reading { max-width: 68ch; }
+  .map-layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(300px, 2fr); align-items: start; }
+  .map-layout .map-side { position: sticky; top: 0; }
+}
+.desk-title { display: none; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<main id="view" class="view" tabindex="-1"><p class="empty">Henter krøniken…</p></main>
+
+<nav class="tabbar tex" aria-label="Hovedmenu">
+  <div class="brand"><div class="kicker" id="brand-kicker"></div><div class="t" id="brand-title"></div></div>
+  <a href="#/kort" data-sec="kort"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5"/><path d="M15 6.5V20"/></svg><span>Kort</span></a>
+  <a href="#/logbog" data-sec="logbog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5S10 4.5 4 4.5v13c6 0 8 2 8 2s2-2 8-2v-13c-6 0-8 2-8 2z"/><path d="M12 6.5v13"/></svg><span>Logbog</span></a>
+  <a href="#/folk" data-sec="folk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.5" cy="8" r="3.2"/><path d="M4 19c0-3 2.4-5 5.5-5s5.5 2 5.5 5"/><path d="M16 5.6a3.2 3.2 0 0 1 0 5.8"/><path d="M17.2 14.6c1.9.7 3.3 2.3 3.3 4.4"/></svg><span>Folk</span></a>
+  <a href="#/fund" data-sec="fund"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10l4 5-9 11L3 9z"/><path d="M3 9h18"/><path d="M7 4l2 5 3 11 3-11 2-5"/></svg><span>Fund</span></a>
+  <a href="#/butik" data-sec="butik"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h12l1.4 10.5H4.6z"/><path d="M9 9V6.6a3 3 0 0 1 6 0V9"/></svg><span>Butik</span></a>
+</nav>
+
+<div id="viewer" class="viewer" hidden role="dialog" aria-modal="true" aria-label="Billede i fuld skærm">
+  <div class="v-stage" id="v-stage"><img id="v-img" alt=""><div class="v-load" id="v-load">Henter billedet…</div></div>
+  <div class="v-top">
+    <button type="button" class="v-btn" id="v-close" aria-label="Luk fuld skærm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg></button>
+    <span class="v-pct" id="v-pct" aria-live="polite">100 %</span>
+  </div>
+  <div class="v-hint" id="v-hint">Knib for at zoome · dobbelttryk nulstiller</div>
+  <div class="v-foot">
+    <div class="v-title" id="v-title"></div>
+    <div class="v-sub" id="v-sub"></div>
+    <div class="v-actions">
+      <button type="button" class="v-btn fit" id="v-fit">Tilpas til skærm</button>
+      <button type="button" class="v-btn" id="v-prev" aria-label="Forrige billede"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="v-btn" id="v-next" aria-label="Næste billede"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+'use strict';
+
+/* ================= config & helpers ================= */
+const DATA = document.documentElement.dataset.dataBase || 'data/';
+const PREF_KEY = 'phandalin-portal-prefs';
+
+const ICON = {
+  chev: '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
+  back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+  map: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20z"/><path d="M9 4v13.5"/><path d="M15 6.5V20"/></svg>',
+  book: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5S10 4.5 4 4.5v13c6 0 8 2 8 2s2-2 8-2v-13c-6 0-8 2-8 2z"/><path d="M12 6.5v13"/></svg>',
+  doc: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/></svg>',
+  expand: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-7 7"/><path d="M10 20H4v-6"/><path d="M4 20l7-7"/></svg>',
+  play: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>',
+  eye: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.8"/></svg>',
+  star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.6H22l-6.2 4.5 2.4 7.6L12 17.2 5.8 21.7l2.4-7.6L2 9.6h7.6z"/></svg>',
+};
+const zoomBadge = `<span class="zoom-badge">${ICON.expand.replace('class="ico"', '')}Se i fuld skærm</span>`;
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const norm = s => String(s || '').trim().toLowerCase();
+const enc = s => encodeURIComponent(s);
+const initial = name => (String(name || '?').trim()[0] || '?').toUpperCase();
+
+function thumb(url) {
+  if (!url) return '';
+  const m = String(url).match(/^(.*\/data\/)images\/([^/?#]+)\.[a-z0-9]+(\?.*)?$/i);
+  return m ? `${m[1]}thumbs/${m[2]}.jpg` : url;
+}
+/* <img> that tries the small version first and quietly falls back to the original */
+function img(url, cls = '', alt = '', extra = '') {
+  if (!url) return '';
+  const t = thumb(url);
+  const fb = t !== url ? ` data-fallback="${esc(url)}" onerror="if(this.dataset.fallback){this.src=this.dataset.fallback;this.removeAttribute('data-fallback')}"` : '';
+  return `<img class="${cls}" src="${esc(t)}" alt="${esc(alt)}" loading="lazy" decoding="async"${fb}${extra}>`;
+}
+
+function prefs() { try { return JSON.parse(localStorage.getItem(PREF_KEY)) || {}; } catch (e) { return {}; } }
+function setPref(k, v) { const p = prefs(); if (v == null) delete p[k]; else p[k] = v; try { localStorage.setItem(PREF_KEY, JSON.stringify(p)); } catch (e) {} }
+
+async function loadJSON(name) {
+  try { const r = await fetch(DATA + name, { cache: 'no-cache' }); if (!r.ok) throw 0; return await r.json(); }
+  catch (e) { return null; }
+}
+
+/* ================= data ================= */
+const S = { labels: {}, npcs: [], players: [], items: [], sessions: [], personal: [], shops: [], map: null };
+let people = [], aliasRe = null, aliasMap = new Map();
+const L = (k, fb) => (S.labels[k] && String(S.labels[k]).trim()) || fb;
+
+async function loadAll() {
+  const [labels, npcs, players, items, sessions, personal, shops, map] = await Promise.all(
+    ['labels.json', 'npcs.json', 'players.json', 'items.json', 'sessions.json', 'personal.json', 'shops.json', 'map.json'].map(loadJSON));
+  S.labels = labels || {};
+  S.npcs = (npcs && npcs.npcs) || [];
+  S.players = (players && players.players) || [];
+  S.items = ((items && items.items) || []).filter(i => i.visibility !== 'Skjult');
+  S.sessions = ((sessions && sessions.sessions) || []).slice().sort((a, b) => (Number(a.number) || 0) - (Number(b.number) || 0));
+  S.personal = ((personal && personal.personal) || []).map((p, i) => ({ ...p, _i: i }));
+  S.shops = (Array.isArray(shops) ? shops : []).filter(s => s.enabled !== false);
+  S.map = map && map.image ? map : null;
+
+  people = [...S.npcs.map(p => ({ ...p, _pc: false })), ...S.players.map(p => ({ ...p, _pc: true }))];
+  buildAliases();
+
+  const title = L('site_title', 'Phandalins Krønike');
+  document.title = title;
+  document.getElementById('brand-kicker').textContent = L('site_kicker', '');
+  document.getElementById('brand-title').textContent = title;
+}
+
+/* People can be mentioned by full name, or by a unique first name ("Tolbin"). */
+function buildAliases() {
+  aliasMap = new Map();
+  const firstCount = new Map();
+  people.forEach(p => { const f = norm(String(p.name).split(/\s+/)[0]); firstCount.set(f, (firstCount.get(f) || 0) + 1); });
+  people.forEach(p => {
+    if (!p.name) return;
+    aliasMap.set(norm(p.name), p);
+    const first = String(p.name).split(/\s+/)[0];
+    if (first.length >= 4 && first !== p.name && firstCount.get(norm(first)) === 1 && !aliasMap.has(norm(first))) aliasMap.set(norm(first), p);
+  });
+  const keys = [...aliasMap.keys()].sort((a, b) => b.length - a.length);
+  aliasRe = keys.length ? new RegExp(`(^|[^\\p{L}\\p{N}])(${keys.map(k => reEsc(esc(k))).join('|')})(?![\\p{L}\\p{N}])`, 'giu') : null;
+}
+function personHref(p) { return p._pc ? `#/folk/selskabet/${enc(p.name)}` : `#/folk/${enc(p.name)}`; }
+function findPerson(name) { return people.find(p => norm(p.name) === norm(name)); }
+function mentionsOf(p) {
+  const keys = [...aliasMap.entries()].filter(([, v]) => v === p).map(([k]) => k);
+  if (!keys.length) return [];
+  const re = new RegExp(`(^|[^\\p{L}\\p{N}])(${keys.map(reEsc).join('|')})(?![\\p{L}\\p{N}])`, 'iu');
+  return S.sessions.filter(s => re.test(s.recap || ''));
+}
+function sessionsMentioning(text) {
+  const re = new RegExp(`(^|[^\\p{L}\\p{N}])${reEsc(text)}(?![\\p{L}\\p{N}])`, 'iu');
+  return S.sessions.filter(s => re.test(s.recap || ''));
+}
+
+/* Paragraphs with the first mention of each person turned into a link. */
+function prose(text, linkPeople) {
+  const seen = new Set();
+  return String(text || '').trim().split(/\n\s*\n/).filter(Boolean).map(par => {
+    let h = esc(par);
+    if (linkPeople && aliasRe) {
+      h = h.replace(aliasRe, (all, pre, m) => {
+        const p = aliasMap.get(norm(m.replace(/&#39;/g, "'").replace(/&amp;/g, '&')));
+        if (!p || seen.has(p)) return all;
+        seen.add(p);
+        return `${pre}<a class="person" href="${personHref(p)}">${m}</a>`;
+      });
+    }
+    return `<p>${h.replace(/\n/g, '<br>')}</p>`;
+  }).join('');
+}
+
+/* ================= galleries for the fullscreen viewer ================= */
+const galleries = {};
+function zoomAttrs(gallery, index) { return `data-zoom="${esc(gallery)}" data-zoom-i="${index}"`; }
+function single(url, title, sub) {
+  const key = 'one:' + url;
+  galleries[key] = [{ src: url, title, sub }];
+  return zoomAttrs(key, 0);
+}
+function buildGalleries() {
+  galleries.items = S.items.filter(i => i.image).map(i => ({ src: i.image, title: i.name, sub: [i.rarity, i.owner && 'båret af ' + i.owner].filter(Boolean).join(' · '), key: i.name }));
+  galleries.npcs = S.npcs.filter(n => n.image).map(n => ({ src: n.image, title: n.name, sub: n.title || '', key: n.name }));
+  galleries.players = S.players.filter(n => n.image).map(n => ({ src: n.image, title: n.name, sub: n.title || '', key: n.name }));
+}
+const galleryIndex = (g, key) => (galleries[g] || []).findIndex(e => e.key === key);
+
+/* ================= routing ================= */
+const view = document.getElementById('view');
+const scrollMemory = new Map();
+let currentKey = '';
+
+function route() {
+  const parts = location.hash.replace(/^#\/?/, '').split('/').map(p => { try { return decodeURIComponent(p); } catch (e) { return p; } });
+  return { sec: parts[0] || 'kort', a: parts[1] || '', b: parts[2] || '' };
+}
+
+function render() {
+  if (currentKey) scrollMemory.set(currentKey, window.scrollY);
+  const r = route();
+  const key = location.hash || '#/kort';
+  const screens = { kort: screenMap, logbog: screenLog, folk: screenFolk, fund: screenFund, butik: screenShops };
+  const fn = screens[r.sec] || screenMap;
+  view.innerHTML = fn(r);
+  document.querySelectorAll('.tabbar a').forEach(a => a.setAttribute('aria-current', a.dataset.sec === (screens[r.sec] ? r.sec : 'kort') ? 'page' : 'false'));
+  bindScreen(r);
+  const y = scrollMemory.get(key);
+  window.scrollTo(0, y || 0);
+  currentKey = key;
+}
+
+/* ================= screens ================= */
+function head(title, sub = '', backHref = '', plain = false) {
+  return `<header class="head tex ${plain ? 'plain' : ''}">
+    ${backHref ? `<a class="back" href="${backHref}" aria-label="Tilbage">${ICON.back}</a>` : ''}
+    <h1>${esc(title)}</h1>${sub ? `<div class="sub">${sub}</div>` : ''}
+  </header>`;
+}
+function linkCard(href, icon, title, sub = '') {
+  return `<a class="link-card tex" href="${href}"><span class="lc-main">${icon}<span><span class="lc-title">${esc(title)}</span>${sub ? `<span class="lc-sub">${esc(sub)}</span>` : ''}</span></span>${ICON.chev}</a>`;
+}
+function visiblePin(name) {
+  if (!S.map || !name || !String(name).trim()) return null;
+  return (S.map.pins || []).find(p => !p.hidden && norm(p.name) === norm(name)) || null;
+}
+function latestPlaced() {
+  const s = [...S.sessions].reverse().find(x => x.mapPin && String(x.mapPin).trim());
+  return s && visiblePin(s.mapPin) ? s : null;
+}
+
+/* ---------- Kort ---------- */
+function screenMap(r) {
+  const title = L('site_title', 'Phandalins Krønike');
+  const kicker = L('site_kicker', '');
+  if (!S.map) return `<header class="head tex"><div class="kicker">${esc(kicker)}</div><h1>${esc(title)}</h1></header><p class="empty">Kortet er ikke lagt op endnu.</p>`;
+  const now = latestPlaced();
+  const selected = visiblePin(r.a) ? r.a : '';
+  const pins = (S.map.pins || []).filter(p => !p.hidden);
+  const pinsHTML = pins.map(p => {
+    const isHere = now && norm(now.mapPin) === norm(p.name);
+    const on = norm(selected) === norm(p.name);
+    return `<button type="button" class="pin ${isHere ? 'here' : ''}" data-pin="${esc(p.name)}" aria-pressed="${on}" style="left:${Number(p.x)}%;top:${Number(p.y)}%">
+      <span class="pin-label">${esc(p.name)}</span><span class="pin-dot"></span></button>`;
+  }).join('');
+  const nowHTML = now ? `<div class="now-card tex">
+      <div class="label"><span>Hvor vi er nu</span><i>Kapitel ${esc(now.number)}</i></div>
+      <div class="place">${esc(now.mapPin)}</div>
+      ${linkCard(`#/logbog/${enc(now.number)}`, ICON.book, now.title, 'Seneste optegnelse')}
+    </div>` : '';
+  return `<header class="head tex"><div class="kicker">${esc(kicker)}</div><h1>${esc(title)}</h1></header>
+    <div class="map-layout">
+      <div>
+        <div class="map-stage">${img(S.map.image, '', L('map', 'Kort'))}${pinsHTML}</div>
+        <div class="map-tools"><button type="button" class="link-card tex" ${single(S.map.image, L('map', 'Kort'), 'Kortet i fuld opløsning')}><span class="lc-main">${ICON.expand}<span class="lc-title">Åbn kortet i fuld skærm</span></span>${ICON.chev}</button></div>
+      </div>
+      <div class="map-side">
+        ${selected ? pinDetail(selected) : nowHTML + `<p class="muted" style="padding:14px 18px 0;margin:0">Tryk på et sted på kortet for at se, hvem og hvad der hører til der.</p>`}
+      </div>
+    </div>`;
+}
+function pinDetail(name) {
+  const here = people.filter(p => norm(p.mapPin) === norm(name));
+  const shops = S.shops.filter(s => norm(s.mapPin) === norm(name));
+  const sess = S.sessions.filter(s => norm(s.mapPin) === norm(name));
+  let h = `<div class="pin-detail"><h2 id="pin-h" tabindex="-1">${esc(name)}</h2><a href="#/kort" class="muted" style="font-size:15px">Luk stedet</a>`;
+  if (!here.length && !shops.length && !sess.length) return h + `<p class="muted">Intet tilknyttet ${esc(name)} endnu.</p></div>`;
+  if (here.length) h += `<div class="section-h">Folk her</div><div class="rows">${here.map(personRow).join('')}</div>`;
+  if (shops.length) h += `<div class="section-h">Butikker her</div>${shops.map(s => linkCard(`#/butik/${enc(s.id)}`, ICON.doc, s.name, s.keeper || '')).join('')}`;
+  if (sess.length) h += `<div class="section-h">Optegnelser herfra</div>${sess.map(s => linkCard(`#/logbog/${enc(s.number)}`, ICON.book, s.title, 'Kapitel ' + s.number)).join('')}`;
+  return h + '</div>';
+}
+
+/* ---------- Logbog ---------- */
+function screenLog(r) {
+  if (r.a) return sessionDetail(r.a);
+  if (!S.sessions.length) return head(L('sessions', 'Logbog')) + '<p class="empty">Ingen optegnelser endnu.</p>';
+  const list = [...S.sessions].reverse();
+  const latestNo = list[0] && list[0].number;
+  return head(L('sessions', 'Logbog'), `${S.sessions.length} optegnelser`) + `<div class="body"><div class="rows">${list.map(s => `
+    <a class="row ${s.number === latestNo ? 'latest' : ''}" href="#/logbog/${enc(s.number)}">
+      <span class="chapter-num">${esc(s.number)}</span>
+      <span class="row-text"><span class="row-name">${esc(s.title)}</span>
+        <span class="row-place">${[s.number === latestNo ? 'Seneste' : '', s.date, s.audio ? 'med lydoptagelse' : ''].filter(Boolean).map(esc).join(' · ')}</span></span>
+      ${ICON.chev}</a>`).join('')}</div></div>`;
+}
+function sessionDetail(no) {
+  const i = S.sessions.findIndex(s => String(s.number) === String(no));
+  const s = S.sessions[i];
+  if (!s) return head('Ukendt optegnelse', '', '#/logbog') + '<p class="empty">Den optegnelse findes ikke.</p>';
+  const prev = S.sessions[i - 1], next = S.sessions[i + 1];
+  const audio = !s.audio ? '' : /\.(mp3|wav|ogg|m4a|aac|flac|opus)(\?.*)?$/i.test(s.audio)
+    ? `<audio controls preload="none" src="${esc(s.audio)}"></audio>`
+    : `<a class="link-card tex audio-card" href="${esc(s.audio)}" target="_blank" rel="noopener"><span class="lc-main"><span class="play">${ICON.play}</span><span><span class="lc-title">Lyt til afsnittet</span><span class="lc-sub">Åbner optagelsen i et nyt vindue</span></span></span>${ICON.chev}</a>`;
+  return `<header class="head tex"><a class="back" href="#/logbog" aria-label="Tilbage til logbogen">${ICON.back}</a>
+      <div class="kicker">Kapitel ${esc(s.number)}${s.date ? ' · ' + esc(s.date) : ''}</div><h1>${esc(s.title)}</h1></header>
+    <div class="body reading">
+      <div class="star-rule"><span></span>${ICON.star}<span></span></div>
+      ${s.image ? `<button type="button" class="inline-img" ${single(s.image, s.title, 'Kapitel ' + s.number)} aria-label="Se billedet i fuld skærm">${img(s.image)}</button>` : ''}
+      <div class="prose">${prose(s.recap, true) || '<p class="muted">Ingen tekst endnu.</p>'}</div>
+      ${audio}
+      ${visiblePin(s.mapPin) ? `<div style="margin-top:12px">${linkCard(`#/kort/${enc(s.mapPin)}`, ICON.map, `Se ${s.mapPin} på kortet`)}</div>` : ''}
+      <nav class="pager" aria-label="Andre kapitler">
+        ${prev ? `<a href="#/logbog/${enc(prev.number)}">${ICON.back}Kapitel ${esc(prev.number)}</a>` : '<span></span>'}
+        ${next ? `<a href="#/logbog/${enc(next.number)}">Kapitel ${esc(next.number)}${ICON.chev.replace('class="chev"', '')}</a>` : '<span></span>'}
+      </nav>
+    </div>`;
+}
+
+/* ---------- Folk ---------- */
+function personRow(p) {
+  const face = p.image ? img(p.image, 'row-thumb') : `<span class="mono" aria-hidden="true">${esc(initial(p.name))}</span>`;
+  return `<a class="row" href="${personHref(p)}" data-search="${esc(norm([p.name, p.title, p.location].join(' ')))}">${face}
+    <span class="row-text"><span class="row-name">${esc(p.name)}</span>
+      ${p.title ? `<span class="row-meta">${esc(p.title)}</span>` : ''}
+      ${p.location ? `<span class="row-place">${esc(p.location)}</span>` : ''}</span></a>`;
+}
+function folkHead(active) {
+  return `<header class="head tex"><h1>Folk</h1>
+    <div class="seg" role="tablist">
+      <a href="#/folk" aria-current="${active === 'npc'}">${esc(L('npcs', 'Folk vi har mødt'))}</a>
+      <a href="#/folk/selskabet" aria-current="${active === 'pc'}">${esc(L('players', 'Selskabet'))}</a>
+    </div>
+    ${active === 'npc' ? `<label class="sr" for="folk-search">Søg efter en person</label><input id="folk-search" class="search tex" type="search" placeholder="Søg efter navn, titel eller sted" autocomplete="off">` : ''}
+  </header>`;
+}
+function screenFolk(r) {
+  if (r.a === 'selskabet') return r.b ? pcDetail(r.b) : partyScreen();
+  if (r.a) return npcDetail(r.a);
+  if (!S.npcs.length) return folkHead('npc') + '<p class="empty">Ingen personer lagt op endnu.</p>';
+  return folkHead('npc') + `<div class="body"><div class="rows two" id="folk-list">${S.npcs.map(n => personRow({ ...n, _pc: false })).join('')}</div>
+    <p class="empty" id="folk-none" hidden>Ingen matcher søgningen.</p></div>`;
+}
+function detailHero(p, gallery, back) {
+  const gi = galleryIndex(gallery, p.name);
+  const title = `<div class="hero-text">${p.location ? `<div class="kicker">${esc(p.location)}</div>` : ''}<h1>${esc(p.name)}</h1>${p.title ? `<div class="sub" style="font-size:16px">${esc(p.title)}</div>` : ''}</div>`;
+  if (!p.image) {
+    return `<header class="head tex"><a class="back" href="${back}" aria-label="Tilbage">${ICON.back}</a>
+      ${p.location ? `<div class="kicker">${esc(p.location)}</div>` : ''}<h1>${esc(p.name)}</h1>${p.title ? `<div class="sub">${esc(p.title)}</div>` : ''}</header>`;
+  }
+  return `<div class="hero has-title">
+      <button type="button" class="zoom-hit" ${zoomAttrs(gallery, gi)} aria-label="Se portrættet af ${esc(p.name)} i fuld skærm">${img(p.image, 'hero-img', 'Portræt af ' + p.name)}</button>
+      <div class="hero-scrim"></div>${title}
+      <a class="hero-back" href="${back}" aria-label="Tilbage">${ICON.back}</a>${zoomBadge}
+    </div>`;
+}
+function deskTitle(p) {
+  return `<div class="desk-title" style="margin-top:6px">${p.location ? `<div class="kicker">${esc(p.location)}</div>` : ''}<h1>${esc(p.name)}</h1>${p.title ? `<div class="sub">${esc(p.title)}</div>` : ''}</div>`;
+}
+function npcDetail(name) {
+  const p = findPerson(name);
+  if (!p || p._pc) return head('Ukendt person', '', '#/folk') + '<p class="empty">Personen findes ikke i krøniken.</p>';
+  const ment = mentionsOf(p);
+  return `<div class="detail-wrap">${detailHero(p, 'npcs', '#/folk')}
+    <div class="body reading">${p.image ? deskTitle(p) : ''}
+      <hr class="rule">
+      <div class="prose">${prose(p.description, false)}</div>
+      <div style="margin-top:20px">
+        ${visiblePin(p.mapPin) ? linkCard(`#/kort/${enc(p.mapPin)}`, ICON.map, `Vis ${p.mapPin} på kortet`) : ''}
+        ${ment.length ? `<div class="section-h">Nævnt i ${ment.length === 1 ? 'én optegnelse' : ment.length + ' optegnelser'}</div>${ment.map(s => linkCard(`#/logbog/${enc(s.number)}`, ICON.book, s.title, 'Kapitel ' + s.number)).join('')}` : ''}
+      </div>
+    </div></div>`;
+}
+function partyScreen() {
+  const me = prefs().me;
+  const mine = me && findPerson(me);
+  const tiles = S.players.map(p => `
+    <a class="tile tex pc-tile ${mine && mine.name === p.name ? 'me' : ''}" href="#/folk/selskabet/${enc(p.name)}">
+      ${p.image ? img(p.image, 'pc-face') : `<span class="mono" aria-hidden="true">${esc(initial(p.name))}</span>`}
+      <span class="tile-name" style="font-size:15px">${esc(p.name)}</span>
+      <span class="tile-owner">${esc([p.title, p.location].filter(Boolean).join(' · '))}</span>
+    </a>`).join('');
+  return folkHead('pc') + `<div class="body">
+    ${mine && mine._pc ? `<div style="margin-bottom:16px">${linkCard(`#/folk/selskabet/${enc(mine.name)}`, ICON.doc, 'Mine papirer', mine.name)}</div>` : ''}
+    ${S.players.length ? `<div class="grid2">${tiles}</div>` : '<p class="empty">Ingen karakterer lagt op endnu.</p>'}
+    ${!mine && S.players.length ? `<p class="muted" style="margin-top:16px;font-size:15px">Åbn din egen karakter og vælg "Det er min karakter", så ligger dine papirer lige her næste gang.</p>` : ''}
+  </div>`;
+}
+const revealed = new Set();
+function paperCard(p) {
+  const body = `${p.date ? `<div class="paper-kind">${esc(p.date)}</div>` : ''}
+    ${p.content ? `<div class="prose">${prose(p.content, false)}</div>` : ''}
+    ${p.image ? `<button type="button" class="inline-img" ${single(p.image, p.title, p.kind)} aria-label="Se billedet i fuld skærm">${img(p.image)}</button>` : ''}
+    ${p.pdf ? `<a class="link-card tex" href="${esc(p.pdf)}" target="_blank" rel="noopener"><span class="lc-main">${ICON.doc}<span class="lc-title">Åbn dokumentet</span></span>${ICON.chev}</a>` : ''}`;
+  if (p.kind === 'Note/Brev') {
+    return `<div class="paper-card tex"><div class="paper-kind">Note eller brev</div><div class="paper-title">${esc(p.title)}</div>${body}</div>`;
+  }
+  if (!revealed.has(p._i)) {
+    return `<button type="button" class="paper-card tex secret" data-reveal="${p._i}" aria-expanded="false">
+      <div class="paper-kind">${esc(p.kind)}</div><div class="paper-title">${esc(p.title)}</div>
+      <div class="reveal">${ICON.eye}Tryk for at afsløre</div></button>`;
+  }
+  return `<div class="paper-card tex" style="border-color:var(--rust)"><div class="paper-kind">${esc(p.kind)}</div><div class="paper-title">${esc(p.title)}</div>${body}
+    <button type="button" class="hide-again" data-reveal="${p._i}" aria-expanded="true">Skjul igen</button></div>`;
+}
+function pcDetail(name) {
+  const p = findPerson(name);
+  if (!p || !p._pc) return head('Ukendt karakter', '', '#/folk/selskabet') + '<p class="empty">Karakteren findes ikke.</p>';
+  const isMe = norm(prefs().me) === norm(p.name);
+  const items = S.items.filter(i => norm(i.owner) === norm(p.name));
+  const mine = S.personal.filter(x => norm(x.character) === norm(p.name));
+  const notes = mine.filter(x => x.kind === 'Note/Brev');
+  const secrets = mine.filter(x => x.kind !== 'Note/Brev');
+  return `<div class="detail-wrap">${detailHero(p, 'players', '#/folk/selskabet')}
+    <div class="body reading">${p.image ? deskTitle(p) : ''}
+      <hr class="rule">
+      <div class="prose">${prose(p.description, false)}</div>
+      <button type="button" class="me-toggle tex" id="me-toggle" aria-pressed="${isMe}">${isMe ? 'Min karakter' : 'Det er min karakter'}</button>
+      ${items.length ? `<div class="section-h">Genstande</div><div class="grid2">${items.map(itemTile).join('')}</div>` : ''}
+      ${notes.length ? `<div class="section-h">Noter og breve</div>${notes.map(paperCard).join('')}` : ''}
+      ${secrets.length ? `<div class="section-h">Hemmelige beskeder</div>${secrets.map(paperCard).join('')}` : ''}
+      ${!items.length && !mine.length ? `<p class="muted" style="margin-top:18px">Intet registreret endnu for ${esc(p.name)}.</p>` : ''}
+    </div></div>`;
+}
+
+/* ---------- Fund ---------- */
+function itemTile(i) {
+  return `<a class="tile tex" href="#/fund/${enc(i.name)}" data-owner="${esc(norm(i.owner))}">
+    ${i.image ? img(i.image, '', '') : ''}
+    <span class="tile-text"><span class="tile-name">${esc(i.name)}</span>
+      ${i.rarity ? `<span class="tile-meta">${esc(i.rarity)}</span>` : ''}
+      ${i.owner ? `<span class="tile-owner">Båret af ${esc(i.owner)}</span>` : ''}</span></a>`;
+}
+function screenFund(r) {
+  if (r.a) return itemDetail(r.a);
+  const me = prefs().me;
+  const filter = sessionStorageGet('fund-filter') === 'mine' && me ? 'mine' : 'alle';
+  const list = filter === 'mine' ? S.items.filter(i => norm(i.owner) === norm(me)) : S.items;
+  return `<header class="head tex"><h1>${esc(L('items', 'Fund & genstande'))}</h1>
+      ${me ? `<div class="chips"><button type="button" class="chip tex" data-filter="alle" aria-pressed="${filter === 'alle'}">Alle</button><button type="button" class="chip tex" data-filter="mine" aria-pressed="${filter === 'mine'}">${esc(/[sxz]$/i.test(me) ? me + "'" : me + 's')}</button></div>` : ''}
+    </header>
+    <div class="body">${list.length ? `<div class="grid2">${list.map(itemTile).join('')}</div>` : `<p class="empty">${filter === 'mine' ? 'Ingen genstande på ' + esc(me) + ' endnu.' : 'Ingen fund endnu.'}</p>`}</div>`;
+}
+function itemDetail(name) {
+  const i = S.items.find(x => norm(x.name) === norm(name));
+  if (!i) return head('Ukendt genstand', '', '#/fund') + '<p class="empty">Genstanden findes ikke.</p>';
+  const owner = i.owner && findPerson(i.owner);
+  const found = sessionsMentioning(i.name);
+  const gi = galleryIndex('items', i.name);
+  return `<div class="detail-wrap">
+    ${i.image ? `<div class="hero contain tex"><button type="button" class="zoom-hit" ${zoomAttrs('items', gi)} aria-label="Se ${esc(i.name)} i fuld skærm">${img(i.image, 'hero-img', i.name)}</button>
+      <a class="hero-back" href="#/fund" aria-label="Tilbage til fund">${ICON.back}</a>${zoomBadge}</div>`
+      : `<header class="head tex"><a class="back" href="#/fund" aria-label="Tilbage">${ICON.back}</a></header>`}
+    <div class="body reading">
+      <h1 style="font-size:25px;font-weight:700">${esc(i.name)}</h1>
+      <div class="sub muted">${esc(i.rarity || '')}${i.owner ? `${i.rarity ? ' · ' : ''}båret af ${owner ? `<a href="${personHref(owner)}">${esc(i.owner)}</a>` : esc(i.owner)}` : ''}</div>
+      <hr class="rule">
+      <div class="prose">${prose(i.description, false)}</div>
+      ${found.length ? `<div style="margin-top:20px">${linkCard(`#/logbog/${enc(found[0].number)}`, ICON.book, `Nævnt første gang i kapitel ${found[0].number}`, found[0].title)}</div>` : ''}
+    </div></div>`;
+}
+function sessionStorageGet(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+function sessionStorageSet(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+
+/* ---------- Butik ---------- */
+function screenShops(r) {
+  if (r.a) return shopDetail(r.a);
+  if (!S.shops.length) return head(L('shops', 'Butikker')) + '<p class="empty">Ingen butikker lagt op endnu.</p>';
+  return head(L('shops', 'Butikker'), 'Hvad der er på hylderne lige nu') + `<div class="body">${S.shops.map(s => {
+    const items = s.items || [];
+    const inStock = items.filter(i => Number(i.qty) !== 0).length;
+    return `<a class="shop-row tex" href="#/butik/${enc(s.id)}"><span class="shop-mark" aria-hidden="true">${esc(initial(s.name))}</span>
+      <span class="row-text"><span class="row-name" style="font-size:15.5px">${esc(s.name)}</span>
+      <span class="row-meta" style="font-size:14px">${esc([s.keeper, `${inStock} ${inStock === 1 ? 'vare' : 'varer'} på lager`].filter(Boolean).join(' · '))}</span></span>${ICON.chev}</a>`;
+  }).join('')}</div>`;
+}
+function shopDetail(id) {
+  const s = S.shops.find(x => String(x.id) === String(id));
+  if (!s) return head('Ukendt butik', '', '#/butik') + '<p class="empty">Butikken er lukket eller findes ikke.</p>';
+  const items = [...(s.items || [])].sort((a, b) => (Number(a.qty) === 0) - (Number(b.qty) === 0));
+  return `<header class="head tex plain"><a class="back" href="#/butik" aria-label="Tilbage til butikker">${ICON.back}</a>
+      <h1 style="font-weight:700">${esc(s.name)}</h1>${s.keeper ? `<div class="sub">${esc(s.keeper)}${visiblePin(s.mapPin) ? ' · ' + esc(s.mapPin) : ''}</div>` : ''}</header>
+    <div class="body reading">${items.length ? items.map(it => {
+      const q = Number(it.qty), sold = q === 0;
+      return `<div class="stock ${sold ? 'sold' : ''}"><div class="stock-main"><div class="stock-name">${esc(it.name)}</div>
+          ${it.type ? `<div class="stock-type">${esc(it.type)}</div>` : ''}${it.rules ? `<div class="stock-rules">${esc(it.rules)}</div>` : ''}</div>
+        <div class="stock-side">${it.price ? `<span class="price">${esc(it.price)}</span>` : ''}
+          <span class="qty tex ${!sold && q <= 2 ? 'low' : ''}">${sold ? 'Udsolgt' : isNaN(q) ? 'På lager' : q + ' på lager'}</span></div></div>`;
+    }).join('') : '<p class="empty">Hylderne er tomme.</p>'}
+    ${visiblePin(s.mapPin) ? `<div style="margin-top:18px">${linkCard(`#/kort/${enc(s.mapPin)}`, ICON.map, `Se ${s.mapPin} på kortet`)}</div>` : ''}</div>`;
+}
+
+/* Keep pin labels inside the map and off each other: nudge at the edges, flip below the dot on collision. */
+function layoutPins() {
+  const stage = view.querySelector('.map-stage');
+  if (!stage) return;
+  const sr = stage.getBoundingClientRect();
+  const pins = [...stage.querySelectorAll('.pin')];
+  pins.forEach(p => { p.classList.remove('below'); p.querySelector('.pin-label').style.transform = ''; });
+  const ordered = pins.slice().sort((a, b) => (b.classList.contains('here') || b.getAttribute('aria-pressed') === 'true') - (a.classList.contains('here') || a.getAttribute('aria-pressed') === 'true'));
+  const placed = [];
+  const hit = (r) => placed.some(q => !(r.right + 3 < q.left || r.left - 3 > q.right || r.bottom + 2 < q.top || r.top - 2 > q.bottom));
+  const fit = (lab) => {
+    lab.style.transform = '';
+    const r = lab.getBoundingClientRect();
+    let dx = 0;
+    if (r.left < sr.left + 4) dx = sr.left + 4 - r.left;
+    else if (r.right > sr.right - 4) dx = sr.right - 4 - r.right;
+    if (dx) lab.style.transform = `translateX(calc(-50% + ${dx}px))`;
+    return lab.getBoundingClientRect();
+  };
+  ordered.forEach(p => {
+    const lab = p.querySelector('.pin-label');
+    let r = fit(lab);
+    if (hit(r)) { p.classList.add('below'); const r2 = fit(lab); if (!hit(r2)) r = r2; else { p.classList.remove('below'); r = fit(lab); } }
+    placed.push(r);
+  });
+}
+let pinTimer = 0;
+window.addEventListener('resize', () => { clearTimeout(pinTimer); pinTimer = setTimeout(layoutPins, 120); });
+
+/* ================= per-screen behaviour ================= */
+function bindScreen(r) {
+  const mapImg = view.querySelector('.map-stage > img');
+  if (mapImg) { if (mapImg.complete) layoutPins(); else mapImg.addEventListener('load', layoutPins, { once: true }); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutPins);
+  const search = document.getElementById('folk-search');
+  if (search) {
+    const q = sessionStorageGet('folk-q') || '';
+    search.value = q;
+    const apply = () => {
+      const v = norm(search.value);
+      sessionStorageSet('folk-q', search.value);
+      let shown = 0;
+      document.querySelectorAll('#folk-list .row').forEach(el => { const ok = !v || el.dataset.search.includes(v); el.hidden = !ok; if (ok) shown++; });
+      document.getElementById('folk-none').hidden = shown > 0;
+    };
+    search.addEventListener('input', apply);
+    apply();
+  }
+  view.querySelectorAll('[data-pin]').forEach(el => el.addEventListener('click', () => {
+    const name = el.dataset.pin;
+    const target = norm(route().a) === norm(name) ? '#/kort' : '#/kort/' + enc(name);
+    history.replaceState(null, '', target);
+    scrollMemory.delete(target);
+    const y = window.scrollY;
+    render();
+    window.scrollTo(0, y);
+    const h = document.getElementById('pin-h');
+    if (h && window.matchMedia('(max-width: 999px)').matches) h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+  view.querySelectorAll('[data-reveal]').forEach(el => el.addEventListener('click', () => {
+    const i = Number(el.dataset.reveal);
+    revealed.has(i) ? revealed.delete(i) : revealed.add(i);
+    const y = window.scrollY; view.innerHTML = screenFolk(route()); bindScreen(route()); window.scrollTo(0, y);
+  }));
+  const meBtn = document.getElementById('me-toggle');
+  if (meBtn) meBtn.addEventListener('click', () => {
+    const name = route().b;
+    const isMe = norm(prefs().me) === norm(name);
+    setPref('me', isMe ? null : (findPerson(name) || {}).name);
+    meBtn.setAttribute('aria-pressed', String(!isMe));
+    meBtn.textContent = !isMe ? 'Min karakter' : 'Det er min karakter';
+  });
+  view.querySelectorAll('[data-filter]').forEach(el => el.addEventListener('click', () => {
+    sessionStorageSet('fund-filter', el.dataset.filter);
+    render();
+  }));
+}
+
+/* ================= fullscreen viewer ================= */
+const V = {
+  el: document.getElementById('viewer'), stage: document.getElementById('v-stage'), img: document.getElementById('v-img'),
+  pct: document.getElementById('v-pct'), hint: document.getElementById('v-hint'), load: document.getElementById('v-load'),
+  list: [], i: 0, s: 1, x: 0, y: 0, ptrs: new Map(), g: null, lastTap: 0, opener: null, hinted: false,
+};
+const MAX = 6;
+function vApply(animate) {
+  V.img.style.transition = animate ? 'transform 0.22s ease-out' : 'none';
+  V.img.style.transform = `translate(${V.x}px, ${V.y}px) scale(${V.s})`;
+  V.pct.textContent = Math.round(V.s * 100) + ' %';
+}
+function vClamp() {
+  V.s = Math.min(MAX, Math.max(1, V.s));
+  const r = V.stage.getBoundingClientRect();
+  const w = V.img.offsetWidth * V.s, h = V.img.offsetHeight * V.s;
+  const mx = Math.max(0, (w - r.width) / 2), my = Math.max(0, (h - r.height) / 2);
+  V.x = Math.min(mx, Math.max(-mx, V.x));
+  V.y = Math.min(my, Math.max(-my, V.y));
+}
+/* zoom to scale s1 keeping the screen point (px,py) — relative to stage centre — fixed */
+function vZoomAt(s1, px, py) {
+  s1 = Math.min(MAX, Math.max(1, s1));
+  const k = s1 / V.s;
+  V.x = px - (px - V.x) * k; V.y = py - (py - V.y) * k; V.s = s1;
+  vClamp();
+}
+function vRel(e) { const r = V.stage.getBoundingClientRect(); return [e.clientX - r.left - r.width / 2, e.clientY - r.top - r.height / 2]; }
+function vReset(animate) { V.s = 1; V.x = 0; V.y = 0; vApply(animate); }
+function vShow() {
+  const e = V.list[V.i];
+  vReset(false);
+  V.load.hidden = false;
+  V.img.style.opacity = '0';
+  V.img.onload = () => { V.load.hidden = true; V.img.style.opacity = '1'; };
+  V.img.onerror = () => { V.load.textContent = 'Billedet kunne ikke hentes.'; };
+  V.img.src = e.src;
+  V.img.alt = e.title || '';
+  document.getElementById('v-title').textContent = e.title || '';
+  document.getElementById('v-sub').textContent = e.sub || '';
+  const many = V.list.length > 1;
+  document.getElementById('v-prev').hidden = !many;
+  document.getElementById('v-next').hidden = !many;
+  document.getElementById('v-prev').disabled = V.i === 0;
+  document.getElementById('v-next').disabled = V.i === V.list.length - 1;
+}
+function vOpen(list, i, opener) {
+  if (!list || !list.length) return;
+  V.list = list; V.i = Math.max(0, Math.min(i, list.length - 1)); V.opener = opener;
+  V.load.textContent = 'Henter billedet…';
+  V.el.hidden = false;
+  document.body.style.overflow = 'hidden';
+  history.pushState({ viewer: true }, '', location.href);
+  vShow();
+  V.hint.classList.toggle('gone', V.hinted);
+  if (!V.hinted) { V.hinted = true; setTimeout(() => V.hint.classList.add('gone'), 2600); }
+  document.getElementById('v-close').focus();
+}
+function vHide() {
+  V.el.hidden = true;
+  document.body.style.overflow = '';
+  V.img.removeAttribute('src');
+  V.ptrs.clear();
+  if (V.opener && document.contains(V.opener)) V.opener.focus({ preventScroll: true });
+}
+function vClose() { if (history.state && history.state.viewer) history.back(); else vHide(); }
+function vGo(d) { const n = V.i + d; if (n < 0 || n >= V.list.length) return; V.i = n; vShow(); }
+
+window.addEventListener('popstate', () => { if (!V.el.hidden) vHide(); });
+document.getElementById('v-close').addEventListener('click', vClose);
+document.getElementById('v-fit').addEventListener('click', () => vReset(true));
+document.getElementById('v-prev').addEventListener('click', () => vGo(-1));
+document.getElementById('v-next').addEventListener('click', () => vGo(1));
+document.addEventListener('keydown', e => {
+  if (V.el.hidden) return;
+  if (e.key === 'Escape') vClose();
+  else if (e.key === 'ArrowLeft') vGo(-1);
+  else if (e.key === 'ArrowRight') vGo(1);
+  else if (e.key === '+' || e.key === '=') { vZoomAt(V.s * 1.4, 0, 0); vApply(true); }
+  else if (e.key === '-') { vZoomAt(V.s / 1.4, 0, 0); vApply(true); }
+});
+V.stage.addEventListener('wheel', e => {
+  e.preventDefault();
+  const [px, py] = vRel(e);
+  vZoomAt(V.s * Math.exp(-e.deltaY * 0.0022), px, py);
+  vApply(false);
+}, { passive: false });
+V.stage.addEventListener('pointerdown', e => {
+  V.stage.setPointerCapture(e.pointerId);
+  V.ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY, x0: e.clientX, y0: e.clientY, t0: Date.now() });
+  const p = [...V.ptrs.values()];
+  if (p.length === 2) {
+    const d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+    const mid = vRel({ clientX: (p[0].x + p[1].x) / 2, clientY: (p[0].y + p[1].y) / 2 });
+    V.g = { type: 'pinch', d0: d || 1, s0: V.s, x0: V.x, y0: V.y, m0: mid };
+  } else if (p.length === 1) {
+    V.g = { type: 'pan', x0: V.x, y0: V.y, cx: e.clientX, cy: e.clientY };
+  }
+});
+V.stage.addEventListener('pointermove', e => {
+  const pt = V.ptrs.get(e.pointerId);
+  if (!pt || !V.g) return;
+  pt.x = e.clientX; pt.y = e.clientY;
+  const p = [...V.ptrs.values()];
+  if (V.g.type === 'pinch' && p.length >= 2) {
+    const d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+    const m = vRel({ clientX: (p[0].x + p[1].x) / 2, clientY: (p[0].y + p[1].y) / 2 });
+    const s1 = Math.min(MAX, Math.max(1, V.g.s0 * d / V.g.d0));
+    const k = s1 / V.g.s0;
+    V.s = s1;
+    V.x = m[0] - (V.g.m0[0] - V.g.x0) * k;
+    V.y = m[1] - (V.g.m0[1] - V.g.y0) * k;
+    vClamp(); vApply(false);
+  } else if (V.g.type === 'pan' && V.s > 1) {
+    V.x = V.g.x0 + (e.clientX - V.g.cx);
+    V.y = V.g.y0 + (e.clientY - V.g.cy);
+    vClamp(); vApply(false);
+  }
+});
+function vUp(e) {
+  const pt = V.ptrs.get(e.pointerId);
+  V.ptrs.delete(e.pointerId);
+  if (!pt) return;
+  const dx = e.clientX - pt.x0, dy = e.clientY - pt.y0, dt = Date.now() - pt.t0;
+  if (V.ptrs.size === 1) {
+    const [o] = V.ptrs.values();
+    V.g = { type: 'pan', x0: V.x, y0: V.y, cx: o.x, cy: o.y };
+    return;
+  }
+  const wasPinch = V.g && V.g.type === 'pinch';
+  V.g = null;
+  if (wasPinch) return;
+  if (V.s === 1 && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.4 && dt < 600) { vGo(dx < 0 ? 1 : -1); return; }
+  if (Math.abs(dx) < 10 && Math.abs(dy) < 10 && dt < 300) {
+    const now = Date.now();
+    if (now - V.lastTap < 320) {
+      V.lastTap = 0;
+      if (V.s > 1) vReset(true);
+      else { const [px, py] = vRel(e); vZoomAt(2.5, px, py); vApply(true); }
+    } else V.lastTap = now;
+  }
+}
+V.stage.addEventListener('pointerup', vUp);
+V.stage.addEventListener('pointercancel', vUp);
+window.addEventListener('resize', () => { if (!V.el.hidden) { vClamp(); vApply(false); } });
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-zoom]');
+  if (!t) return;
+  e.preventDefault();
+  vOpen(galleries[t.dataset.zoom], Number(t.dataset.zoomI) || 0, t);
+});
+
+/* ================= start ================= */
+window.addEventListener('hashchange', render);
+loadAll().then(() => { buildGalleries(); render(); }).catch(() => {
+  view.innerHTML = '<p class="empty">Krøniken kunne ikke hentes. Prøv at genindlæse siden.</p>';
+});
+})();
+</script>
+</body>
+</html>
