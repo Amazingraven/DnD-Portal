@@ -346,10 +346,11 @@ audio { width: 100%; margin-top: 18px; }
   /* map: whole map fits the screen height, info panel beside it */
   .view[data-layout="map"] > * { max-width: none; }
   .map-head { display: none; }
-  .map-layout { display: grid; grid-template-columns: auto minmax(300px, 420px); justify-content: center; gap: 40px; align-items: start; }
-  .map-stage { display: inline-block; border: 1px solid var(--gold); }
-  .map-stage > img { width: auto; height: calc(100vh - 72px); max-width: 100%; }
-  .map-side { position: sticky; top: 36px; }
+  .view[data-layout="map"] { padding: 18px 22px 22px; }
+  .map-layout { display: grid; grid-template-columns: auto minmax(270px, 340px); justify-content: center; gap: 28px; align-items: start; }
+  .map-stage { display: block; width: fit-content; margin: 0 auto; border: 1px solid var(--gold); }
+  .map-stage > img { width: auto; height: calc(100vh - 42px); max-width: 100%; }
+  .map-side { position: sticky; top: 18px; }
   .now-card { margin: 0; }
   .pin-detail { padding: 0; }
   .pin-detail h2 { margin-top: 0; }
