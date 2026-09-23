@@ -347,9 +347,9 @@ audio { width: 100%; margin-top: 18px; }
   .view[data-layout="map"] > * { max-width: none; }
   .map-head { display: none; }
   .view[data-layout="map"] { padding: 18px 22px 22px; }
-  .map-layout { display: grid; grid-template-columns: auto minmax(270px, 340px); justify-content: center; gap: 28px; align-items: start; }
-  .map-stage { display: block; width: fit-content; margin: 0 auto; border: 1px solid var(--gold); }
-  .map-stage > img { width: auto; height: calc(100vh - 42px); max-width: 100%; }
+  .map-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 320px); gap: 32px; align-items: start; }
+  .map-stage { display: block; width: 100%; max-width: var(--map-max, 900px); margin: 0 auto; border: 1px solid var(--gold); }
+  .map-stage > img { width: 100%; height: auto; max-width: none; }
   .map-side { position: sticky; top: 18px; }
   .now-card { margin: 0; }
   .pin-detail { padding: 0; }
@@ -854,7 +854,15 @@ window.addEventListener('resize', () => { clearTimeout(pinTimer); pinTimer = set
 function bindScreen(r) {
   const mapImg = view.querySelector('.map-stage > img');
   if (mapImg) mapImg.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); mapImg.click(); } });
-  if (mapImg) { if (mapImg.complete) layoutPins(); else mapImg.addEventListener('load', layoutPins, { once: true }); }
+  if (mapImg) {
+    const sizeMap = () => {
+      const stage = mapImg.closest('.map-stage');
+      // 1.6x the file's own pixels is about as far as it can stretch before it looks soft
+      if (stage && mapImg.naturalWidth) stage.style.setProperty('--map-max', Math.round(mapImg.naturalWidth * 1.6) + 'px');
+      layoutPins();
+    };
+    if (mapImg.complete && mapImg.naturalWidth) sizeMap(); else mapImg.addEventListener('load', sizeMap, { once: true });
+  }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutPins);
   const search = document.getElementById('folk-search');
   if (search) {
